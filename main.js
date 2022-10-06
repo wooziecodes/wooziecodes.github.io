@@ -5,6 +5,7 @@ function myFunction() {
 	  alert("kura loves you too!! here's a reward");  
 	  aboutpic = document.getElementById("aboutpic")
 	  aboutpic.setAttribute("src", "assets/img/cutekura.jpg")
+	  document.getElementById("clickme").disabled = true;
   
 	}
   
