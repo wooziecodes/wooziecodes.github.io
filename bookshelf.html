@@ -6,32 +6,34 @@
     <title>Arif Woozeer's Bookshelf</title>
     <style>
         body {
-            font-family: 'Helvetica', 'Arial', sans-serif;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
             line-height: 1.6;
             margin: 0;
             padding: 0;
-            background-color: #ffffff;
-            color: #000000;
+            background-color: #f4f4f4;
+            color: #333;
         }
         .container {
-            width: 80%;
+            width: 90%;
             max-width: 1200px;
             margin: auto;
             padding: 20px;
         }
         header {
-            text-align: center;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
             padding: 20px 0;
-            border-bottom: 1px solid #000000;
         }
         h1 {
             font-size: 2.5em;
             margin-bottom: 0.5em;
             font-weight: 300;
+            text-align: center;
         }
         nav ul {
             list-style-type: none;
             padding: 0;
+            text-align: center;
         }
         nav ul li {
             display: inline;
@@ -39,28 +41,52 @@
         }
         a {
             text-decoration: none;
-            color: #000000;
+            color: #333;
             transition: color 0.3s ease;
         }
         a:hover {
-            color: #0000ff;
+            color: #0066cc;
         }
         h2, h3 {
             font-weight: 300;
         }
         .book-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
         }
         .book-item {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
             text-align: center;
+            transition: transform 0.3s ease;
+        }
+        .book-item:hover {
+            transform: translateY(-5px);
         }
         .book-item img {
             max-width: 100%;
             height: auto;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 4px;
+            margin-bottom: 15px;
+        }
+        .book-status {
+            font-style: italic;
+            color: #666;
+            margin-top: 10px;
+        }
+        .book-tldr {
+            margin-top: 15px;
+        }
+        .book-tldr textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            resize: vertical;
         }
     </style>
 </head>
@@ -82,7 +108,7 @@
 
     <div class="container">
         <h2>My Bookshelf</h2>
-        <p>Here are some books I've recently read or am currently reading. This list is synced with my Goodreads account.</p>
+        <p>Here are some books I've recently read, am currently reading, or consider favorites. This list is synced with my Goodreads account and includes my personal thoughts.</p>
         
         <div id="bookshelf" class="book-grid">
             <!-- Books will be dynamically inserted here -->
@@ -90,31 +116,76 @@
     </div>
 
     <script>
-        // We'll add JavaScript here to fetch and display your Goodreads data
         async function fetchBooks() {
-            // In a real implementation, this would be replaced with actual API calls
-            // For now, we'll use placeholder data
-            const books = [
-                { title: "The Innovator's Dilemma", author: "Clayton M. Christensen", cover: "/api/placeholder/200/300" },
-                { title: "Thinking, Fast and Slow", author: "Daniel Kahneman", cover: "/api/placeholder/200/300" },
-                { title: "The Lean Startup", author: "Eric Ries", cover: "/api/placeholder/200/300" },
-                // Add more books as needed
-            ];
+            try {
+                // Check if we have cached data
+                const cachedData = localStorage.getItem('bookshelfData');
+                const cachedTimestamp = localStorage.getItem('bookshelfTimestamp');
+                
+                // If we have cached data and it's less than 24 hours old, use it
+                if (cachedData && cachedTimestamp && (Date.now() - cachedTimestamp < 24 * 60 * 60 * 1000)) {
+                    return JSON.parse(cachedData);
+                }
 
-            const bookshelf = document.getElementById('bookshelf');
-            books.forEach(book => {
-                const bookElement = document.createElement('div');
-                bookElement.className = 'book-item';
-                bookElement.innerHTML = `
-                    <img src="${book.cover}" alt="${book.title} cover">
-                    <h3>${book.title}</h3>
-                    <p>${book.author}</p>
-                `;
-                bookshelf.appendChild(bookElement);
-            });
+                // If no valid cached data, fetch from server
+                const response = await fetch('books.json');
+                const books = await response.json();
+
+                // Cache the new data
+                localStorage.setItem('bookshelfData', JSON.stringify(books));
+                localStorage.setItem('bookshelfTimestamp', Date.now().toString());
+
+                return books;
+            } catch (error) {
+                console.error('Error fetching books:', error);
+                throw error;
+            }
         }
 
-        fetchBooks();
+        function saveTldr(bookTitle, tldr) {
+            const tldrs = JSON.parse(localStorage.getItem('bookTldrs') || '{}');
+            tldrs[bookTitle] = tldr;
+            localStorage.setItem('bookTldrs', JSON.stringify(tldrs));
+        }
+
+        function getTldr(bookTitle) {
+            const tldrs = JSON.parse(localStorage.getItem('bookTldrs') || '{}');
+            return tldrs[bookTitle] || '';
+        }
+
+        async function displayBooks() {
+            try {
+                const books = await fetchBooks();
+                const bookshelf = document.getElementById('bookshelf');
+                bookshelf.innerHTML = ''; // Clear existing content
+
+                books.forEach(book => {
+                    const bookElement = document.createElement('div');
+                    bookElement.className = 'book-item';
+                    const tldr = getTldr(book.title);
+                    bookElement.innerHTML = `
+                        <img src="${book.cover}" alt="${book.title} cover">
+                        <h3>${book.title}</h3>
+                        <p>${book.author}</p>
+                        <p class="book-status">${book.status}</p>
+                        <div class="book-tldr">
+                            <textarea placeholder="Add your tldr thoughts..." rows="3">${tldr}</textarea>
+                        </div>
+                    `;
+                    bookshelf.appendChild(bookElement);
+
+                    // Add event listener to save tldr on change
+                    const textarea = bookElement.querySelector('textarea');
+                    textarea.addEventListener('change', (e) => {
+                        saveTldr(book.title, e.target.value);
+                    });
+                });
+            } catch (error) {
+                document.getElementById('bookshelf').innerHTML = '<p>Error loading books. Please try again later.</p>';
+            }
+        }
+
+        displayBooks();
     </script>
 </body>
 </html>
