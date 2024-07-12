@@ -116,64 +116,31 @@
     </div>
 
     <script>
-
-async function fetchBooks() {
-    try {
-        // Check if we have cached data
-        const cachedData = localStorage.getItem('bookshelfData');
-        const cachedTimestamp = localStorage.getItem('bookshelfTimestamp');
-
-        // If we have cached data and it's less than 24 hours old, use it
-        if (cachedData && cachedTimestamp && (Date.now() - cachedTimestamp < 24 * 60 * 60 * 1000)) {
-            return JSON.parse(cachedData);
-        }
-
-        // If no valid cached data, fetch from server
-        const response = await fetch('books.json');
-        
-        // Check if the response is successful
-        if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-
-        const books = await response.json();
-
-        // Cache the new data
-        localStorage.setItem('bookshelfData', JSON.stringify(books));
-        localStorage.setItem('bookshelfTimestamp', Date.now().toString());
-
-        return books;
-    } catch (error) {
-        console.error('Error fetching books:', error);
-        throw error;
-    }
-}
-
-        // async function fetchBooks() {
-        //     try {
-        //         // Check if we have cached data
-        //         const cachedData = localStorage.getItem('bookshelfData');
-        //         const cachedTimestamp = localStorage.getItem('bookshelfTimestamp');
+        async function fetchBooks() {
+            try {
+                // Check if we have cached data
+                const cachedData = localStorage.getItem('bookshelfData');
+                const cachedTimestamp = localStorage.getItem('bookshelfTimestamp');
                 
-        //         // If we have cached data and it's less than 24 hours old, use it
-        //         if (cachedData && cachedTimestamp && (Date.now() - cachedTimestamp < 24 * 60 * 60 * 1000)) {
-        //             return JSON.parse(cachedData);
-        //         }
+                // If we have cached data and it's less than 24 hours old, use it
+                if (cachedData && cachedTimestamp && (Date.now() - cachedTimestamp < 24 * 60 * 60 * 1000)) {
+                    return JSON.parse(cachedData);
+                }
 
-        //         // If no valid cached data, fetch from server
-        //         const response = await fetch('books.json');
-        //         const books = await response.json();
+                // If no valid cached data, fetch from server
+                const response = await fetch('books.json');
+                const books = await response.json();
 
-        //         // Cache the new data
-        //         localStorage.setItem('bookshelfData', JSON.stringify(books));
-        //         localStorage.setItem('bookshelfTimestamp', Date.now().toString());
+                // Cache the new data
+                localStorage.setItem('bookshelfData', JSON.stringify(books));
+                localStorage.setItem('bookshelfTimestamp', Date.now().toString());
 
-        //         return books;
-        //     } catch (error) {
-        //         console.error('Error fetching books:', error);
-        //         throw error;
-        //     }
-        // }
+                return books;
+            } catch (error) {
+                console.error('Error fetching books:', error);
+                throw error;
+            }
+        }
 
         function saveTldr(bookTitle, tldr) {
             const tldrs = JSON.parse(localStorage.getItem('bookTldrs') || '{}');
