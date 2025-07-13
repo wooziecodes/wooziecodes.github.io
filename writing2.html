@@ -73,6 +73,15 @@
         .blog-item p {
             color: #666;
         }
+
+        .section a {
+  color: #007bff; /* Blue link color - adjust as desired */
+  text-decoration: underline; /* Optional, for added visual cue */
+}
+
+.section a:hover {
+  color: #0056b3; /* Darker blue on hover - adjust as desired */
+}
     </style>
 </head>
 <body>
@@ -82,7 +91,7 @@
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
-            <li><a href="writing.html">Writing</a></li>
+            <li><a href="blog.html">Writing</a></li>
             <li><a href="bookshelf.html">Bookshelf</a></li>
             <li><a href="research.html">Research</a></li>
             <li><a href="projects.html">Projects</a></li>
@@ -91,32 +100,38 @@
     </nav>
 </header>
 
+
+
 <div class="container">
-    <h2>Thinking</h2>
-    <ul>
-        <li>
-            <a href="https://drive.google.com/file/d/195DYnmsYCal5NCDWHnWB2s_-hHUeLXV4/view?usp=sharing">The Ethics of Anthropomorphic AI for Emotional Support</a>
-            <p>This paper explores the ethical implications of using anthropomorphic AI for emotional support, focusing on issues like trust, dependency, and ethical design principles.</p>
-        </li>
-        <li>
-            <a href="https://drive.google.com/file/d/1A1Sj1eE_Ru7KJR8cX_MTGs9v-IEexQfF/view?usp=sharing">The Experience of Being 'Othered' in Singapore's CMIO Classification</a>
-            <p>A personal sociological examination of racial categorization and its implications in Singapore.</p>
-        </li>
-        <li>
-            <a href="https://drive.google.com/file/d/1DkefNhNIoPzoVAX46tpS0vCB7Ai4KK9P/view?usp=sharing">Redefining Society in the Age of AI</a>
-            <p>A sociological exploration of artificial intelligence's transformative impact.</p>
-        </li>
-    </ul>
 
-    <h2>Making</h2>
+
+    <h2>My Writing</h2>
+    <section class="papers-section">
+        <h2>Select Papers and Essays</h2>
+        <ul class="papers-list">
+            <li>
+                <a href="https://drive.google.com/file/d/195DYnmsYCal5NCDWHnWB2s_-hHUeLXV4/view?usp=sharing">The Ethics of Anthropomorphic AI for Emotional Support</a>
+                <p>This paper explores the ethical implications of using anthropomorphic AI for emotional support, focusing on issues like trust, dependency, and ethical design principles.</p>
+             
+            </li>
+            <li>
+                <a href="https://drive.google.com/file/d/1A1Sj1eE_Ru7KJR8cX_MTGs9v-IEexQfF/view?usp=sharing">The Experience of Being 'Othered' in Singapore's CMIO Classification: A Personal Sociological Examination</a>
+                <p>This essay provides a personal sociological examination of the CMIO classification system in Singapore and its impact on individuals who feel 'othered' by this racial categorization.</p>
+           
+            </li>
+            <li>
+                <a href="https://drive.google.com/file/d/1DkefNhNIoPzoVAX46tpS0vCB7Ai4KK9P/view?usp=sharing"">Redefining Society in the Age of AI: A Sociological Exploration of Artificial Intelligence's Transformative Impact</a>
+                <p>This paper discusses the transformative impact of artificial intelligence on society, examining both the potential benefits and the social challenges that arise from widespread AI integration.</p>
+             
+            </li>
+        </ul>
+    </section>
+    
+    <h2>And here are some articles from my Medium blog:</h2>
+
+ 
     <div id="blog" class="blog-grid">
-        <!-- Medium posts dynamically inserted here -->
-    </div>
-
-    <h2>Feeling</h2>
-    <div>
-        <h3><a href="https://arifwoozeer.substack.com" target="_blank">Letters from Wooz</a></h3>
-        <p><em>Stream-of-consciousness reflections, emotional notes, and moments in motion — hosted on Substack.</em></p>
+        <!-- Writing posts will be dynamically inserted here -->
     </div>
 </div>
 
@@ -150,7 +165,8 @@ function parseFeed(xml) {
 
 function displayPosts(posts) {
     const blogContainer = document.getElementById('blog');
-    blogContainer.innerHTML = '';
+    blogContainer.innerHTML = ''; // Clear existing content
+
     posts.forEach(post => {
         const postElement = document.createElement('div');
         postElement.className = 'blog-item';
