@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arif Woozeer's Bookshelf</title>
+    <title>Reading - Arif Woozeer</title>
     <style>
         body {
             font-family: 'Helvetica Neue', Arial, sans-serif;
@@ -97,19 +97,17 @@
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
-                <li><a href="blog.html">Writing</a></li>
-                <li><a href="bookshelf.html">Bookshelf</a></li>
-                <li><a href="writing.html">Research</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="work.html">Work</a></li>
+                <li><a href="research.html">Research</a></li>
+                <li><a href="thinking.html">Thinking</a></li>
+                <li><a href="reading.html">Reading</a></li>
             </ul>
         </nav>
     </header>
 
     <div class="container">
-        <h2>My Bookshelf</h2>
+        <h2>Reading</h2>
         <p>Here are some books I've recently read, am currently reading, or consider favorites. This list is synced with my Goodreads account and includes my personal thoughts.</p>
-        
+
         <div id="bookshelf" class="book-grid">
             <!-- Books will be dynamically inserted here -->
         </div>
@@ -121,7 +119,7 @@
                 // Check if we have cached data
                 const cachedData = localStorage.getItem('bookshelfData');
                 const cachedTimestamp = localStorage.getItem('bookshelfTimestamp');
-                
+
                 // If we have cached data and it's less than 24 hours old, use it
                 if (cachedData && cachedTimestamp && (Date.now() - cachedTimestamp < 24 * 60 * 60 * 1000)) {
                     return JSON.parse(cachedData);

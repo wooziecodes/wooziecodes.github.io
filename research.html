@@ -45,11 +45,28 @@
         a:hover {
             color: #0000ff;
         }
-        h2, h3 {
+        h2, h3, h4 {
             font-weight: 300;
         }
         .research-section {
+            margin-bottom: 50px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #eee;
+        }
+        .research-section:last-child {
+            border-bottom: none;
+        }
+        .project {
             margin-bottom: 30px;
+        }
+        .project h4 {
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+        .project-meta {
+            font-size: 0.9em;
+            color: #666;
+            margin-bottom: 10px;
         }
         .research-image {
             max-width: 70%;
@@ -58,16 +75,12 @@
             border-radius: 5px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
-        .learn-more {
-            display: inline-block;
-            margin-top: 10px;
-            padding: 5px 10px;
-            background-color: #f0f0f0;
-            border-radius: 3px;
-            transition: background-color 0.3s ease;
+        .section a {
+            color: #007bff;
+            text-decoration: underline;
         }
-        .learn-more:hover {
-            background-color: #e0e0e0;
+        .section a:hover {
+            color: #0056b3;
         }
     </style>
 </head>
@@ -78,52 +91,87 @@
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
-                <li><a href="blog.html">Writing</a></li>
-                <li><a href="bookshelf.html">Bookshelf</a></li>
                 <li><a href="research.html">Research</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="work.html">Work</a></li>
+                <li><a href="thinking.html">Thinking</a></li>
+                <li><a href="reading.html">Reading</a></li>
             </ul>
         </nav>
     </header>
 
     <div class="container">
-        <h2>Research Interests</h2>
-        
+        <h2>Research</h2>
+
         <div class="research-section">
-            <h3>Reach Alliance</h3>
-            <p>I'm part of the Reach Alliance team at Singapore Management University. We're working on a cool project about using AI chatbots to help migrant workers in Singapore understand money matters better. It's all about making sure everyone, even those who might be overlooked, gets a fair shot at managing their finances.</p>
-            <p>Our current research asks: <strong>How can we use conversational AI to boost financial literacy for migrant workers in Singapore?</strong> We're looking at things like:</p>
-            <ul>
-                <li>What financial challenges do migrant workers face?</li>
-                <li>How can AI chatbots help explain money stuff in different languages?</li>
-                <li>Can we make these chatbots understand different cultural approaches to saving and spending?</li>
-            </ul>
-            <img src="./assets/img/reach.jpg" alt="Reach Alliance Project" class="research-image">
-            <a href="https://reachalliance.org/partner/singapore-management-university/" target="_blank" class="learn-more">Check out SMU's Reach Alliance work</a>
+            <h3>Current Research</h3>
+
+            <div class="project">
+                <h4>Financial Literacy AI for Migrant Workers</h4>
+                <div class="project-meta">The Reach Alliance | July 2024 — Present</div>
+                <p>I lead research and prototype development exploring how conversational AI and large language models can enhance financial literacy for migrant workers in Singapore. The project investigates how multilingual dialogue systems can provide culturally responsive financial education in contexts where language barriers and unfamiliar institutional systems create barriers to economic participation.</p>
+
+                <p><strong>Research questions:</strong> How can AI chatbots explain financial concepts across languages and cultural frameworks for money management? What trust mechanisms matter in AI-mediated learning? How do we design systems that account for varying levels of digital and financial literacy?</p>
+
+                <p><strong>Methods & Tools:</strong> Natural Language Processing, Retrieval-Augmented Generation (RAG), LangChain, OpenAI APIs, user-centered design research. Developing tailored AI agents for contextual Q&A and guided financial education, collaborating with a multidisciplinary team on interfaces aligned with SDGs 8 (Decent Work), 9 (Industry & Innovation), and 11 (Sustainable Cities).</p>
+
+                <img src="./assets/img/reach.jpg" alt="Reach Alliance Project" class="research-image">
+                <p><a href="https://reachalliance.org/partner/singapore-management-university/" target="_blank">Learn more about SMU's Reach Alliance work</a></p>
+            </div>
         </div>
-        
+
         <div class="research-section">
-            <h3>Affective Technologies</h3>
-            <p>My second major at SMU is in Affective Technologies. It's a mix of computing, psychology, and neuroscience - basically, we're trying to develop and better understand systems that understand and respond to human emotions.</p>
-            <!-- <img src="/api/placeholder/800/400" alt="Affective Technologies Research" class="research-image"> -->
+            <h3>Applied Research & Technical Work</h3>
+
+            <div class="project">
+                <h4>Emotion Pattern Recognition for Youth Well-Being</h4>
+                <div class="project-meta">Over The Rainbow (OTR) | January 2025 — August 2025</div>
+                <p>Developed advanced emotion pattern recognition systems for youth well-being support using AI-augmented tooling and pattern recognition algorithms. Built a Flutter-based chatbot companion prototype with self-reflection capabilities, prompt-generation system, and feedback loops for user journaling insights. Created a well-being dashboard MVP for mentor-facing emotional trend tracking with emotion timeline, flag history, and engagement summaries.</p>
+
+                <p><strong>Research dimensions:</strong> How can anthropomorphic AI support emotional development without creating dependency? What ethical principles should govern emotion-aware systems? How do we design feedback mechanisms that respect user agency while providing meaningful support?</p>
+
+                <p><strong>Technical approach:</strong> AI/ML emotion recognition, Flutter mobile development, Firebase backend, dashboard analytics for pattern visualization.</p>
+            </div>
+
+            <div class="project">
+                <h4>Affective Technologies</h4>
+                <div class="project-meta">Singapore Management University | Second Major</div>
+                <p>Pursued a second major in Affective Technologies through SMU's College of Integrative Studies, combining computing, psychology, and neuroscience to develop and understand systems that recognize and respond to human emotions. Explored applications in gaming, education, and mental health support, with particular focus on the ethical implications of emotion-aware AI.</p>
+
+                <p><strong>Key areas:</strong> Affective computing applications, emotional AI in gaming and education, ethics of emotion detection systems, behavioral science integration with technology.</p>
+
+                <p><strong>Written work:</strong> <a href="https://drive.google.com/file/d/195DYnmsYCal5NCDWHnWB2s_-hHUeLXV4/view?usp=sharing" target="_blank">"The Ethics of Anthropomorphic AI for Emotional Support"</a> — examining ethical implications of using anthropomorphic AI for emotional support, focusing on trust, dependency, and ethical design principles.</p>
+            </div>
         </div>
-        
+
         <div class="research-section">
-            <h3>Emotions and Tech</h3>
-            <p>I'm really interested in how we can make technology more emotionally intelligent. Some areas I'm keen on exploring:</p>
-            <ul>
-                <li>How games can read and respond to players' emotions</li>
-                <li>Using emotion-aware tech to support mental health</li>
-                <li>The ethical side of building emotion-aware systems</li>
-            </ul>
-            <!-- <img src="/api/placeholder/800/400" alt="Emotions in Technology Research" class="research-image"> -->
-        </div>
-        
-        <div class="research-section">
-            <h3>What I'm Up To</h3>
-            <p>Right now, I'm mostly focused on our Reach Alliance project. It's early days, but I'm excited to see where it leads. I'm also keeping an eye out for opportunities to dive deeper into affective computing. No fancy publications yet, but who knows what the future holds!</p>
-            <img src="/api/placeholder/800/400" alt="Current Research Projects" class="research-image">
+            <h3>Selected Projects</h3>
+
+            <div class="project">
+                <h4>Kura Kura — Mental Health Tech Startup</h4>
+                <div class="project-meta">Co-founder/CEO | May 2021 — May 2024</div>
+                <p>Co-founded and led development of a mobile app helping Gen Z foster emotional intelligence, alongside a web dashboard aggregating mood data for school administrators to assess student mental health. Secured $50,000 in pre-seed funding from raiSE, launched Kickstarter and Product Hunt campaigns attracting 70 backers from 5+ countries, and managed a team of 6 employees while overseeing product strategy and stakeholder engagement.</p>
+
+                <p><strong>What this shows:</strong> Entrepreneurial depth, ability to ship products at scale (1000+ downloads), stakeholder management across educational institutions (pilots with NUS, Duke-NUS Medical School, local secondary schools), and full-stack technical capability.</p>
+
+                <p><strong>Technical stack:</strong> React Native, React.js, PostgreSQL/Firebase, designed for scalability and institutional use.</p>
+            </div>
+
+            <div class="project">
+                <h4>China Tech Ecosystem — DayDayUp</h4>
+                <div class="project-meta">Technology Analyst | Beijing, China | May 2024 — August 2024</div>
+                <p>Worked as a Technology Analyst at a Chinese technology accelerator, developing automated systems for market intelligence and business development. Built a news scraper to aggregate and analyze tech-industry news, created an investor details scraper to streamline due diligence processes, and engineered an automated plugin for generating lead messages to improve outreach efficiency.</p>
+
+                <p><strong>What this shows:</strong> Cross-border tech exposure, rapid prototyping capability, understanding of Chinese innovation ecosystems and how they differ from Western contexts.</p>
+
+                <p><strong>Skills demonstrated:</strong> Web scraping, data aggregation and analysis, automation, working in Mandarin-speaking technical environments.</p>
+            </div>
+
+            <div class="project">
+                <h4>CarbonAware Crypto Dashboard</h4>
+                <div class="project-meta">IS463 - Digital Technologies for Sustainability | 2023</div>
+                <p>Created a dashboard to estimate carbon emissions from cryptocurrency trading data, demonstrating the intersection of blockchain technology and environmental consciousness. Provides users with insights into the ecological impact of their crypto activities.</p>
+
+                <p><strong>What this shows:</strong> Ability to apply technical skills to sustainability challenges, understanding of blockchain's environmental implications, data visualization for user education.</p>
+            </div>
         </div>
     </div>
 </body>
