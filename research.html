@@ -107,11 +107,13 @@
             <div class="project">
                 <h4>Financial Literacy AI for Migrant Workers</h4>
                 <div class="project-meta">The Reach Alliance | July 2024 — Present</div>
-                <p>I lead research and prototype development exploring how conversational AI and large language models can enhance financial literacy for migrant workers in Singapore. The project investigates how multilingual dialogue systems can provide culturally responsive financial education in contexts where language barriers and unfamiliar institutional systems create barriers to economic participation.</p>
+                <p>Migrant workers arrive in Singapore and immediately need to navigate systems that assume you already understand them: opening bank accounts, understanding CPF contributions, reading employment contracts, figuring out remittance fees. Most of this information is in English. Most workers speak Bengali, Tamil, Mandarin, or Malay as their first language. The information exists, but the access doesn't.</p>
 
-                <p><strong>Research questions:</strong> How can AI chatbots explain financial concepts across languages and cultural frameworks for money management? What trust mechanisms matter in AI-mediated learning? How do we design systems that account for varying levels of digital and financial literacy?</p>
+                <p>I'm leading research and prototype development on using conversational AI to bridge that gap. The core question: can a multilingual chatbot explain financial concepts (savings accounts, interest rates, insurance) in a way that actually makes sense to someone navigating an unfamiliar system in an unfamiliar language?</p>
 
-                <p><strong>Methods & Tools:</strong> Natural Language Processing, Retrieval-Augmented Generation (RAG), LangChain, OpenAI APIs, user-centered design research. Developing tailored AI agents for contextual Q&A and guided financial education, collaborating with a multidisciplinary team on interfaces aligned with SDGs 8 (Decent Work), 9 (Industry & Innovation), and 11 (Sustainable Cities).</p>
+                <p><strong>What I'm trying to figure out:</strong> How do you explain "CPF" when there's no direct translation and the concept itself is culturally specific? What makes a migrant worker trust an AI chatbot for financial advice when they're already dealing with institutional systems that don't always feel trustworthy? How do you design for people with wildly different levels of digital literacy and financial background?</p>
+
+                <p><strong>Technical approach:</strong> Building conversational agents using Retrieval-Augmented Generation (RAG), LangChain, and OpenAI APIs. The system pulls from financial education resources, adapts explanations based on the user's language and context, and provides Q&A support. I'm working with a team to design interfaces that don't assume everyone starts with the same baseline knowledge.</p>
 
                 <img src="./assets/img/reach.jpg" alt="Reach Alliance Project" class="research-image">
                 <p><a href="https://reachalliance.org/case-study/how-can-we-utilise-conversational-a-i-to-enhance-financial-literacy-for-migrant-workers-in-singapore/#article" target="_blank">Read the full case study</a> | <a href="https://reachalliance.org/partner/singapore-management-university/" target="_blank">SMU's Reach Alliance work</a></p>
@@ -126,7 +128,7 @@
                 <div class="project-meta">Over The Rainbow (OTR) | INTS402 Capstone Project | January 2025 — May 2025</div>
                 <p><strong>The Challenge:</strong> Youth well-being mentors at Over The Rainbow reported spending "considerably more time" interpreting digital emotional expressions compared to face-to-face interactions. Traditional emotional intelligence frameworks fail to account for Singapore's unique linguistic landscape—code-switching, Colloquial Singapore English (CSE) patterns like sentence-final particles ("sia"), emoji usage, and asynchronous timing signals that carry emotional weight in youth support conversations.</p>
 
-                <p><strong>My Approach:</strong> I led the end-to-end development of an AI copilot system, from discovery research through technical implementation and user testing. The project demonstrates product thinking grounded in interdisciplinary depth: user interviews surfaced pain points, strategic scoping balanced technical feasibility against impact, and implementation decisions (Singapore English NLP adaptations, augmentation-vs-automation philosophy, ethical safeguards) emerged from a CIS-informed understanding that technology must honor—not flatten—cultural and emotional complexity.</p>
+                <p><strong>My Approach:</strong> I led the end-to-end development from discovery research through technical implementation and user testing. User interviews with OTR mentors surfaced pain points, which shaped decisions about what to build and what to leave out. The core design choice: build something that supports the human work of listening without trying to automate it away.</p>
 
                 <p><strong>What I Built:</strong> A Flutter-based copilot with four core capabilities: (1) digital expression pattern recognition analyzing emoji usage, message timing, and linguistic shifts; (2) context-aware analysis with baseline tracking to detect emotional deviations; (3) LLM-powered message templates that preserve mentor authenticity; (4) resource recommendations integrated with OTR's knowledge base. The system incorporates custom NLP adaptations for CSE emotional markers, cultural-linguistic patterns, and privacy-first architecture.</p>
 
@@ -136,7 +138,7 @@
 
                 <p><strong>Technical Stack:</strong> Flutter (cross-platform UI), Firebase (auth, Firestore, serverless functions), Google Gemini 2.5 Flash (context-aware message generation), custom NLP with Singapore English adaptations, cultural emoji interpretation algorithms.</p>
 
-                <p><strong>Reflections:</strong> This project bridges my Information Systems technical foundation with CIS's holistic lens. Every technical decision—from prompt engineering for culturally-grounded message templates to balancing real-time responsiveness with analysis depth—reflected an interdisciplinary understanding that effective AI assistance must account for trust formation, cultural context, and the delicate human work it aims to support. Three complete redesigns taught me that messy iteration is where real product thinking happens.</p>
+                <p><strong>What I Learned:</strong> Three complete redesigns taught me that building AI for emotionally sensitive work is less about technical sophistication and more about understanding what human work actually is. The hardest part wasn't the NLP or the LLM integration—it was figuring out how to support mentors without making the work feel clinical and detached. Every technical decision (rule-based NLP for transparency, confidence indicators on every insight, custom Singapore English detection) came down to: does this help mentors do their work, or does it get in the way?</p>
 
                 <p>
                     <a href="otr-copilot.html">Read the full case study</a> |
@@ -149,11 +151,11 @@
             <div class="project">
                 <h4>Affective Technologies</h4>
                 <div class="project-meta">Singapore Management University | Second Major</div>
-                <p>Pursued a second major in Affective Technologies through SMU's College of Integrative Studies, combining computing, psychology, and neuroscience to develop and understand systems that recognize and respond to human emotions. Explored applications in gaming, education, and mental health support, with particular focus on the ethical implications of emotion-aware AI.</p>
+                <p>I added a second major in Affective Technologies through SMU's College of Integrative Studies because I kept running into the same question in my technical work: how do you build systems that recognize and respond to emotions without reducing those emotions to data points? The program combined computing, psychology, and neuroscience—which sounded interesting—but what actually pulled me in was the focus on the ethical mess of building emotion-aware AI.</p>
 
-                <p><strong>Key areas:</strong> Affective computing applications, emotional AI in gaming and education, ethics of emotion detection systems, behavioral science integration with technology.</p>
+                <p>The coursework covered applications in gaming, education, and mental health support, but the part that stuck with me was the constant tension: emotion detection systems can be genuinely helpful (supporting mental health, improving human-computer interaction) or deeply invasive (surveillance, manipulation, dependency). The difference often comes down to design choices and who's making them.</p>
 
-                <p><strong>Written work:</strong> <a href="https://drive.google.com/file/d/195DYnmsYCal5NCDWHnWB2s_-hHUeLXV4/view?usp=sharing" target="_blank">"The Ethics of Anthropomorphic AI for Emotional Support"</a> — examining ethical implications of using anthropomorphic AI for emotional support, focusing on trust, dependency, and ethical design principles.</p>
+                <p><strong>Written work:</strong> <a href="https://drive.google.com/file/d/195DYnmsYCal5NCDWHnWB2s_-hHUeLXV4/view?usp=sharing" target="_blank">"The Ethics of Anthropomorphic AI for Emotional Support"</a> — I wrote about what happens when we design AI to feel like a friend or therapist. When does anthropomorphism help build trust, and when does it cross into manipulation? What happens when people start depending on AI for emotional support that might be better coming from humans? These aren't hypothetical questions anymore.</p>
             </div>
         </div>
 

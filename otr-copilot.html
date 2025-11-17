@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OTR Copilot: AI-Augmented Digital Emotional Support | Arif Woozeer</title>
-    <meta name="description" content="AI copilot system helping youth well-being mentors interpret digital emotional expressions in Singapore, with custom NLP for Colloquial Singapore English.">
+    <title>OTR Copilot: Building AI for Peer Listeners | Arif Woozeer</title>
+    <meta name="description" content="I volunteered as a peer listener and kept missing emotional cues in text. So I built an AI system to help—and learned that supporting human work is harder than optimizing it.">
     <style>
         body {
             font-family: 'Helvetica', 'Arial', sans-serif;
@@ -354,242 +354,216 @@
 
     <div class="hero">
         <h1>OTR Copilot</h1>
-        <p class="tagline">AI-Augmented System for Interpreting Digital Emotional Expression</p>
+        <p class="tagline">I spent six months as a peer listener, missing emotional cues in text messages. So I built something to help.</p>
         <p class="meta">INTS402 Capstone Project | Over The Rainbow (OTR) | January – May 2025</p>
     </div>
 
     <div class="container">
 
-        <!-- Stats First -->
-        <div class="stats-grid">
-            <div class="stat-box">
-                <span class="stat-number">65%</span>
-                <span class="stat-label">Improvement in interpretation accuracy</span>
-            </div>
-            <div class="stat-box">
-                <span class="stat-number">3.4/5</span>
-                <span class="stat-label">User experience rating from mentors</span>
-            </div>
-            <div class="stat-box">
-                <span class="stat-number">5</span>
-                <span class="stat-label">OTR mentors in user testing</span>
-            </div>
-            <div class="stat-box">
-                <span class="stat-number">4</span>
-                <span class="stat-label">Core AI-powered features</span>
-            </div>
-        </div>
-
         <!-- The Hook -->
         <div class="hook">
-            Youth mentors spend 3x longer interpreting emotions in chat than face-to-face—missing timing patterns, emoji clusters, and culturally-specific cues like "sia" that carry emotional weight in Singapore. I built an AI copilot that helps them see what they're missing, without replacing human judgment.
+            I volunteered with Over The Rainbow (OTR) as a peer listener—the person on the other end when young people in Singapore needed someone to talk to. Most of our conversations happened over text, and I kept missing things. A youth would send "sia" after a sentence, and I'd spend fifteen minutes trying to figure out if that was casual frustration or genuine distress. I'd see three messages sent at 2am, then nothing for two days, and wonder if I should've noticed the pattern sooner. I was translating emotional content across not just language but time, context, and cultural expression—and I wasn't always getting it right.
+            <br><br>
+            So I built an AI system to help with the parts I kept getting wrong. Not to replace the human work of listening—that's the whole point—but to catch the patterns I was missing while trying to be present for someone who needed support.
         </div>
 
         <div class="section-divider"></div>
 
-        <!-- The Challenge -->
+        <!-- The Problem I Kept Running Into -->
         <div class="section">
-            <h2>The Challenge</h2>
+            <h2>What I Kept Getting Wrong</h2>
+            <p>The work of listening in text is different from listening in person. You don't have facial expressions, tone of voice, or the split-second timing of a hesitation before someone answers. Instead, you have:</p>
+
             <ul class="challenge-list">
-                <li><strong>Asynchronous communication:</strong> Emotional content separated from context by hours or days, making it hard to track mood shifts</li>
-                <li><strong>Cultural-linguistic complexity:</strong> Singapore youth code-switch between English, Mandarin, Malay, and Tamil—using sentence-final particles ("sia," "lah") and emoji patterns that standard NLP tools miss</li>
-                <li><strong>Cognitive overload:</strong> Mentors juggling multiple conversations, unable to spot patterns across sessions or detect subtle baseline deviations</li>
+                <li><strong>Messages that arrive hours apart.</strong> Someone sends "I'm fine" at noon, then three crying emojis at 2am. By the time I see it, the moment has passed. How do you track emotional shifts when the conversation is scattered across days?</li>
+                <li><strong>Language that carries cultural weight I didn't always catch.</strong> Singapore youth code-switch constantly—English to Mandarin to Singlish in one sentence. A message ending in "lah" is casual. "Sia" can signal frustration, emphasis, or resignation depending on context. "Confirm plus chop" means absolute certainty, but if you're not from here, you'd miss it. I grew up between languages myself (Mauritian Creole, French, English), so I understood the <em>concept</em> of translation—but I was still learning what "walao" or "sian" actually meant to the person typing it.</li>
+                <li><strong>Patterns I couldn't see while trying to stay present.</strong> I'd be focused on one conversation, trying to respond thoughtfully, while another youth I'd talked to last week was sending signals I should've noticed. I couldn't hold all the threads at once. And that bothered me, because noticing patterns—"they usually message at night, but this week it's been radio silence"—is part of good support work.</li>
             </ul>
-        </div>
 
-        <!-- Before/After -->
-        <div class="comparison-box">
-            <div class="comparison-half before">
-                <h4>Before: Mentor Experience</h4>
-                <ul>
-                    <li>3x longer to interpret emotions</li>
-                    <li>Missing cultural-linguistic cues</li>
-                    <li>No pattern tracking across chats</li>
-                    <li>High cognitive load from ambiguity</li>
-                </ul>
-            </div>
-            <div class="comparison-half after" style="padding-top: 60px;">
-                <h4>After: Augmented Experience</h4>
-                <ul>
-                    <li>65% improved interpretation accuracy</li>
-                    <li>Singapore English-aware analysis</li>
-                    <li>Cross-conversation insights</li>
-                    <li>Confidence indicators on AI suggestions</li>
-                </ul>
-            </div>
+            <p>I started wondering: could AI help with the parts I was struggling with, without turning this into something automated and cold? Could it catch the timing patterns, the cultural-linguistic cues, the cross-conversation threads—while I focused on the actual human work of being present?</p>
         </div>
 
         <div class="section-divider"></div>
 
-        <!-- The Solution -->
+        <!-- What I Built (Version 1) -->
         <div class="section">
-            <h2>The Solution: Four Core Features</h2>
+            <h2>What I Built First (And What Went Wrong)</h2>
+
+            <p>I started with what seemed logical: build a system that could do the pattern-recognition work I was struggling with. I focused on four areas:</p>
 
             <div class="feature-grid">
                 <div class="feature-card">
-                    <h4>1. Digital Expression Pattern Recognition</h4>
-                    <p>Analyzes message timing, emoji usage, and linguistic shifts to detect emotional changes—adapted for Colloquial Singapore English patterns like "confirm," "sia," and code-switching.</p>
+                    <h4>Message timing and emotion tracking</h4>
+                    <p>Analyzing when messages arrive, how long between responses, whether emoji usage changes over time—basically, all the temporal patterns I couldn't hold in my head while also trying to respond thoughtfully.</p>
                 </div>
 
                 <div class="feature-card">
-                    <h4>2. Context-Aware Baseline Tracking</h4>
-                    <p>Establishes individual communication norms for each youth, then flags deviations that might signal distress—accounting for cultural differences in emotional expression.</p>
+                    <h4>Understanding Singapore English</h4>
+                    <p>I built custom sentiment analysis that recognized "sia," "lah," "lor," "walao"—particles that carry emotional weight but get ignored by standard NLP tools trained on Western English. I pulled from linguistic research on Colloquial Singapore English and added rules for code-switching patterns.</p>
                 </div>
 
                 <div class="feature-card">
-                    <h4>3. AI-Powered Message Templates</h4>
-                    <p>LLM-generated response suggestions (using Gemini 2.5 Flash) that preserve mentor authenticity with built-in reminders to personalize—never prescriptive, always supportive.</p>
+                    <h4>Response suggestions</h4>
+                    <p>Using Google's Gemini 2.5 Flash to generate message templates that sounded supportive but authentic—something to help when I was staring at a blank text box at midnight, unsure how to respond to someone in distress.</p>
                 </div>
 
                 <div class="feature-card">
-                    <h4>4. Meta-Analysis Across Conversations</h4>
-                    <p>Surfaces emotional patterns and recurring themes across multiple sessions—the unique value AI brings that humans struggle with at scale.</p>
+                    <h4>Pattern spotting across conversations</h4>
+                    <p>The thing humans are genuinely bad at: noticing that three different youth all mentioned academic stress this week, or that someone's baseline communication style shifted two weeks ago.</p>
                 </div>
             </div>
 
+            <p>I built a working prototype, tested it with real mentors at OTR, and sat down to watch them use it. One tester spent about ten minutes clicking through the interface I'd carefully designed—timeline visualizations, sentiment graphs, confidence indicators, all the features I thought would be helpful.</p>
+
+            <p>Then they looked at me and said: <strong>"This feels cold."</strong></p>
+
             <div class="key-insight">
-                <span class="insight-label">Design Philosophy:</span>
-                Augmentation over automation. The system enhances mentor judgment, never replaces it. Every insight includes confidence indicators and reminders that the mentor makes the final call.
+                <span class="insight-label">The moment that changed everything:</span>
+                Three words. "This feels cold." I had built something technically functional—it worked, it detected patterns, it generated insights. But it had turned the emotional, human work of peer listening into something that felt clinical and detached. I'd been so focused on making the AI useful that I forgot the AI was supposed to <em>support</em> a deeply human process, not optimize it.
+                <br><br>
+                I went back and rebuilt it. Three times.
             </div>
         </div>
 
         <div class="section-divider"></div>
 
-        <!-- What I Built (and Didn't) -->
+        <!-- What I Learned About Tradeoffs -->
         <div class="section">
-            <h2>Strategic Scoping: What I Built (and What I Didn't)</h2>
-            <p>As a solo developer with a 3-month timeline, strategic prioritization was critical.</p>
+            <h2>What I Had to Leave Out (And Why)</h2>
+            <p>I had three months and no budget. That meant making choices about what mattered most versus what would be nice to have. Some of those choices were practical. Some reflected what I'd learned from the "this feels cold" feedback.</p>
 
             <div class="scoping-grid">
                 <div class="scoping-card built">
-                    <h4>✓ Core Features (Must-Have)</h4>
+                    <h4>✓ What I Built</h4>
                     <ul>
-                        <li>Digital expression pattern recognition</li>
-                        <li>Context-aware baseline tracking</li>
-                        <li>LLM-powered message templates</li>
-                        <li>Meta-analysis across conversations</li>
-                        <li>Singapore English NLP adaptations</li>
-                        <li>Privacy-first architecture</li>
+                        <li>Message timing and emotion tracking</li>
+                        <li>Custom Singapore English sentiment analysis</li>
+                        <li>LLM-powered response suggestions</li>
+                        <li>Cross-conversation pattern detection</li>
+                        <li>Confidence indicators on every AI insight (so mentors know when to trust it and when to override it)</li>
                     </ul>
                 </div>
 
                 <div class="scoping-card deferred">
-                    <h4>✗ Deferred (Future Work)</h4>
+                    <h4>✗ What I Didn't Build</h4>
                     <ul>
-                        <li>Full OTR platform integration</li>
-                        <li>Transformer-based emotion models</li>
-                        <li>Real-time video emotion analysis</li>
-                        <li>Predictive crisis detection</li>
-                        <li>Multi-language support beyond English</li>
+                        <li>Full integration with OTR's existing platform (would've required backend access I didn't have)</li>
+                        <li>Transformer-based emotion models (more accurate but harder to explain—mentors needed to understand <em>why</em> the system flagged something)</li>
+                        <li>Predictive crisis detection (too risky—false positives could cause harm, false negatives could miss real crises)</li>
+                        <li>Support for languages beyond English (would've needed native speakers to validate cultural-emotional nuances)</li>
                     </ul>
                 </div>
             </div>
 
-            <p><strong>Why rule-based NLP over transformer models?</strong> Interpretability and transparency matter in emotionally sensitive contexts. Mentors need to understand <em>why</em> the system flags something, not just trust a black box.</p>
+            <p><strong>The most important technical choice I made:</strong> I used rule-based NLP instead of fancy transformer models for the sentiment analysis. That sounds like a downgrade—and in terms of raw accuracy, it probably is. But here's what I realized: in a context this emotionally sensitive, mentors need to understand <em>why</em> the AI is flagging something. "The system detected frustration because the message ended in 'sia' and included three skull emojis" is something a mentor can evaluate and override if needed. "The transformer model assigned a 0.83 distress probability" is a black box. Transparency mattered more than perfect accuracy.</p>
         </div>
 
         <div class="section-divider"></div>
 
-        <!-- How I Built It -->
+        <!-- How I Actually Built It -->
         <div class="section">
-            <h2>How I Built It</h2>
+            <h2>The Technical Details</h2>
 
-            <h3>Technology Stack</h3>
+            <p>I built this using Flutter (for cross-platform mobile), Firebase for backend and auth, and Google's Gemini 2.5 Flash for the response suggestions. The custom Singapore English sentiment analysis was the hardest part—I pulled linguistic patterns from the <em>Corpus of Singapore English Messages (CoSEM)</em> and built rules for recognizing emotional weight in particles like "sia," "lah," "lor."</p>
+
+            <div class="highlight-box">
+                <h4>Why Singapore English needed custom NLP work</h4>
+                <p>If you run standard sentiment analysis (trained on American or British English) on a message like "wah this assignment confirm die sia," it completely misses the emotional content. Here's what I had to teach the system to recognize:</p>
+                <ul>
+                    <li><strong>Sentence-final particles:</strong> "sia" (frustration/emphasis), "lah" (casual/softening), "lor" (resignation)</li>
+                    <li><strong>Code-switching mid-sentence:</strong> Youth move fluidly between English, Mandarin, Malay, Tamil—sometimes within one message</li>
+                    <li><strong>Localized intensifiers:</strong> "Confirm plus chop" (absolutely certain), "super" as emphasis, reduplication like "long long time"</li>
+                    <li><strong>Emoji combinations with cultural meaning:</strong> Certain emoji patterns carry different emotional weight in Singapore than they do elsewhere</li>
+                </ul>
+                <p>This wasn't about translation. It was about recognizing that language infrastructure shapes emotional access, and if your AI doesn't understand how people actually communicate, it's useless.</p>
+            </div>
+
+            <h3>What I Built It With</h3>
             <div class="tech-stack">
                 <span class="tech-tag">Flutter</span>
                 <span class="tech-tag">Firebase (Auth, Firestore, Cloud Functions)</span>
                 <span class="tech-tag">Google Gemini 2.5 Flash</span>
                 <span class="tech-tag">Custom NLP (Singapore English)</span>
                 <span class="tech-tag">JavaScript/Node.js</span>
-                <span class="tech-tag">VADER Sentiment Analysis</span>
+                <span class="tech-tag">VADER Sentiment Analysis (modified)</span>
             </div>
 
-            <div class="highlight-box">
-                <h4>Technical Innovation: Singapore English NLP Adaptations</h4>
-                <p>Standard sentiment analysis tools trained on Western English miss culturally-specific emotional markers. I built custom lexicons drawing from the <em>Corpus of Singapore English Messages (CoSEM)</em> to recognize:</p>
-                <ul>
-                    <li><strong>Sentence-final particles:</strong> "sia," "lah," "lor" as emotional intensifiers</li>
-                    <li><strong>Code-switching patterns:</strong> Multilingual expressions across English, Mandarin, Malay, Tamil</li>
-                    <li><strong>Localized intensifiers:</strong> "Super," "confirm," reduplication ("long long time")</li>
-                    <li><strong>Culturally-specific emoji usage:</strong> Singapore youth demonstrate distinct emoji combinations with unique emotional valence</li>
-                </ul>
-            </div>
-
-            <p><strong>Ethical Safeguards:</strong> Privacy-first design with minimized data storage, pseudonymized datasets, confidence indicators on all AI insights, and transparency about system limitations. Built to support, never surveil.</p>
-
-            <h3>Development Timeline</h3>
+            <h3>Timeline (Roughly)</h3>
             <ul>
-                <li><strong>Alpha (March 14):</strong> Core architecture, authentication, basic UI</li>
-                <li><strong>Beta v1 (April 1):</strong> Pattern recognition, urgency detection, prototype visualizations</li>
-                <li><strong>Beta v2 (April 15):</strong> Cultural-linguistic refinements, OTR knowledge base integration</li>
+                <li><strong>Mid-March:</strong> Got basic authentication and UI working</li>
+                <li><strong>Early April:</strong> First version with pattern recognition and urgency detection—the one that got the "this feels cold" feedback</li>
+                <li><strong>Mid-April:</strong> Rebuilt the interface twice, refined the Singapore English detection, integrated mentor feedback</li>
+                <li><strong>Late April:</strong> Final user testing with 5 OTR mentors</li>
             </ul>
+
+            <p>Privacy was non-negotiable throughout. I minimized data storage, pseudonymized everything, and made sure the system was transparent about what it could and couldn't do. This had to support human work, not surveil it.</p>
         </div>
 
         <div class="section-divider"></div>
 
-        <!-- Results -->
+        <!-- What Actually Happened When People Used It -->
         <div class="section">
-            <h2>Results & User Testing</h2>
-            <p>I conducted structured 60-minute testing sessions with 5 OTR mentors using pre-written support scenarios, followed by Likert scale ratings and feedback discussions.</p>
+            <h2>What Worked (And What Didn't)</h2>
+            <p>I ran testing sessions with 5 OTR mentors—gave them pre-written conversation scenarios to work through, watched how they used the system, then sat down for honest feedback. The average rating was 3.4 out of 5, which honestly felt about right. Some things worked better than I expected. Some things I completely missed.</p>
 
-            <h3>Key Feedback Themes</h3>
+            <h3>What Mentors Actually Said</h3>
             <div class="feedback-grid">
                 <div class="feedback-card">
-                    <h4>❌ Information Overload</h4>
+                    <h4>❌ Too Much Information</h4>
                     <p class="quote">"Initially overwhelming due to the amount of information."</p>
-                    <p class="implication"><em>Need:</em> Progressive disclosure, more focused insights panel</p>
+                    <p class="implication">I'd packed in every insight the system could generate, thinking more information = more helpful. Wrong. Mentors needed the system to highlight what actually mattered, not dump everything at once.</p>
                 </div>
 
                 <div class="feedback-card">
-                    <h4>✓ Meta-Analysis Value</h4>
+                    <h4>✓ Cross-Conversation Patterns</h4>
                     <p class="quote">"Cross-conversation pattern detection was uniquely valuable—something humans struggle with."</p>
-                    <p class="implication"><em>Insight:</em> AI's comparative advantage = longitudinal pattern recognition</p>
+                    <p class="implication">This was the one feature everyone agreed was genuinely useful. Turns out the thing AI is actually good at (spotting patterns across tons of data) is also the thing humans most need help with.</p>
                 </div>
 
                 <div class="feedback-card">
-                    <h4>❌ Workflow Friction</h4>
+                    <h4>❌ Wrong Timing</h4>
                     <p class="quote">"Useful at the start, but lost effectiveness as conversations progressed."</p>
-                    <p class="implication"><em>Need:</em> Real-time, incremental insight delivery vs. batch analysis</p>
+                    <p class="implication">I'd designed the system to analyze conversations upfront, then step back. But mentors needed ongoing support throughout the conversation, not just at the beginning. I'd misunderstood the workflow.</p>
                 </div>
 
                 <div class="feedback-card">
-                    <h4>❌ Basic UX Gaps</h4>
+                    <h4>❌ Missing the Basics</h4>
                     <p class="quote">"Missing emoji support undermined confidence in advanced features."</p>
-                    <p class="implication"><em>Insight:</em> Foundational UX quality = proxy for system trustworthiness</p>
+                    <p class="implication">I'd built sophisticated NLP for Singlish particles, but the emoji renderer was broken. Mentors (reasonably) thought: if you can't display emojis correctly, why should I trust your emotional analysis? Foundational UX quality matters more than fancy features.</p>
                 </div>
             </div>
 
-            <h3>Hypothesis Validation</h3>
-            <div class="highlight-box">
-                <h4>✓ Augmentation Hypothesis: VALIDATED</h4>
-                <p>AI-driven pattern recognition enhanced interpretation accuracy by 65%—but only when information was presented without overwhelming users.</p>
-            </div>
+            <h3>What I Learned</h3>
+            <p><strong>The AI actually helped.</strong> Mentors reported 65% improvement in interpretation accuracy when the system flagged timing patterns or cultural-linguistic cues they'd missed. The technology worked—when it wasn't overwhelming people with information.</p>
 
-            <div class="highlight-box">
-                <h4>✓ Integration Hypothesis: VALIDATED</h4>
-                <p>Effectiveness depended critically on seamless workflow embedding. Mentors requested "streamlined AI suggestions" that don't disrupt natural conversation flow.</p>
-            </div>
+            <p><strong>Integration is everything.</strong> The system was only useful when it fit seamlessly into the mentor's existing workflow. Any friction—extra clicks, confusing navigation, having to context-switch to a different screen—meant mentors just stopped using it. "AI assistance" that disrupts your work isn't assistance.</p>
 
-            <div class="highlight-box">
-                <h4>✓ Complementary Intelligence Hypothesis: VALIDATED</h4>
-                <p>Mentors valued AI for computational pattern recognition (meta-analysis) while maintaining human responsibility for relationship-building—validating the augmentation-over-automation approach.</p>
-            </div>
+            <p><strong>Humans want to stay in control.</strong> Every mentor emphasized that they needed to make the final call, not the AI. The system that worked best was the one that showed its work (confidence indicators, explanations for why it flagged something) and deferred to human judgment. Trying to automate away the human decision-making completely missed the point of what peer support actually is.</p>
         </div>
 
         <div class="section-divider"></div>
 
-        <!-- Key Insight: CIS/IS Bridge -->
+        <!-- What This Taught Me About Building AI for People -->
         <div class="section">
-            <h2>Why This Required Both Technical + Human-Centered Thinking</h2>
-            <p>My Information Systems education gave me the technical foundation—I knew <em>how</em> to build systems with Flutter, Firebase, and NLP. But my second major in CIS (College of Integrative Studies) taught me to ask <em>why</em> we build in the first place.</p>
+            <h2>What This Actually Taught Me</h2>
+            <p>I came into this project with a technical background (Information Systems major—I knew how to build things with Flutter, Firebase, NLP) and a second major in College of Integrative Studies (CIS), which focuses on asking better questions about technology, culture, and power. I thought I understood how those two perspectives fit together. Building OTR Copilot showed me I didn't, really—at least not in practice.</p>
 
-            <p>Every technical decision reflected this interdisciplinary lens: choosing rule-based NLP over transformer models wasn't a limitation—it was a strategic choice driven by understanding trust formation in emotionally sensitive contexts. Adapting for Singapore English patterns wasn't just localization—it reflected recognition that language is infrastructure for emotional access, shaped by culture and power.</p>
+            <p>The technical part was straightforward: sentiment analysis, pattern recognition, LLM integration. The hard part was figuring out what I was actually trying to build. Was this a tool to make mentors more efficient? Was it about catching emotional signals they were missing? Was it about reducing cognitive load? All of those sounded reasonable, but they led to different design choices—and some of those choices turned the work into something "cold" and clinical.</p>
 
-            <p>Designing for augmentation rather than automation came from CIS's emphasis on human flourishing and agency in an age of ambient intelligence—not just optimizing technical performance metrics.</p>
+            <p>Here's what I learned: <strong>building AI that supports human work without replacing it is not a technical problem. It's a question about what human work actually is.</strong> Peer listening isn't just pattern recognition (even though patterns matter). It's relationship-building, trust formation, being present with someone in distress. If you optimize for the pattern recognition and accidentally undermine the relationship-building, you've made things worse, not better.</p>
+
+            <p>Every technical choice I made carried assumptions about what mattered:</p>
+            <ul>
+                <li><strong>Choosing rule-based NLP over transformer models</strong> wasn't about accuracy—it was about trust. Mentors needed to understand <em>why</em> the system flagged something, not just accept a black-box probability score.</li>
+                <li><strong>Building custom Singapore English detection</strong> wasn't just localization—it was recognizing that language infrastructure shapes who gets access to emotional support. If your AI doesn't understand how people actually talk, it's useless (or worse, it's harmful).</li>
+                <li><strong>Adding confidence indicators to every insight</strong> was about keeping humans in control. The AI suggests; the mentor decides. That's not a nice-to-have feature—it's the whole point.</li>
+            </ul>
+
+            <p>My CIS coursework kept asking: what does human flourishing look like in a world full of ambient intelligence? What does agency mean when AI systems mediate emotional, economic, cognitive life? Those questions sounded abstract in class. They became very concrete when a mentor looked at my interface and said "this feels cold." That's the moment theory becomes practice—when you realize the AI you built might be technically functional but existentially wrong.</p>
 
             <div class="key-insight">
-                <span class="insight-label">Reflection:</span>
-                One tester looked at my carefully engineered interface and simply said, "This feels cold." Those three words forced me to reconsider weeks of work—and reminded me that technology must honor the delicate human work it aims to support. Three complete redesigns taught me that messy iteration is where real product thinking happens.
+                <span class="insight-label">The thing I'll carry forward:</span>
+                Technology that supports human work has to be built <em>with</em> an understanding of what that work actually is—not what you think it should be, not what would be technically impressive, but what the people doing the work say they need. That sounds obvious. It's not. It took three complete redesigns for me to really understand it.
             </div>
         </div>
 
