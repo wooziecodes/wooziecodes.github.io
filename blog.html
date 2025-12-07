@@ -3,37 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arif Woozeer's Writing</title>
+    <title>Writing - Arif Woozeer</title>
     <style>
         body {
-            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-family: 'Helvetica', 'Arial', sans-serif;
             line-height: 1.6;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
+            background-color: #ffffff;
+            color: #000000;
         }
         .container {
-            width: 90%;
-            max-width: 1200px;
+            width: 80%;
+            max-width: 800px;
             margin: auto;
             padding: 20px;
         }
         header {
-            background-color: #fff;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            text-align: center;
             padding: 20px 0;
+            border-bottom: 1px solid #000000;
         }
         h1 {
             font-size: 2.5em;
             margin-bottom: 0.5em;
             font-weight: 300;
-            text-align: center;
         }
         nav ul {
             list-style-type: none;
             padding: 0;
-            text-align: center;
         }
         nav ul li {
             display: inline;
@@ -41,14 +39,22 @@
         }
         a {
             text-decoration: none;
-            color: #333;
+            color: #000000;
             transition: color 0.3s ease;
         }
         a:hover {
-            color: #0066cc;
+            color: #0000ff;
         }
         h2, h3 {
             font-weight: 300;
+        }
+        .writing-section {
+            margin-bottom: 50px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #eee;
+        }
+        .writing-section:last-child {
+            border-bottom: none;
         }
         .blog-grid {
             display: grid;
@@ -73,108 +79,156 @@
         .blog-item p {
             color: #666;
         }
+        .blog-item a {
+            color: #007bff;
+            text-decoration: underline;
+        }
+        .blog-item a:hover {
+            color: #0056b3;
+        }
+        .year-group {
+            margin-bottom: 30px;
+        }
+        .year-heading {
+            font-size: 1.1em;
+            color: #666;
+            margin-bottom: 15px;
+        }
+        .post-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 20px 0;
+        }
+        .post-list li {
+            margin-bottom: 12px;
+        }
+        .post-list a {
+            color: #007bff;
+            text-decoration: underline;
+        }
+        .post-list a:hover {
+            color: #0056b3;
+        }
+        .date {
+            color: #999;
+            font-size: 0.9em;
+        }
+        .theme-description {
+            color: #666;
+            font-size: 0.95em;
+            margin-bottom: 15px;
+        }
     </style>
 </head>
 <body>
-<header>
-    <h1>Arif Woozeer</h1>
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="writing.html">Writing</a></li>
-            <li><a href="bookshelf.html">Bookshelf</a></li>
-            <li><a href="research.html">Research</a></li>
-            <li><a href="projects.html">Projects</a></li>
-            <li><a href="work.html">Work</a></li>
-        </ul>
-    </nav>
-</header>
+    <header>
+        <h1>Arif Woozeer</h1>
+        <nav>
+            <ul>
+                <li><a href="about.html">About</a></li>
+                <li><a href="blog.html">Writing</a></li>
+                <li><a href="research.html">Research</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<div class="container">
-    <h2>Thinking</h2>
-    <ul>
-        <li>
-            <a href="https://drive.google.com/file/d/195DYnmsYCal5NCDWHnWB2s_-hHUeLXV4/view?usp=sharing">The Ethics of Anthropomorphic AI for Emotional Support</a>
-            <p>This paper explores the ethical implications of using anthropomorphic AI for emotional support, focusing on issues like trust, dependency, and ethical design principles.</p>
-        </li>
-        <li>
-            <a href="https://drive.google.com/file/d/1A1Sj1eE_Ru7KJR8cX_MTGs9v-IEexQfF/view?usp=sharing">The Experience of Being 'Othered' in Singapore's CMIO Classification</a>
-            <p>A personal sociological examination of racial categorization and its implications in Singapore.</p>
-        </li>
-        <li>
-            <a href="https://drive.google.com/file/d/1DkefNhNIoPzoVAX46tpS0vCB7Ai4KK9P/view?usp=sharing">Redefining Society in the Age of AI</a>
-            <p>A sociological exploration of artificial intelligence's transformative impact.</p>
-        </li>
-    </ul>
+    <div class="container">
+        <h2>Writing</h2>
 
-    <h2>Making</h2>
-    <div id="blog" class="blog-grid">
-        <!-- Medium posts dynamically inserted here -->
+        <div class="writing-section">
+            <h3>From Medium</h3>
+            <div id="blog" class="blog-grid">
+                <!-- Medium posts dynamically inserted here -->
+            </div>
+        </div>
+
+        <div class="writing-section" id="themes">
+            <h3>Self-Hosted (By Theme)</h3>
+
+            <div class="year-group">
+                <div class="year-heading">Thinking</div>
+                <p class="theme-description">Academic papers, technical analysis, analytical explorations.</p>
+                <ul class="post-list">
+                    <li><em>No posts yet.</em></li>
+                </ul>
+            </div>
+
+            <div class="year-group">
+                <div class="year-heading">Feeling</div>
+                <p class="theme-description">Personal reflections, lived experience, navigating systems.</p>
+                <ul class="post-list">
+                    <li>
+                        <a href="blog/not-yet-dead/">Not Yet Dead: What REACH Taught Me About the Violence of Optimization</a>
+                        <span class="date">— December 2025</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="year-group">
+                <div class="year-heading">Making</div>
+                <p class="theme-description">Project case studies, building with intention.</p>
+                <ul class="post-list">
+                    <li><em>No posts yet.</em></li>
+                </ul>
+            </div>
+        </div>
     </div>
 
-    <h2>Feeling</h2>
-    <div>
-        <h3><a href="https://arifwoozeer.substack.com" target="_blank">Letters from Wooz</a></h3>
-        <p><em>Stream-of-consciousness reflections, emotional notes, and moments in motion — hosted on Substack.</em></p>
-    </div>
-</div>
-
-<script>
-async function fetchMediumFeed() {
-    const parser = new DOMParser();
-    const response = await fetch('https://api.allorigins.win/get?url=https://medium.com/feed/@wooz');
-    const data = await response.json();
-    const xml = parser.parseFromString(data.contents, 'application/xml');
-    return xml;
-}
-
-function parseFeed(xml) {
-    const items = xml.querySelectorAll('item');
-    const posts = [];
-    items.forEach(item => {
-        const titleElement = item.querySelector('title');
-        const linkElement = item.querySelector('link');
-        const descriptionElement = item.querySelector('description');
-        const pubDateElement = item.querySelector('pubDate');
-
-        const title = titleElement ? titleElement.textContent : 'No title';
-        const link = linkElement ? linkElement.textContent : '#';
-        const description = descriptionElement ? descriptionElement.textContent : 'No description';
-        const pubDate = pubDateElement ? pubDateElement.textContent : 'No date';
-
-        posts.push({ title, link, description, pubDate });
-    });
-    return posts;
-}
-
-function displayPosts(posts) {
-    const blogContainer = document.getElementById('blog');
-    blogContainer.innerHTML = '';
-    posts.forEach(post => {
-        const postElement = document.createElement('div');
-        postElement.className = 'blog-item';
-        postElement.innerHTML = `
-            <h3><a href="${post.link}" target="_blank">${post.title}</a></h3>
-            <p>${new Date(post.pubDate).toLocaleDateString()}</p>
-            <p>${post.description}</p>
-        `;
-        blogContainer.appendChild(postElement);
-    });
-}
-
-async function displayMediumPosts() {
-    try {
-        const xml = await fetchMediumFeed();
-        const posts = parseFeed(xml);
-        displayPosts(posts);
-    } catch (error) {
-        console.error('Error fetching Medium feed:', error);
-        document.getElementById('blog').innerHTML = '<p>Sorry, unable to load blog posts at the moment.</p>';
+    <script>
+    async function fetchMediumFeed() {
+        const parser = new DOMParser();
+        const response = await fetch('https://api.allorigins.win/get?url=https://medium.com/feed/@wooz');
+        const data = await response.json();
+        const xml = parser.parseFromString(data.contents, 'application/xml');
+        return xml;
     }
-}
 
-displayMediumPosts();
-</script>
+    function parseFeed(xml) {
+        const items = xml.querySelectorAll('item');
+        const posts = [];
+        items.forEach(item => {
+            const titleElement = item.querySelector('title');
+            const linkElement = item.querySelector('link');
+            const descriptionElement = item.querySelector('description');
+            const pubDateElement = item.querySelector('pubDate');
+
+            const title = titleElement ? titleElement.textContent : 'No title';
+            const link = linkElement ? linkElement.textContent : '#';
+            const description = descriptionElement ? descriptionElement.textContent : 'No description';
+            const pubDate = pubDateElement ? pubDateElement.textContent : 'No date';
+
+            posts.push({ title, link, description, pubDate });
+        });
+        return posts;
+    }
+
+    function displayPosts(posts) {
+        const blogContainer = document.getElementById('blog');
+        blogContainer.innerHTML = '';
+        posts.forEach(post => {
+            const postElement = document.createElement('div');
+            postElement.className = 'blog-item';
+            postElement.innerHTML = `
+                <h3><a href="${post.link}" target="_blank">${post.title}</a></h3>
+                <p>${new Date(post.pubDate).toLocaleDateString()}</p>
+                <p>${post.description}</p>
+            `;
+            blogContainer.appendChild(postElement);
+        });
+    }
+
+    async function displayMediumPosts() {
+        try {
+            const xml = await fetchMediumFeed();
+            const posts = parseFeed(xml);
+            displayPosts(posts);
+        } catch (error) {
+            console.error('Error fetching Medium feed:', error);
+            document.getElementById('blog').innerHTML = '<p>Sorry, unable to load blog posts at the moment.</p>';
+        }
+    }
+
+    displayMediumPosts();
+    </script>
 </body>
 </html>
