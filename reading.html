@@ -78,15 +78,30 @@
             color: #666;
             margin-top: 10px;
         }
-        .book-tldr {
+        .book-review {
             margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #e0e0e0;
+            text-align: left;
         }
-        .book-tldr textarea {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            resize: vertical;
+        .book-review h4 {
+            font-size: 0.9em;
+            font-weight: 400;
+            color: #666;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .book-review-text {
+            font-size: 0.9em;
+            line-height: 1.5;
+            color: #555;
+        }
+        .book-review-text p {
+            margin-bottom: 10px;
+        }
+        .book-review-text p:last-child {
+            margin-bottom: 0;
         }
     </style>
 </head>
@@ -98,13 +113,14 @@
                 <li><a href="about.html">About</a></li>
                 <li><a href="blog.html">Writing</a></li>
                 <li><a href="research.html">Research</a></li>
+                <li><a href="reading.html">Reading</a></li>
             </ul>
         </nav>
     </header>
 
     <div class="container">
         <h2>Reading</h2>
-        <p>Here are some books I've recently read, am currently reading, or consider favorites. This list is synced with my Goodreads account and includes my personal thoughts.</p>
+        <p>Books I've recently read, am currently reading, or consider favorites. Reviews reflect my personal thoughts and takeaways.</p>
 
         <div id="bookshelf" class="book-grid">
             <!-- Books will be dynamically inserted here -->
@@ -138,17 +154,6 @@
             }
         }
 
-        function saveTldr(bookTitle, tldr) {
-            const tldrs = JSON.parse(localStorage.getItem('bookTldrs') || '{}');
-            tldrs[bookTitle] = tldr;
-            localStorage.setItem('bookTldrs', JSON.stringify(tldrs));
-        }
-
-        function getTldr(bookTitle) {
-            const tldrs = JSON.parse(localStorage.getItem('bookTldrs') || '{}');
-            return tldrs[bookTitle] || '';
-        }
-
         async function displayBooks() {
             try {
                 const books = await fetchBooks();
@@ -158,23 +163,35 @@
                 books.forEach(book => {
                     const bookElement = document.createElement('div');
                     bookElement.className = 'book-item';
-                    const tldr = getTldr(book.title);
+
+                    // Build review HTML if review exists
+                    let reviewHTML = '';
+                    if (book.review && book.review.trim() !== '') {
+                        // Convert newlines to paragraph breaks
+                        const reviewParagraphs = book.review
+                            .split('\n\n')
+                            .filter(p => p.trim() !== '')
+                            .map(p => `<p>${p.trim()}</p>`)
+                            .join('');
+
+                        reviewHTML = `
+                            <div class="book-review">
+                                <h4>Review</h4>
+                                <div class="book-review-text">
+                                    ${reviewParagraphs}
+                                </div>
+                            </div>
+                        `;
+                    }
+
                     bookElement.innerHTML = `
                         <img src="${book.cover}" alt="${book.title} cover">
                         <h3>${book.title}</h3>
                         <p>${book.author}</p>
                         <p class="book-status">${book.status}</p>
-                        <div class="book-tldr">
-                            <textarea placeholder="Add your tldr thoughts..." rows="3">${tldr}</textarea>
-                        </div>
+                        ${reviewHTML}
                     `;
                     bookshelf.appendChild(bookElement);
-
-                    // Add event listener to save tldr on change
-                    const textarea = bookElement.querySelector('textarea');
-                    textarea.addEventListener('change', (e) => {
-                        saveTldr(book.title, e.target.value);
-                    });
                 });
             } catch (error) {
                 document.getElementById('bookshelf').innerHTML = '<p>hmm.. the scraper does not seem to be working, try again later! or i need to topup my heroku credits..</p>';
