@@ -3,48 +3,56 @@
     "title": "A Promised Land",
     "author": "Barack Obama",
     "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1600357110l/55361205._SX98_.jpg",
-    "status": "Currently Reading"
+    "status": "Currently Reading",
+    "review": ""
   },
   {
     "title": "Building a Second Brain: A Proven Method to Organize Your Digital Life and Unlock Your Creative Potential",
     "author": "Tiago Forte",
     "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1652891488l/59616977._SX98_.jpg",
-    "status": "Currently Reading"
+    "status": "Currently Reading",
+    "review": ""
   },
   {
     "title": "Together: Why Social Connection Holds the Key to Better Health, Higher Performance, and Greater Happiness",
     "author": "Vivek H. Murthy",
     "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1569893285l/43309159._SX98_.jpg",
-    "status": "Currently Reading"
+    "status": "Currently Reading",
+    "review": ""
   },
   {
     "title": "The Spirit Catches You and You Fall Down",
     "author": "Anne Fadiman",
     "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1432610033l/12609._SY75_.jpg",
-    "status": "Favorite"
+    "status": "Favorite",
+    "review": ""
   },
   {
     "title": "Anything You Want",
     "author": "Derek Sivers",
     "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1608491606l/11878168._SX50_.jpg",
-    "status": "Favorite"
+    "status": "Favorite",
+    "review": ""
   },
   {
     "title": "What I Know for Sure",
     "author": "Oprah Winfrey",
     "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1400988917l/21531503._SY75_.jpg",
-    "status": "Favorite"
+    "status": "Favorite",
+    "review": ""
   },
   {
     "title": "When Breath Becomes Air",
     "author": "Paul Kalanithi",
     "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1492677644l/25899336._SX50_.jpg",
-    "status": "Favorite"
+    "status": "Favorite",
+    "review": ""
   },
   {
     "title": "The Subtle Art of Not Giving a F*ck",
     "author": "Mark Manson",
     "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1465761302l/28257707._SX50_.jpg",
-    "status": "Favorite"
+    "status": "Favorite",
+    "review": ""
   }
 ]
