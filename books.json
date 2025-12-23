@@ -1,3 +1,4 @@
+
 [
   {
     "title": "A Promised Land",
@@ -28,13 +29,6 @@
     "review": ""
   },
   {
-    "title": "Anything You Want",
-    "author": "Derek Sivers",
-    "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1608491606l/11878168._SX50_.jpg",
-    "status": "Favorite",
-    "review": ""
-  },
-  {
     "title": "What I Know for Sure",
     "author": "Oprah Winfrey",
     "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1400988917l/21531503._SY75_.jpg",
@@ -49,10 +43,59 @@
     "review": ""
   },
   {
-    "title": "The Subtle Art of Not Giving a F*ck",
-    "author": "Mark Manson",
-    "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1465761302l/28257707._SX50_.jpg",
-    "status": "Favorite",
+    "title": "Human Acts",
+    "author": "Han Kang",
+    "cover": "",
+    "status": "To Read",
+    "review": ""
+  },
+  {
+    "title": "Last Night I Dreamed of Peace",
+    "author": "",
+    "cover": "",
+    "status": "To Read",
+    "review": ""
+  },
+  {
+    "title": "Kampong Boy",
+    "author": "M. Ravi",
+    "cover": "",
+    "status": "To Read",
+    "review": ""
+  },
+  {
+    "title": "Egalité/Fraternité",
+    "author": "",
+    "cover": "",
+    "status": "To Read",
+    "review": ""
+  },
+  {
+    "title": "The Empathy Exams: Essays Against Happiness",
+    "author": "Leslie Jamison",
+    "cover": "",
+    "status": "To Read",
+    "review": ""
+  },
+  {
+    "title": "In Praise of Melancholy",
+    "author": "",
+    "cover": "",
+    "status": "To Read",
+    "review": ""
+  },
+  {
+    "title": "The Tyranny of Merit: What's Become of the Common Good?",
+    "author": "Michael J. Sandel",
+    "cover": "",
+    "status": "Read 22 Oct 2025 – 04 Nov 2025",
+    "review": ""
+  },
+  {
+    "title": "What We Owe Each Other: A New Social Contract",
+    "author": "T. M. Scanlon",
+    "cover": "",
+    "status": "Read 22 Oct 2025 – 04 Nov 2025",
     "review": ""
   }
 ]
