@@ -56,36 +56,6 @@
         .writing-section:last-child {
             border-bottom: none;
         }
-        .blog-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 30px;
-            margin-top: 30px;
-        }
-        .blog-item {
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            text-align: center;
-            transition: transform 0.3s ease;
-        }
-        .blog-item:hover {
-            transform: translateY(-5px);
-        }
-        .blog-item h3 {
-            margin-bottom: 15px;
-        }
-        .blog-item p {
-            color: #666;
-        }
-        .blog-item a {
-            color: #007bff;
-            text-decoration: underline;
-        }
-        .blog-item a:hover {
-            color: #0056b3;
-        }
         .year-group {
             margin-bottom: 30px;
         }
@@ -138,9 +108,9 @@
 
         <div class="writing-section">
             <h3>From Medium</h3>
-            <div id="blog" class="blog-grid">
+            <ul id="blog" class="post-list">
                 <!-- Medium posts dynamically inserted here -->
-            </div>
+            </ul>
         </div>
 
         <div class="writing-section" id="themes">
@@ -207,14 +177,12 @@
         const blogContainer = document.getElementById('blog');
         blogContainer.innerHTML = '';
         posts.forEach(post => {
-            const postElement = document.createElement('div');
-            postElement.className = 'blog-item';
-            postElement.innerHTML = `
-                <h3><a href="${post.link}" target="_blank">${post.title}</a></h3>
-                <p>${new Date(post.pubDate).toLocaleDateString()}</p>
-                <p>${post.description}</p>
+            const listItem = document.createElement('li');
+            listItem.innerHTML = `
+                <a href="${post.link}" target="_blank">${post.title}</a>
+                <span class="date"> — ${new Date(post.pubDate).toLocaleDateString()}</span>
             `;
-            blogContainer.appendChild(postElement);
+            blogContainer.appendChild(listItem);
         });
     }
 
