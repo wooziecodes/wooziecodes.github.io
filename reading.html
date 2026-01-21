@@ -91,6 +91,67 @@
         .book-review-text p:last-child {
             margin-bottom: 0;
         }
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #666;
+        }
+        .loading-spinner {
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            border: 3px solid #e0e0e0;
+            border-top-color: #333;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        .error-state {
+            text-align: center;
+            padding: 40px;
+            color: #666;
+        }
+        .error-state button {
+            margin-top: 15px;
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .error-state button:hover {
+            background-color: #555;
+        }
+        .star-rating {
+            color: #f4b400;
+            font-size: 1.1em;
+            margin-top: 5px;
+        }
+        .star-rating .empty {
+            color: #ddd;
+        }
+        .show-more-container {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 20px 0;
+        }
+        .show-more-btn {
+            padding: 12px 30px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+        .show-more-btn:hover {
+            background-color: #555;
+        }
     </style>
 </head>
 <body>
@@ -116,77 +177,278 @@
     </div>
 
     <script>
-        async function fetchBooks() {
-            try {
-                // Check if we have cached data
-                const cachedData = localStorage.getItem('bookshelfData');
-                const cachedTimestamp = localStorage.getItem('bookshelfTimestamp');
+        // Configuration
+        const CONFIG = {
+            userId: '14444457',
+            corsProxy: 'https://corsproxy.io/?',
+            shelves: [
+                { name: 'currently-reading', label: 'Currently Reading', priority: 1 },
+                { name: 'favorites', label: 'Favorite', priority: 2 },
+                { name: 'read', label: 'Read', priority: 3 }
+            ],
+            cacheKey: 'goodreadsBookshelfData',
+            cacheTimestampKey: 'goodreadsBookshelfTimestamp',
+            cacheDuration: 24 * 60 * 60 * 1000, // 24 hours
+            booksPerPage: 12
+        };
 
-                // If we have cached data and it's less than 24 hours old, use it
-                if (cachedData && cachedTimestamp && (Date.now() - cachedTimestamp < 24 * 60 * 60 * 1000)) {
-                    return JSON.parse(cachedData);
+        // Pagination state
+        let allBooksData = [];
+        let currentlyShown = 0;
+
+        // Show loading state
+        function showLoading() {
+            document.getElementById('bookshelf').innerHTML = `
+                <div class="loading">
+                    <span class="loading-spinner"></span>
+                    Loading books from Goodreads...
+                </div>
+            `;
+        }
+
+        // Show error state
+        function showError(message) {
+            document.getElementById('bookshelf').innerHTML = `
+                <div class="error-state">
+                    <p>${message}</p>
+                    <button onclick="loadBooks(true)">Try Again</button>
+                </div>
+            `;
+        }
+
+        // Build Goodreads RSS URL for a shelf
+        function getShelfUrl(shelfName) {
+            return `https://www.goodreads.com/review/list_rss/${CONFIG.userId}?shelf=${shelfName}`;
+        }
+
+        // Fetch a single shelf via CORS proxy
+        async function fetchShelf(shelf) {
+            const url = CONFIG.corsProxy + encodeURIComponent(getShelfUrl(shelf.name));
+            const response = await fetch(url);
+
+            if (!response.ok) {
+                throw new Error(`Failed to fetch shelf: ${shelf.name}`);
+            }
+
+            const text = await response.text();
+            const parser = new DOMParser();
+            const xml = parser.parseFromString(text, 'application/xml');
+            return parseRSSXml(xml, shelf);
+        }
+
+        // Parse RSS XML and extract book data
+        function parseRSSXml(xml, shelf) {
+            const items = xml.querySelectorAll('item');
+            const books = [];
+
+            items.forEach(item => {
+                const getTextContent = (tagName) => {
+                    const element = item.querySelector(tagName);
+                    return element ? element.textContent.trim() : '';
+                };
+
+                const book = {
+                    title: getTextContent('title'),
+                    author: getTextContent('author_name'),
+                    cover: getTextContent('book_image_url'),
+                    link: getTextContent('link'),
+                    review: cleanReviewHtml(getTextContent('user_review')),
+                    rating: parseInt(getTextContent('user_rating')) || 0,
+                    status: shelf.label,
+                    priority: shelf.priority
+                };
+
+                // Only add if we have at least a title
+                if (book.title) {
+                    books.push(book);
+                }
+            });
+
+            return books;
+        }
+
+        // Clean HTML from review text
+        function cleanReviewHtml(html) {
+            if (!html) return '';
+
+            // Convert <br> tags to newlines
+            let text = html.replace(/<br\s*\/?>/gi, '\n');
+
+            // Strip all other HTML tags
+            text = text.replace(/<[^>]*>/g, '');
+
+            // Decode HTML entities
+            const textarea = document.createElement('textarea');
+            textarea.innerHTML = text;
+            text = textarea.value;
+
+            // Clean up excessive whitespace
+            text = text.replace(/\n{3,}/g, '\n\n').trim();
+
+            return text;
+        }
+
+        // Deduplicate books across shelves (higher priority status wins)
+        function deduplicateBooks(allBooks) {
+            const bookMap = new Map();
+
+            allBooks.forEach(book => {
+                const key = book.title.toLowerCase() + '|' + book.author.toLowerCase();
+                const existing = bookMap.get(key);
+
+                // Keep the book with higher priority (lower number)
+                if (!existing || book.priority < existing.priority) {
+                    bookMap.set(key, book);
+                }
+            });
+
+            // Sort: books with reviews first, then by priority within each group
+            return Array.from(bookMap.values()).sort((a, b) => {
+                const aHasReview = a.review && a.review.trim() !== '' ? 0 : 1;
+                const bHasReview = b.review && b.review.trim() !== '' ? 0 : 1;
+
+                // First sort by whether they have reviews
+                if (aHasReview !== bHasReview) {
+                    return aHasReview - bHasReview;
+                }
+                // Then by priority (currently reading, favorites, read)
+                return a.priority - b.priority;
+            });
+        }
+
+        // Generate star rating HTML
+        function getStarRatingHtml(rating) {
+            if (!rating || rating === 0) return '';
+
+            let stars = '';
+            for (let i = 1; i <= 5; i++) {
+                stars += i <= rating ? '★' : '<span class="empty">★</span>';
+            }
+            return `<div class="star-rating">${stars}</div>`;
+        }
+
+        // Fetch all shelves and return combined book list
+        async function fetchAllBooks() {
+            // Check cache first
+            const cachedData = localStorage.getItem(CONFIG.cacheKey);
+            const cachedTimestamp = localStorage.getItem(CONFIG.cacheTimestampKey);
+
+            if (cachedData && cachedTimestamp && (Date.now() - parseInt(cachedTimestamp) < CONFIG.cacheDuration)) {
+                return JSON.parse(cachedData);
+            }
+
+            // Fetch all shelves in parallel
+            const shelfPromises = CONFIG.shelves.map(shelf => fetchShelf(shelf));
+            const results = await Promise.all(shelfPromises);
+
+            // Flatten and deduplicate
+            const allBooks = results.flat();
+            const books = deduplicateBooks(allBooks);
+
+            // Cache the results
+            localStorage.setItem(CONFIG.cacheKey, JSON.stringify(books));
+            localStorage.setItem(CONFIG.cacheTimestampKey, Date.now().toString());
+
+            return books;
+        }
+
+        // Display books in the grid
+        function displayBooks(books, append = false) {
+            const bookshelf = document.getElementById('bookshelf');
+
+            if (!append) {
+                bookshelf.innerHTML = '';
+                currentlyShown = 0;
+                allBooksData = books;
+            }
+
+            if (allBooksData.length === 0) {
+                bookshelf.innerHTML = '<p>No books found.</p>';
+                return;
+            }
+
+            // Remove existing Show More button if present
+            const existingBtn = bookshelf.querySelector('.show-more-container');
+            if (existingBtn) {
+                existingBtn.remove();
+            }
+
+            // Get the next batch of books to display
+            const booksToShow = allBooksData.slice(currentlyShown, currentlyShown + CONFIG.booksPerPage);
+
+            booksToShow.forEach(book => {
+                const bookElement = document.createElement('div');
+                bookElement.className = 'book-item';
+
+                // Build review HTML if review exists
+                let reviewHTML = '';
+                if (book.review && book.review.trim() !== '') {
+                    const reviewParagraphs = book.review
+                        .split('\n\n')
+                        .filter(p => p.trim() !== '')
+                        .map(p => `<p>${p.trim()}</p>`)
+                        .join('');
+
+                    reviewHTML = `
+                        <div class="book-review">
+                            <h4>Review</h4>
+                            <div class="book-review-text">
+                                ${reviewParagraphs}
+                            </div>
+                        </div>
+                    `;
                 }
 
-                // If no valid cached data, fetch from server
-                const response = await fetch('books.json');
-                const books = await response.json();
+                // Build cover image HTML (with fallback)
+                const coverHtml = book.cover
+                    ? `<a href="${book.link}" target="_blank"><img src="${book.cover}" alt="${book.title} cover"></a>`
+                    : '';
 
-                // Cache the new data
-                localStorage.setItem('bookshelfData', JSON.stringify(books));
-                localStorage.setItem('bookshelfTimestamp', Date.now().toString());
+                bookElement.innerHTML = `
+                    ${coverHtml}
+                    <h3><a href="${book.link}" target="_blank">${book.title}</a></h3>
+                    <p>${book.author}</p>
+                    ${getStarRatingHtml(book.rating)}
+                    <p class="book-status">${book.status}</p>
+                    ${reviewHTML}
+                `;
+                bookshelf.appendChild(bookElement);
+            });
 
-                return books;
+            currentlyShown += booksToShow.length;
+
+            // Add Show More button if there are more books
+            if (currentlyShown < allBooksData.length) {
+                const showMoreContainer = document.createElement('div');
+                showMoreContainer.className = 'show-more-container';
+                showMoreContainer.innerHTML = `
+                    <button class="show-more-btn" onclick="displayBooks(null, true)">Show More</button>
+                `;
+                bookshelf.appendChild(showMoreContainer);
+            }
+        }
+
+        // Main function to load and display books
+        async function loadBooks(forceRefresh = false) {
+            showLoading();
+
+            try {
+                // Clear cache if force refresh
+                if (forceRefresh) {
+                    localStorage.removeItem(CONFIG.cacheKey);
+                    localStorage.removeItem(CONFIG.cacheTimestampKey);
+                }
+
+                const books = await fetchAllBooks();
+                displayBooks(books);
             } catch (error) {
                 console.error('Error fetching books:', error);
-                throw error;
+                showError('Unable to load books from Goodreads. Please try again later.');
             }
         }
 
-        async function displayBooks() {
-            try {
-                const books = await fetchBooks();
-                const bookshelf = document.getElementById('bookshelf');
-                bookshelf.innerHTML = ''; // Clear existing content
-
-                books.forEach(book => {
-                    const bookElement = document.createElement('div');
-                    bookElement.className = 'book-item';
-
-                    // Build review HTML if review exists
-                    let reviewHTML = '';
-                    if (book.review && book.review.trim() !== '') {
-                        // Convert newlines to paragraph breaks
-                        const reviewParagraphs = book.review
-                            .split('\n\n')
-                            .filter(p => p.trim() !== '')
-                            .map(p => `<p>${p.trim()}</p>`)
-                            .join('');
-
-                        reviewHTML = `
-                            <div class="book-review">
-                                <h4>Review</h4>
-                                <div class="book-review-text">
-                                    ${reviewParagraphs}
-                                </div>
-                            </div>
-                        `;
-                    }
-
-                    bookElement.innerHTML = `
-                        <img src="${book.cover}" alt="${book.title} cover">
-                        <h3>${book.title}</h3>
-                        <p>${book.author}</p>
-                        <p class="book-status">${book.status}</p>
-                        ${reviewHTML}
-                    `;
-                    bookshelf.appendChild(bookElement);
-                });
-            } catch (error) {
-                document.getElementById('bookshelf').innerHTML = '<p>hmm.. the scraper does not seem to be working, try again later! or i need to topup my heroku credits..</p>';
-            }
-        }
-
-        displayBooks();
+        // Initialize
+        loadBooks();
     </script>
 </body>
 </html>
