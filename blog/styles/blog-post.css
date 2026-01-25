@@ -244,6 +244,31 @@
     margin: 2.5em 0;
 }
 
+/* Post Images */
+.post-image {
+    margin: 2em 0;
+    padding: 0;
+}
+
+.post-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 4px;
+    background: var(--color-bg-accent);
+    /* Placeholder styling - shows a light gray box when image is missing */
+    min-height: 200px;
+    object-fit: cover;
+}
+
+.post-image figcaption {
+    margin-top: 0.75em;
+    font-size: 0.85em;
+    color: var(--color-text-muted);
+    text-align: center;
+    font-style: italic;
+}
+
 /* Post Footer */
 .post-footer {
     margin-top: 3em;

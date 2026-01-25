@@ -192,12 +192,27 @@
             font-style: italic;
         }
 
-        /* Medium Section */
-        #medium-posts li {
-            margin-bottom: 0.75em;
+        /* Subsection (e.g., From Medium within Making, Academic Papers within Thinking) */
+        .medium-section,
+        .papers-section {
+            margin-top: 1.5em;
+            padding-top: 1em;
+            border-top: 1px solid #eee;
         }
 
-        #medium-posts .post-date {
+        .subsection-title {
+            font-size: 0.95em;
+            font-weight: 500;
+            color: #666;
+            margin: 0 0 0.75em;
+        }
+
+        .medium-section .post-list li,
+        .papers-section .post-list li {
+            margin-bottom: 0.6em;
+        }
+
+        .medium-section .post-date {
             color: #888;
             font-size: 0.85em;
         }
@@ -255,7 +270,7 @@
             </div>
             <p class="category-description">Academic papers, technical analysis, analytical explorations.</p>
             <div id="thinking-posts">
-                <p class="no-posts">No posts yet.</p>
+                <p class="no-posts">Loading...</p>
             </div>
         </section>
 
@@ -277,27 +292,7 @@
             </div>
             <p class="category-description">Project case studies, building with intention.</p>
             <div id="making-posts">
-                <p class="no-posts">No posts yet.</p>
-            </div>
-        </section>
-
-        <!-- From Medium -->
-        <section class="category-section">
-            <div class="category-header">
-                <h3>From Medium</h3>
-            </div>
-            <ul id="medium-posts" class="post-list">
-                <li class="no-posts">Loading...</li>
-            </ul>
-        </section>
-
-        <!-- Academic Papers -->
-        <section class="category-section">
-            <div class="category-header">
-                <h3>Academic Papers</h3>
-            </div>
-            <div id="academic-papers">
-                <p class="no-posts">Loading...</p>
+                <!-- Self-hosted making posts will render here, followed by Medium posts -->
             </div>
         </section>
     </div>

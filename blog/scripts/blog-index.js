@@ -81,7 +81,10 @@
         if (!container) return;
 
         if (posts.length === 0) {
-            container.innerHTML = '<p class="no-posts">No posts yet.</p>';
+            // Don't show "no posts" for making - Medium posts will fill it
+            if (containerId !== 'making-posts') {
+                container.innerHTML = '<p class="no-posts">No posts yet.</p>';
+            }
             return;
         }
 
@@ -115,26 +118,31 @@
         renderCategoryPosts(groups.making, 'making-posts');
     }
 
-    // Render academic papers
+    // Render academic papers - now appended under Thinking section
     function renderAcademicPapers(papers) {
-        const container = document.getElementById('academic-papers');
+        const container = document.getElementById('thinking-posts');
         if (!container || !papers || papers.length === 0) return;
 
-        let html = '<ul class="post-list">';
+        // Get existing content (blog posts)
+        let existingContent = container.innerHTML;
+
+        // Create Academic Papers subsection
+        let papersHtml = '<div class="papers-section"><h4 class="subsection-title">Academic Papers</h4><ul class="post-list">';
         papers.forEach(paper => {
-            html += `
+            papersHtml += `
                 <li>
                     <a href="${paper.url}" target="_blank">${paper.title} (PDF)</a>
                     <span class="paper-description">${paper.description}</span>
                 </li>
             `;
         });
-        html += '</ul>';
+        papersHtml += '</ul></div>';
 
-        container.innerHTML = html;
+        // Append papers to existing content
+        container.innerHTML = existingContent + papersHtml;
     }
 
-    // Medium feed integration (preserved from original)
+    // Medium feed integration - now renders under Making section
     async function fetchMediumFeed() {
         const parser = new DOMParser();
         const response = await fetch('https://api.allorigins.win/get?url=https://medium.com/feed/@wooz');
@@ -161,18 +169,28 @@
     }
 
     function displayMediumPosts(posts) {
-        const blogContainer = document.getElementById('medium-posts');
-        if (!blogContainer) return;
+        const container = document.getElementById('making-posts');
+        if (!container) return;
 
-        blogContainer.innerHTML = '';
+        // Check if there's already content (from making posts)
+        let existingContent = container.innerHTML;
+
+        // Create Medium section header
+        let mediumHtml = '<div class="medium-section"><h4 class="subsection-title">From Medium</h4><ul class="post-list">';
+
         posts.forEach(post => {
-            const listItem = document.createElement('li');
-            listItem.innerHTML = `
-                <a href="${post.link}" target="_blank">${post.title}</a>
-                <span class="post-date">${new Date(post.pubDate).toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}</span>
+            mediumHtml += `
+                <li>
+                    <a href="${post.link}" target="_blank">${post.title}</a>
+                    <span class="post-date">${new Date(post.pubDate).toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}</span>
+                </li>
             `;
-            blogContainer.appendChild(listItem);
         });
+
+        mediumHtml += '</ul></div>';
+
+        // Append Medium posts to existing content
+        container.innerHTML = existingContent + mediumHtml;
     }
 
     async function loadMediumPosts() {
@@ -182,9 +200,9 @@
             displayMediumPosts(posts);
         } catch (error) {
             console.error('Error fetching Medium feed:', error);
-            const container = document.getElementById('medium-posts');
+            const container = document.getElementById('making-posts');
             if (container) {
-                container.innerHTML = '<li class="error">Unable to load Medium posts.</li>';
+                container.innerHTML += '<div class="medium-section"><h4 class="subsection-title">From Medium</h4><p class="error">Unable to load Medium posts.</p></div>';
             }
         }
     }

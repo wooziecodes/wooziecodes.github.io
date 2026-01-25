@@ -1,6 +1,16 @@
 {
   "posts": [
     {
+      "slug": "solution-stopped-being-the-point",
+      "title": "What I Learned When the Solution Stopped Being the Point",
+      "category": "thinking",
+      "date": "2026-01-25",
+      "readingTime": 14,
+      "excerpt": "We'd spent months building toward an AI-powered financial literacy tool. But in that debrief, we realized we'd been trying to get migrant workers to confirm our interpretation rather than recognizing they already had frameworks just as valid as ours.",
+      "featured": true,
+      "length": "long"
+    },
+    {
       "slug": "not-yet-dead",
       "title": "Not Yet Dead: What REACH Taught Me About the Violence of Optimization",
       "category": "feeling",

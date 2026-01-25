@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What I Learned When the Solution Stopped Being the Point | Arif Woozeer</title>
+    <link rel="stylesheet" href="../styles/blog-post.css">
+</head>
+<body>
+    <article class="post" data-length="long">
+        <nav class="post-nav">
+            <a href="../../about.html">About</a>
+            <a href="../../blog.html">Writing</a>
+            <a href="../../research.html">Research</a>
+            <a href="../../reading.html">Reading</a>
+        </nav>
+
+        <header class="post-header">
+            <h1 class="post-title">What I Learned When the Solution Stopped Being the Point</h1>
+            <div class="post-meta">
+                <span class="post-date">January 2026</span>
+                <span class="reading-time">14 min read</span>
+            </div>
+        </header>
+
+        <blockquote class="epigraph">
+            <p>The hardest to reach are not hard to reach. They are underserved within existing systems.</p>
+            <cite>Joseph Wong, Reach Alliance</cite>
+        </blockquote>
+
+        <nav class="toc">
+            <button class="toc-toggle">Table of Contents</button>
+            <p class="toc-title">Contents</p>
+            <ol class="toc-list" id="toc-list"></ol>
+        </nav>
+
+        <div class="post-content">
+            <p>We were sitting in a community center after our focus group with migrant workers, doing what researchers do—debriefing, comparing notes, trying to synthesize. Someone said something that made us all go quiet: "Wait. Maybe a chatbot isn't the right approach here."</p>
+
+            <p>We'd spent months building toward an AI-powered financial literacy tool. We'd done the literature reviews, mapped the user journeys, prototyped interfaces. We knew the frameworks—the 50/30/20 rule, the standard financial literacy curricula. We thought we were being participatory, thought we were listening. But in that debrief, we realized we'd been doing something else entirely: we'd been trying to get migrant workers to confirm our interpretation of what financial literacy should look like, rather than recognizing they already had frameworks for managing money that were just as valid as ours. They didn't need to be taught our metrics. They needed different kinds of support entirely.</p>
+
+            <p>That moment—the one where the solution we'd invested in started to dissolve—turned out to be more valuable than any prototype we built.</p>
+
+            <p>Joseph Wong, the founder of the Reach Alliance, once reflected on ten years of case studies and identified a pattern: "The hardest to reach are not hard to reach. They are underserved within existing systems." What we thought was a delivery problem—how do we get financial literacy to migrant workers?—was actually a systems problem. The institutions, the mental models, the economic assumptions, the norms—these were what needed examining. Not our chatbot's interface.</p>
+
+            <!-- IMAGE PLACEHOLDER: Opening image - focus group setting, community center, or team discussion -->
+            <figure class="post-image">
+                <img src="images/placeholder-focus-group.jpg" alt="[Description of focus group or community center setting]">
+                <figcaption>[Caption: e.g., "Early focus group session at the community center"]</figcaption>
+            </figure>
+
+            <h2>Part I: Building in the Messiness</h2>
+
+            <p>Here's what I thought participatory design meant: you involve users in the creation process, you iterate based on their feedback, you build something that meets their needs.</p>
+
+            <p>Here's what it actually required: confronting the possibility that the thing you're building might not need to exist at all.</p>
+
+            <p>We'd already decided on a chatbot as the solution framework before we really understood the problem. That decision constrained everything—what questions we could ask, what kinds of solutions we could imagine, how we measured success. We found ourselves wrestling with impossible metrics: does increased chatbot usage actually indicate improved financial literacy? Does behavioral change matter more than knowledge acquisition? What even counts as "financial literacy" for someone navigating remittances, informal lending networks, and precarious employment simultaneously?</p>
+
+            <h3>Learning to Listen Through Drawing</h3>
+
+            <p>One of our earliest activities was called "Draw Your Achievements." We asked participants to illustrate something they were proud of. It seemed almost too simple—childlike, even. But what emerged were drawings of houses, children, families. One worker drew his house in blue, then added in green what he wanted to achieve in the next five years: more rooms for his growing family, his children's education completed.</p>
+
+            <p>These drawings forced us to confront something: our chatbot was suggesting goals like "save $50 this month" to people whose aspirations were building homes across continents and securing their children's futures. The generic financial frameworks we'd imported—the 50/30/20 budgeting rule, the standard savings advice—completely missed what financial management actually looked like in their lives.</p>
+
+            <!-- IMAGE PLACEHOLDER: Draw Your Achievements activity - participant drawings -->
+            <figure class="post-image">
+                <img src="images/placeholder-drawings.jpg" alt="[Participant drawings from the Draw Your Achievements activity]">
+                <figcaption>[Caption: e.g., "Drawings from the 'Draw Your Achievements' activity showing houses, families, and future goals"]</figcaption>
+            </figure>
+
+            <p>The migrant workers we worked with didn't fit into our frameworks because their financial lives were far more sophisticated than our models acknowledged. They had systems for managing money across borders, informal insurance networks, collective savings strategies. They didn't need financial education in the traditional sense. They needed structural support: access to fair banking, protection from exploitative employers, legal representation when contracts were violated.</p>
+
+            <h3>Trust Isn't a Feature—It's the Foundation</h3>
+
+            <p>Wong told a story that stayed with me. During the pandemic, a Reach team studied vaccine delivery to remote indigenous communities in northern Ontario—places so isolated that roads end 200 kilometers short, accessible only by ice roads in winter or by plane. Everyone assumed it would be a logistics optimization problem: how to transport vaccines across impossible distances.</p>
+
+            <p>It wasn't.</p>
+
+            <p class="pullquote">The single most important variable determining vaccination rates wasn't the flight schedule or cold chain management. It was whether the vaccine was delivered by an indigenous physician.</p>
+
+            <p>Indigenous communities had every reason to mistrust medical interventions from the south—the legacy of residential schools, of medical experimentation, of systematic harm. What looked like a logistics problem was actually about trust, about legacy, about who shows up.</p>
+
+            <p>Our chatbot faced a similar reckoning. Early versions would analyze expenses and immediately offer advice: "You're spending too much on food. Try cooking at home instead." One worker pushed back: "No time to cook. If I cook the cost very low"—acknowledging that cooking would save money, but it wasn't feasible given their work schedules and dormitory living situation.</p>
+
+            <p>Trust building wasn't a separate step before design—it was embedded in every interaction, every technical choice. When we switched from prescriptive advice to asking questions first, workers started opening up. When we added proper Bengali and Tamil script instead of romanized text, one participant said: "When I type, I mix because it's easy. But when I read your message, I want to see my language properly written. It feels more respectful."</p>
+
+            <p>This wasn't just about translation. It was about dignity. About being seen.</p>
+
+            <h3>When Preferences Became Context</h3>
+
+            <p>We tried another exercise: spectrum mapping. We'd read a statement like "I set a monthly budget and stick to it" and participants would position themselves along a line from "strongly disagree" to "strongly agree." What emerged wasn't neat data—it was conversation. Workers explained why they struggled to follow budgets despite having good intentions. They acknowledged that financial goals were important, but when we asked if they actually set goals or tracked expenses, most said no.</p>
+
+            <p>In other words: agreeing something matters doesn't mean you'll act on it. And our chatbot needed to understand that gap.</p>
+
+            <p>We discovered workers wanted both voice and text options, but not for the reasons we'd assumed. "Voice is good when I'm working. Text is better when I'm checking my budget on the bus," one explained. Context determined preference. We'd been asking "which do you prefer?" when the real question was "when do you prefer what?"</p>
+
+            <!-- IMAGE PLACEHOLDER: Spectrum mapping activity or workshop session -->
+            <figure class="post-image">
+                <img src="images/placeholder-workshop.jpg" alt="[Workshop or spectrum mapping activity in progress]">
+                <figcaption>[Caption: e.g., "Spectrum mapping exercise during a co-design workshop"]</figcaption>
+            </figure>
+
+            <h3>The Technical as the Human</h3>
+
+            <p>Every technical challenge revealed a human dimension we'd missed.</p>
+
+            <p>We added an onboarding process—questions about family responsibilities, monthly expenses, debt. The chatbot needed to understand before it could suggest. One participant tested the updated version and said simply: "Now it understands my situation."</p>
+
+            <p>Even our platform choice became a lesson in meeting people where they are. WhatsApp was universal—"how we talk to family back home"—but its regulated structure made iteration slow. Telegram allowed us to build buttons and features quickly, but fewer workers used it initially. We ended up supporting both, learning that inclusive design sometimes means operating across multiple spaces rather than forcing everyone into one.</p>
+
+            <h3>What Hybrid Solutions Actually Mean</h3>
+
+            <p>The hybrid solutions we eventually landed on weren't technological at all—or rather, technology became a small piece of something much larger. A chatbot might provide information, sure. But what people actually needed was a good lawyer on speed dial, a community support system, regulatory enforcement of labor protections.</p>
+
+            <p>I came in thinking like a technologist—problems have solutions, solutions involve building something. I left thinking like... I'm not sure what. Someone more skeptical of solutions, maybe. Someone more interested in systems. Someone who understands that sometimes the most important thing you can build is the space for people to articulate what they actually need, even when it's not what you came prepared to give them.</p>
+
+            <div class="callout">
+                <p>Wong's analysis of Reach Alliance case studies revealed something profound: the most important takeaway wasn't a methodology or intervention model—it was "appreciating that reaching the hardest to reach successfully depends on trust." Trust is the foundation. Not efficiency, not innovation, not scale. Trust.</p>
+            </div>
+
+            <p>The third critical factor was "the role of intermediary organizations"—the community champions who bridge worlds. We experienced this firsthand. Without the DBS digital literacy workshops, without the migrant worker who first invited his peers to our focus groups, without the workers who trusted us enough to bring their friends—none of this would have been possible. They weren't just helping us recruit participants. They were vouching for us, translating our intentions, making trust possible.</p>
+
+            <h2>Part II: Translating Knowledge</h2>
+
+            <!-- IMAGE PLACEHOLDER: Conference presentation or panel -->
+            <figure class="post-image">
+                <img src="images/placeholder-conference.jpg" alt="[Conference presentation or panel discussion]">
+                <figcaption>[Caption: e.g., "Presenting at the REACH Alliance conference"]</figcaption>
+            </figure>
+
+            <p>Turning messy, iterative, uncertain research into a clean conference panel and published paper was its own kind of challenge.</p>
+
+            <p>The hardest part wasn't condensing months of work into digestible takeaways—it was figuring out what narrative to tell when our primary finding was essentially "the thing we set out to build probably shouldn't be built the way we imagined it." How do you communicate that without sounding like the project failed? How do you advocate for restraint when the whole field is oriented toward innovation and intervention?</p>
+
+            <p>We kept prototyping because that's what you do in design research. Each iteration made the chatbot more functional, more responsive. But each iteration also made it clearer that we were, for all intents and purposes, working on a project with no neat resolution. The technical problems we solved—voice latency, multilingual processing, interface design—mattered. But they mattered less than the conceptual shift: from prescribing financial behavior to respecting existing financial knowledge.</p>
+
+            <p>Writing the research paper meant confronting our own assumptions in print. We had to articulate that "financial literacy" as commonly defined might not be the actual gap. That participatory design isn't just a methodology but a fundamentally different relationship to the people you're trying to serve. That admitting "we don't have all the answers" isn't a weakness—it's the most honest thing you can offer.</p>
+
+            <p>Wong once said that what Reach does—asking questions about conditions in the margins, about how interventions might reach those in the margins—is itself "the most novel and impactful thing." Most actors ask: "We have 50% coverage, how do we scale this model to get to 60%?" Reach asks: "How do you actually reach the hardest to reach, the most marginalized? Those who are left out?"</p>
+
+            <p>That reframing gave me permission to write honestly about our findings. We weren't failing by not having a scalable solution. We were succeeding by asking a question no one else wanted to ask: what if the people we're trying to help don't need what we're offering?</p>
+
+            <p>The panel discussions felt vulnerable in ways I wasn't prepared for. Academia and tech both reward certainty. Saying "here's what we tried, here's what we learned, here's why we're still not sure" requires a different kind of courage. But the conversations that emerged—the questions people asked about our research, the recognition from other teams facing similar tensions—suggested that maybe uncertainty isn't a failure to report. Maybe it's the insight.</p>
+
+            <h2>Part III: The Network Effect</h2>
+
+            <!-- IMAGE PLACEHOLDER: REACH network/Toronto conference/group photo -->
+            <figure class="post-image">
+                <img src="images/placeholder-network.jpg" alt="[REACH Alliance network gathering or Toronto conference]">
+                <figcaption>[Caption: e.g., "REACH Alliance researchers at the Toronto conference"]</figcaption>
+            </figure>
+
+            <p>I wouldn't have understood any of this without the Reach Alliance network—not just as professional connections, but as intellectual community.</p>
+
+            <p>At the Toronto conference, I sat in on presentations from teams at Tec de Monterrey working on their own migrant worker challenges. I heard about financial literacy interventions that hadn't worked, technology solutions that had to be abandoned halfway through, research designs that completely shifted after the first round of fieldwork. What struck me wasn't the diversity of approaches—it was how comfortable everyone was naming what had failed.</p>
+
+            <p>The UFT folks, the UCL researchers, the teams scattered across different contexts and continents—they'd all discovered that their initial assumptions were wrong and had kept going anyway. That mattered more than any methodological insight. There's something clarifying about being in rooms where "we had to completely rethink our approach" isn't a confession of inadequacy but just... what rigorous research actually looks like.</p>
+
+            <p>Between sessions, in those unstructured conversations over coffee or meals, people shared the messy middle of their projects. The intervention that participants didn't show up for. The technology that solved the wrong problem. The moment they realized they'd been asking the wrong question entirely. These weren't war stories or cautionary tales—they were evidence that good work and uncertain process aren't contradictions.</p>
+
+            <p>Wong reflected on what struck him most about Reach's evolution over ten years. In 2015, when Reach launched, there was tremendous optimism—the SDGs had just been established, there was unprecedented collective agreement about eradicating poverty. The assumption was that we just needed to keep doing what we'd been doing in the MDG era, but more efficiently, with more innovation. "How do we get things to people everywhere? How do we deliver things more efficiently and more equally?"</p>
+
+            <p>But that wasn't the right question.</p>
+
+            <p class="pullquote">"It's actually not much about the delivery or the intervention. It's about the entire system. The institutions, the mental models, the theoretical models, the economic models, the norms."</p>
+
+            <p>The hardest to reach aren't hard to reach because of logistics—they're underserved because systems weren't designed with them in mind.</p>
+
+            <p>This network didn't just teach me methods or connect me to resources. It gave me permission to sit with complexity. To not rush toward solutions. To trust that the discomfort of "I don't know yet" can be productive if you stay in it long enough. To recognize, as Wong put it, that "those who are furthest from privilege, those who have been marginalized and otherwise excluded—that's where the solutions are. The best insights for the solutions are there."</p>
+
+            <p>Larry Yeung's guidance on participatory design helped us see co-creation not as a checkbox but as a fundamentally different relationship to power and expertise. Dr. Andrew Koh's patience when our early prototypes fell apart. Lyn-Marie Farley's coaching on team dynamics when we were navigating interpersonal tensions while also trying to navigate technical challenges. The DBS connections that opened doors to the digital literacy workshops where we first met the workers who would become our collaborators.</p>
+
+            <p>And the migrant workers themselves—who trusted us enough to share not just their time but their experiences, their frustrations, their hopes. Who pushed back when our assumptions were wrong. Who taught us more about financial systems and human dignity than any literature review ever could.</p>
+
+            <p>This network wasn't just about who I met. It was about finding a community that held space for the kind of work that doesn't produce easy answers—that values depth over speed, listening over building, questions over conclusions. A community committed to what Wong called "asking the questions that are hardest to ask."</p>
+
+            <h2>What Carries Forward</h2>
+
+            <p>I don't have clean lessons from this experience. I have questions that won't let me go.</p>
+
+            <p>The biggest one: when is technology actually the right tool, and when is it just the tool we reach for because we know how to build it?</p>
+
+            <p>My entire education trained me to think like an engineer—to see problems and immediately start architecting solutions, to believe that the right system, the right code, the right interface could fix things. The Reach Alliance work dismantled that reflex. Not completely—I still think technology can be powerful, can be generative. But I'm far more skeptical now of "tech for good" narratives that bypass the harder questions of power, access, and structural inequality.</p>
+
+            <p>Wong shared a concept that's been haunting me: the infrastructure of solidarity.</p>
+
+            <p>He described a family friend—a 16-year-old who discovered he had cancer in his leg. The surgery to remove it was extraordinary: rotationplasty, where they reverse what remains of your leg and reattach your ankle to the top part of your thigh, so your ankle becomes your knee. An 18-hour surgery. Only about a dozen surgeons in the world can do it. The family paid nothing. "This is why we pay our taxes," the father said. "This is who we are."</p>
+
+            <p>Wong called this "a kind of infrastructure of solidarity." The concept comes from a book he'd been reading—Lessons in Liberty from a Hospital Diary—which argues that at the core of democracy and freedom is the ability to enjoy solidarity. When you're sick, you're vulnerable, exposed. You can't truly be free without healthcare. And healthcare systems that are grounded in solidarity become the basis for democratic society.</p>
+
+            <p>He asked: what does it mean to create infrastructures of solidarity? Whether in the systems we live in, the policies we work on, or the technologies we build—how do we design for solidarity?</p>
+
+            <div class="callout">
+                <p>The chatbot we built works. It can process voice messages in multiple languages, adapt to different contexts, remember user preferences, offer personalized financial guidance. But the real achievement wasn't the technology; it was learning how to build with people rather than for them. How to recognize that what looks like a gap in financial literacy might actually be a gap in structural support. How to sit with the possibility that the most helpful thing you can do is not build anything at all, but advocate for the systems and protections people actually need.</p>
+            </div>
+
+            <p>Going into the workforce I'm carrying this shift with me. I'm less interested in building things and more interested in understanding the systems that determine who gets to build, who benefits, and who gets left out. Sometimes the most transformative intervention isn't a new tool—it's a good lawyer, stronger labor protections, enforcement of rights that already exist on paper. Sometimes it's designing infrastructures of solidarity rather than optimizing delivery mechanisms.</p>
+
+            <p>Wong ended his reflection with something that struck me: he worries about the state of democracy not as a failure of borders, but as a failure of development—specifically, a failure of inclusive development. "Democratic fragility, democratic frailty, is a reflection of the failure of development," he said. The rise of authoritarianism, the erosion of democratic institutions—these aren't just political problems. They're symptoms of systems that left people behind.</p>
+
+            <p>The Reach Alliance taught me that rigorous work doesn't mean having all the answers. It means asking better questions, building relationships that matter, sitting with complexity long enough to understand it. The network I found there—the researchers willing to share their failures, the mentors who made space for uncertainty, the migrant workers who trusted us with their stories—gave me something more valuable than any methodology.</p>
+
+            <p>They taught me that the best solutions emerge not from our assumptions about what people need, but from deep listening to what they already know. They taught me to ask: does this build solidarity, or does it just optimize extraction? Does this shift power, or does it just make existing inequalities more efficient?</p>
+
+            <p>I thought I was learning how to solve problems. I learned instead how to sit with their complexity, how to resist the seduction of solutionism, how to ask better questions even when the answers stay elusive.</p>
+
+            <p>That might be the most valuable thing the Reach Alliance gave me: not confidence in what I know, but comfort with what I don't. And a commitment to building infrastructures of solidarity (in whatever form that takes) rather than just deploying technological fixes.</p>
+        </div>
+
+        <footer class="post-footer">
+            <p><a href="../../blog.html">&larr; Back to writing</a></p>
+        </footer>
+    </article>
+
+    <script>
+        // Auto-generate Table of Contents
+        (function() {
+            const content = document.querySelector('.post-content');
+            const tocList = document.getElementById('toc-list');
+            const headings = content.querySelectorAll('h2');
+
+            if (headings.length === 0) {
+                document.querySelector('.toc').style.display = 'none';
+                return;
+            }
+
+            headings.forEach((heading, index) => {
+                const id = 'section-' + (index + 1);
+                heading.id = id;
+
+                const li = document.createElement('li');
+                const a = document.createElement('a');
+                a.href = '#' + id;
+                a.textContent = heading.textContent;
+                li.appendChild(a);
+                tocList.appendChild(li);
+            });
+
+            tocList.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                });
+            });
+
+            const toggle = document.querySelector('.toc-toggle');
+            toggle.addEventListener('click', function() {
+                this.classList.toggle('active');
+                tocList.classList.toggle('active');
+            });
+        })();
+    </script>
+</body>
+</html>
