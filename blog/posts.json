@@ -1,0 +1,31 @@
+{
+  "posts": [
+    {
+      "slug": "not-yet-dead",
+      "title": "Not Yet Dead: What REACH Taught Me About the Violence of Optimization",
+      "category": "feeling",
+      "date": "2025-12-07",
+      "readingTime": 24,
+      "excerpt": "Last month I presented three years of work at the REACH Alliance conference. But what I actually remember isn't the presentation. It's afterward, when a group of us went out for ice cream.",
+      "featured": true,
+      "length": "long"
+    }
+  ],
+  "academicPapers": [
+    {
+      "title": "The Ethics of Anthropomorphic AI for Emotional Support",
+      "url": "https://drive.google.com/file/d/195DYnmsYCal5NCDWHnWB2s_-hHUeLXV4/view?usp=sharing",
+      "description": "Exploring ethical implications of anthropomorphic AI for emotional support, focusing on trust, dependency, and ethical design principles."
+    },
+    {
+      "title": "The Experience of Being 'Othered' in Singapore's CMIO Classification",
+      "url": "https://drive.google.com/file/d/1A1Sj1eE_Ru7KJR8cX_MTGs9v-IEexQfF/view?usp=sharing",
+      "description": "A personal sociological examination of racial categorization and its implications in Singapore."
+    },
+    {
+      "title": "Redefining Society in the Age of AI",
+      "url": "https://drive.google.com/file/d/1DkefNhNIoPzoVAX46tpS0vCB7Ai4KK9P/view?usp=sharing",
+      "description": "A sociological exploration of artificial intelligence's transformative impact."
+    }
+  ]
+}
