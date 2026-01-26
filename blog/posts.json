@@ -11,14 +11,74 @@
       "length": "long"
     },
     {
-      "slug": "not-yet-dead",
-      "title": "Not Yet Dead: What REACH Taught Me About the Violence of Optimization",
+      "title": "Reconciling Hustle Culture and Self-Care",
+      "category": "thinking",
+      "date": "2024-08-01",
+      "url": "https://medium.com/@wooz",
+      "external": true
+    },
+    {
+      "title": "do nice founders finish last?",
+      "category": "thinking",
+      "date": "2023-02-01",
+      "url": "https://medium.com/@wooz",
+      "external": true
+    },
+    {
+      "title": "Building a more intentional relationship with technology",
+      "category": "thinking",
+      "date": "2021-04-01",
+      "url": "https://medium.com/@wooz",
+      "external": true
+    },
+    {
+      "title": "From Classroom to Chaoyang: A Singaporean's Journey in the Heart of China",
       "category": "feeling",
-      "date": "2025-12-07",
-      "readingTime": 24,
-      "excerpt": "Last month I presented three years of work at the REACH Alliance conference. But what I actually remember isn't the presentation. It's afterward, when a group of us went out for ice cream.",
-      "featured": true,
-      "length": "long"
+      "date": "2024-08-15",
+      "url": "https://medium.com/@wooz",
+      "external": true
+    },
+    {
+      "title": "just keep swimming",
+      "category": "feeling",
+      "date": "2024-08-10",
+      "url": "https://medium.com/@wooz",
+      "external": true
+    },
+    {
+      "title": "what they don't say about moving abroad",
+      "category": "feeling",
+      "date": "2024-08-05",
+      "url": "https://medium.com/@wooz",
+      "external": true
+    },
+    {
+      "title": "Hopes for 2021",
+      "category": "feeling",
+      "date": "2021-01-01",
+      "url": "https://medium.com/@wooz",
+      "external": true
+    },
+    {
+      "title": "A heartfelt message to 2020",
+      "category": "feeling",
+      "date": "2020-12-01",
+      "url": "https://medium.com/@wooz",
+      "external": true
+    },
+    {
+      "title": "CS462: TODI — Optimising Cleaning with IoT",
+      "category": "making",
+      "date": "2024-04-01",
+      "url": "https://medium.com/@wooz",
+      "external": true
+    },
+    {
+      "title": "CS460: Smart Guard Helmet — Enhancing Workplace Safety with IoT Technology",
+      "category": "making",
+      "date": "2023-04-01",
+      "url": "https://medium.com/@wooz",
+      "external": true
     }
   ],
   "academicPapers": [
