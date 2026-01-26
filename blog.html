@@ -53,82 +53,57 @@
             color: #0000ff;
         }
 
-        h2 {
+        h2, h3 {
             font-weight: 300;
-            margin-top: 2em;
         }
 
-        /* Category Sections */
-        .category-section {
-            margin-bottom: 3em;
-            padding-bottom: 2em;
+        /* Category Sections - matching research.html style */
+        .writing-section {
+            margin-bottom: 50px;
+            padding-bottom: 30px;
             border-bottom: 1px solid #eee;
         }
 
-        .category-section:last-child {
+        .writing-section:last-child {
             border-bottom: none;
         }
 
-        .category-header {
-            margin-bottom: 0.5em;
-        }
-
-        .category-header h3 {
-            font-weight: 400;
-            font-size: 1.3em;
-            margin: 0;
-        }
-
-        .category-description {
+        .section-description {
             color: #666;
-            font-size: 0.9em;
-            margin: 0.25em 0 1.25em;
+            font-size: 0.95em;
+            margin-bottom: 20px;
         }
 
-        /* Featured Post Card */
+        /* Featured Post - prose style, not card */
         .featured-post {
-            border: 1px solid #ddd;
-            padding: 1.25em 1.5em;
-            margin-bottom: 1.5em;
-            border-radius: 4px;
+            margin-bottom: 25px;
         }
 
-        .featured-link {
-            text-decoration: none;
-            color: inherit;
+        .featured-post h4 {
+            font-weight: 300;
+            font-size: 1.2em;
+            margin: 0 0 8px;
         }
 
-        .featured-title {
-            font-size: 1.15em;
-            font-weight: 500;
-            margin: 0 0 0.5em;
+        .featured-post h4 a {
             color: #007bff;
-        }
-
-        .featured-link:hover .featured-title {
-            color: #0056b3;
             text-decoration: underline;
         }
 
+        .featured-post h4 a:hover {
+            color: #0056b3;
+        }
+
         .featured-excerpt {
-            color: #444;
+            color: #333;
             font-size: 0.95em;
-            margin: 0 0 0.75em;
+            margin: 0 0 8px;
             line-height: 1.5;
         }
 
         .featured-meta {
-            font-size: 0.85em;
-            color: #888;
-        }
-
-        .featured-meta span {
-            margin-right: 1em;
-        }
-
-        .featured-reading-time::before {
-            content: "\00B7";
-            margin-right: 1em;
+            font-size: 0.9em;
+            color: #666;
         }
 
         /* Post List */
@@ -139,7 +114,7 @@
         }
 
         .post-list li {
-            margin-bottom: 0.75em;
+            margin-bottom: 12px;
             line-height: 1.4;
         }
 
@@ -152,33 +127,16 @@
             color: #0056b3;
         }
 
-        .post-row {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: baseline;
-            gap: 0.5em;
-        }
-
         .post-meta-inline {
-            font-size: 0.85em;
-            color: #888;
-        }
-
-        .post-date::before {
-            content: "\00B7";
-            margin-right: 0.5em;
-        }
-
-        .post-reading-time::before {
-            content: "\00B7";
-            margin: 0 0.5em;
+            color: #666;
+            font-size: 0.9em;
         }
 
         .paper-description {
             display: block;
             color: #666;
             font-size: 0.9em;
-            margin-top: 0.25em;
+            margin-top: 4px;
         }
 
         .no-posts {
@@ -187,34 +145,16 @@
             margin: 0;
         }
 
-        .error {
-            color: #999;
-            font-style: italic;
+        /* Subsections */
+        .subsection {
+            margin-top: 25px;
         }
 
-        /* Subsection (e.g., From Medium within Making, Academic Papers within Thinking) */
-        .medium-section,
-        .papers-section {
-            margin-top: 1.5em;
-            padding-top: 1em;
-            border-top: 1px solid #eee;
-        }
-
-        .subsection-title {
-            font-size: 0.95em;
-            font-weight: 500;
-            color: #666;
-            margin: 0 0 0.75em;
-        }
-
-        .medium-section .post-list li,
-        .papers-section .post-list li {
-            margin-bottom: 0.6em;
-        }
-
-        .medium-section .post-date {
-            color: #888;
-            font-size: 0.85em;
+        .subsection h4 {
+            font-weight: 300;
+            font-size: 1.1em;
+            color: #333;
+            margin: 0 0 12px;
         }
 
         @media (max-width: 600px) {
@@ -225,24 +165,6 @@
 
             h1 {
                 font-size: 2em;
-            }
-
-            .featured-post {
-                padding: 1em;
-            }
-
-            .post-row {
-                flex-direction: column;
-                gap: 0.25em;
-            }
-
-            .post-date::before,
-            .post-reading-time::before {
-                display: none;
-            }
-
-            .post-meta-inline {
-                margin-left: 0;
             }
         }
     </style>
@@ -263,36 +185,27 @@
     <div class="container">
         <h2>Writing</h2>
 
-        <!-- Thinking -->
-        <section class="category-section">
-            <div class="category-header">
-                <h3>Thinking</h3>
-            </div>
-            <p class="category-description">Academic papers, technical analysis, analytical explorations.</p>
+        <section class="writing-section">
+            <h3>Thinking</h3>
+            <p class="section-description">Academic papers, technical analysis, analytical explorations.</p>
             <div id="thinking-posts">
                 <p class="no-posts">Loading...</p>
             </div>
         </section>
 
-        <!-- Feeling -->
-        <section class="category-section">
-            <div class="category-header">
-                <h3>Feeling</h3>
-            </div>
-            <p class="category-description">Personal reflections, lived experience, navigating systems.</p>
+        <section class="writing-section">
+            <h3>Feeling</h3>
+            <p class="section-description">Personal reflections, lived experience, navigating systems.</p>
             <div id="feeling-posts">
                 <p class="no-posts">Loading...</p>
             </div>
         </section>
 
-        <!-- Making -->
-        <section class="category-section">
-            <div class="category-header">
-                <h3>Making</h3>
-            </div>
-            <p class="category-description">Project case studies, building with intention.</p>
+        <section class="writing-section">
+            <h3>Making</h3>
+            <p class="section-description">Project case studies, building with intention.</p>
             <div id="making-posts">
-                <!-- Self-hosted making posts will render here, followed by Medium posts -->
+                <!-- Posts and Medium feed will render here -->
             </div>
         </section>
     </div>

@@ -46,18 +46,13 @@
         });
     }
 
-    // Render a featured post card
-    function renderFeaturedCard(post) {
+    // Render a featured post (prose style, not card)
+    function renderFeaturedPost(post) {
         return `
             <div class="featured-post">
-                <a href="blog/${post.slug}/" class="featured-link">
-                    <h4 class="featured-title">${post.title}</h4>
-                </a>
+                <h4><a href="blog/${post.slug}/">${post.title}</a></h4>
                 <p class="featured-excerpt">${post.excerpt}</p>
-                <div class="featured-meta">
-                    <span class="featured-date">${formatDate(post.date)}</span>
-                    <span class="featured-reading-time">${post.readingTime} min read</span>
-                </div>
+                <p class="featured-meta">${formatDate(post.date)} · ${post.readingTime} min read</p>
             </div>
         `;
     }
@@ -65,12 +60,9 @@
     // Render a compact post row
     function renderPostRow(post) {
         return `
-            <li class="post-row">
+            <li>
                 <a href="blog/${post.slug}/">${post.title}</a>
-                <span class="post-meta-inline">
-                    <span class="post-date">${formatDate(post.date)}</span>
-                    <span class="post-reading-time">${post.readingTime} min</span>
-                </span>
+                <span class="post-meta-inline"> · ${formatDate(post.date)} · ${post.readingTime} min</span>
             </li>
         `;
     }
@@ -95,7 +87,7 @@
         let html = '';
 
         if (featured) {
-            html += renderFeaturedCard(featured);
+            html += renderFeaturedPost(featured);
         }
 
         if (regular.length > 0) {
@@ -118,7 +110,7 @@
         renderCategoryPosts(groups.making, 'making-posts');
     }
 
-    // Render academic papers - now appended under Thinking section
+    // Render academic papers - appended under Thinking section
     function renderAcademicPapers(papers) {
         const container = document.getElementById('thinking-posts');
         if (!container || !papers || papers.length === 0) return;
@@ -127,11 +119,11 @@
         let existingContent = container.innerHTML;
 
         // Create Academic Papers subsection
-        let papersHtml = '<div class="papers-section"><h4 class="subsection-title">Academic Papers</h4><ul class="post-list">';
+        let papersHtml = '<div class="subsection"><h4>Academic Papers</h4><ul class="post-list">';
         papers.forEach(paper => {
             papersHtml += `
                 <li>
-                    <a href="${paper.url}" target="_blank">${paper.title} (PDF)</a>
+                    <a href="${paper.url}" target="_blank">${paper.title}</a> (PDF)
                     <span class="paper-description">${paper.description}</span>
                 </li>
             `;
@@ -142,7 +134,7 @@
         container.innerHTML = existingContent + papersHtml;
     }
 
-    // Medium feed integration - now renders under Making section
+    // Medium feed integration - renders under Making section
     async function fetchMediumFeed() {
         const parser = new DOMParser();
         const response = await fetch('https://api.allorigins.win/get?url=https://medium.com/feed/@wooz');
@@ -172,17 +164,18 @@
         const container = document.getElementById('making-posts');
         if (!container) return;
 
-        // Check if there's already content (from making posts)
+        // Get existing content (from making posts)
         let existingContent = container.innerHTML;
 
-        // Create Medium section header
-        let mediumHtml = '<div class="medium-section"><h4 class="subsection-title">From Medium</h4><ul class="post-list">';
+        // Create Medium subsection
+        let mediumHtml = '<div class="subsection"><h4>From Medium</h4><ul class="post-list">';
 
         posts.forEach(post => {
+            const date = new Date(post.pubDate).toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
             mediumHtml += `
                 <li>
                     <a href="${post.link}" target="_blank">${post.title}</a>
-                    <span class="post-date">${new Date(post.pubDate).toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}</span>
+                    <span class="post-meta-inline"> · ${date}</span>
                 </li>
             `;
         });
@@ -202,7 +195,7 @@
             console.error('Error fetching Medium feed:', error);
             const container = document.getElementById('making-posts');
             if (container) {
-                container.innerHTML += '<div class="medium-section"><h4 class="subsection-title">From Medium</h4><p class="error">Unable to load Medium posts.</p></div>';
+                container.innerHTML += '<div class="subsection"><h4>From Medium</h4><p class="no-posts">Unable to load Medium posts.</p></div>';
             }
         }
     }
