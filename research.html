@@ -75,11 +75,11 @@
             border-radius: 5px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
-        .section a {
+        .project a {
             color: #007bff;
             text-decoration: underline;
         }
-        .section a:hover {
+        .project a:hover {
             color: #0056b3;
         }
     </style>
@@ -101,92 +101,59 @@
         <h2>Research</h2>
 
         <div class="research-section">
-            <h3>Current Research</h3>
+            <h3>Recent Work</h3>
 
             <div class="project">
-                <h4>Financial Literacy AI for Migrant Workers</h4>
-                <div class="project-meta">The Reach Alliance | July 2024 — Present</div>
-                <p>Migrant workers arrive in Singapore and immediately need to navigate systems that assume you already understand them: opening bank accounts, understanding CPF contributions, reading employment contracts, figuring out remittance fees. Most of this information is in English. Most workers speak Bengali, Tamil, Mandarin, or Malay as their first language. The information exists, but the access doesn't.</p>
+                <h4>Financial Literacy for Migrant Workers</h4>
+                <div class="project-meta">Reach Alliance | 2024 - 2025</div>
+                <p>We started by trying to build a chatbot to teach migrant workers about savings and budgeting. We ended up learning that they already had sophisticated systems for managing money across borders - they didn't need our financial frameworks. They needed structural support: fair banking access, protection from exploitative employers, legal help when contracts were violated.</p>
 
-                <p>I'm leading research and prototype development on using conversational AI to bridge that gap. The core question: can a multilingual chatbot explain financial concepts (savings accounts, interest rates, insurance) in a way that actually makes sense to someone navigating an unfamiliar system in an unfamiliar language?</p>
+                <p>The most valuable thing wasn't the prototype. It was learning how to listen - through drawing exercises, spectrum mapping, conversations that went sideways from our research questions. One worker drew his house in blue, then added in green what he wanted to achieve in five years. Our chatbot was suggesting "save $50 this month" to someone building a home across continents.</p>
 
-                <p><strong>What I'm trying to figure out:</strong> How do you explain "CPF" when there's no direct translation and the concept itself is culturally specific? What makes a migrant worker trust an AI chatbot for financial advice when they're already dealing with institutional systems that don't always feel trustworthy? How do you design for people with wildly different levels of digital literacy and financial background?</p>
-
-                <p><strong>Technical approach:</strong> Building conversational agents using Retrieval-Augmented Generation (RAG), LangChain, and OpenAI APIs. The system pulls from financial education resources, adapts explanations based on the user's language and context, and provides Q&A support. I'm working with a team to design interfaces that don't assume everyone starts with the same baseline knowledge.</p>
+                <p><a href="blog/solution-stopped-being-the-point/">I wrote about what I learned from this project.</a></p>
 
                 <img src="./assets/img/reach.jpg" alt="Reach Alliance Project" class="research-image">
-                <p><a href="https://reachalliance.org/case-study/how-can-we-utilise-conversational-a-i-to-enhance-financial-literacy-for-migrant-workers-in-singapore/#article" target="_blank">Read the full case study</a> | <a href="https://reachalliance.org/partner/singapore-management-university/" target="_blank">SMU's Reach Alliance work</a></p>
+                <p><a href="https://reachalliance.org/case-study/how-can-we-utilise-conversational-a-i-to-enhance-financial-literacy-for-migrant-workers-in-singapore/#article" target="_blank">Read the case study</a></p>
+            </div>
+
+            <div class="project">
+                <h4>OTR Copilot</h4>
+                <div class="project-meta">Over The Rainbow | Capstone Project | 2025</div>
+                <p>Youth mentors at Over The Rainbow were spending a lot of time trying to interpret digital emotional expressions - emoji usage, message timing, Singlish particles like "sia" that carry emotional weight. I built a tool to help surface patterns across conversations without trying to automate the human work of actually listening.</p>
+
+                <p>Three complete redesigns taught me that building for emotionally sensitive contexts is less about technical sophistication and more about understanding what the human work actually is. The hardest part wasn't the NLP - it was figuring out how to support mentors without making everything feel clinical.</p>
+
+                <p>
+                    <a href="https://github.com/wooziecodes/otr-copilot" target="_blank">GitHub</a>
+                </p>
             </div>
         </div>
 
         <div class="research-section">
-            <h3>Applied Research & Technical Work</h3>
+            <h3>Past Projects</h3>
 
             <div class="project">
-                <h4>OTR Copilot: AI-Augmented System for Digital Emotional Support</h4>
-                <div class="project-meta">Over The Rainbow (OTR) | INTS402 Capstone Project | January 2025 — May 2025</div>
-                <p><strong>The Challenge:</strong> Youth well-being mentors at Over The Rainbow reported spending "considerably more time" interpreting digital emotional expressions compared to face-to-face interactions. Traditional emotional intelligence frameworks fail to account for Singapore's unique linguistic landscape—code-switching, Colloquial Singapore English (CSE) patterns like sentence-final particles ("sia"), emoji usage, and asynchronous timing signals that carry emotional weight in youth support conversations.</p>
-
-                <p><strong>My Approach:</strong> I led the end-to-end development from discovery research through technical implementation and user testing. User interviews with OTR mentors surfaced pain points, which shaped decisions about what to build and what to leave out. The core design choice: build something that supports the human work of listening without trying to automate it away.</p>
-
-                <p><strong>What I Built:</strong> A Flutter-based copilot with four core capabilities: (1) digital expression pattern recognition analyzing emoji usage, message timing, and linguistic shifts; (2) context-aware analysis with baseline tracking to detect emotional deviations; (3) LLM-powered message templates that preserve mentor authenticity; (4) resource recommendations integrated with OTR's knowledge base. The system incorporates custom NLP adaptations for CSE emotional markers, cultural-linguistic patterns, and privacy-first architecture.</p>
-
-                <p><strong>Validation & Impact:</strong> Testing with 5 OTR mentors showed 65% improvement in interpretation accuracy, with mentors rating the system 3.4/5 overall. User feedback validated core hypotheses about augmentation (AI enhances, doesn't replace human judgment) and workflow integration (effectiveness depends on seamless embedding, not disruption). The meta-analysis feature—surfacing emotional patterns across conversations—emerged as uniquely valuable, leveraging AI's computational strengths while preserving the relational core of peer support.</p>
-
-                <p><strong>Strategic Decisions:</strong> Scoped as standalone MVP (not full OTR platform integration) to balance capstone timeline constraints. Prioritized foundational UX and cognitive load management over advanced ML features. Used synthetic conversation data to maintain privacy/ethics. Chose rule-based approaches over complex models to ensure interpretability in emotionally sensitive contexts.</p>
-
-                <p><strong>Technical Stack:</strong> Flutter (cross-platform UI), Firebase (auth, Firestore, serverless functions), Google Gemini 2.5 Flash (context-aware message generation), custom NLP with Singapore English adaptations, cultural emoji interpretation algorithms.</p>
-
-                <p><strong>What I Learned:</strong> Three complete redesigns taught me that building AI for emotionally sensitive work is less about technical sophistication and more about understanding what human work actually is. The hardest part wasn't the NLP or the LLM integration—it was figuring out how to support mentors without making the work feel clinical and detached. Every technical decision (rule-based NLP for transparency, confidence indicators on every insight, custom Singapore English detection) came down to: does this help mentors do their work, or does it get in the way?</p>
-
-                <p>
-                    <a href="otr-copilot.html">Read the full case study</a> |
-                    <a href="https://github.com/wooziecodes/otr-copilot" target="_blank">GitHub Repository</a> |
-                    <a href="https://youtu.be/demo-link" target="_blank">Demo Video</a> |
-                    <a href="./assets/pdf/otr-capstone-report.pdf" target="_blank">Download Full Report (PDF)</a>
-                </p>
+                <h4>Kura Kura</h4>
+                <div class="project-meta">Co-founder | 2021 - 2024</div>
+                <p>Mental health app for Gen Z. We got $50k in funding, 1000+ downloads, pilots with NUS and Duke-NUS. I learned a lot about shipping products, managing a team, and eventually winding something down when it wasn't working.</p>
             </div>
+
+            <div class="project">
+                <h4>DayDayUp</h4>
+                <div class="project-meta">Beijing | Summer 2024</div>
+                <p>Worked at a Chinese tech accelerator building scrapers and automation tools. Mostly interesting for the exposure to how the Chinese tech ecosystem works differently from what I knew in Singapore.</p>
+            </div>
+        </div>
+
+        <div class="research-section">
+            <h3>Academic Writing</h3>
 
             <div class="project">
                 <h4>Affective Technologies</h4>
-                <div class="project-meta">Singapore Management University | Second Major</div>
-                <p>I added a second major in Affective Technologies through SMU's College of Integrative Studies because I kept running into the same question in my technical work: how do you build systems that recognize and respond to emotions without reducing those emotions to data points? The program combined computing, psychology, and neuroscience—which sounded interesting—but what actually pulled me in was the focus on the ethical mess of building emotion-aware AI.</p>
+                <div class="project-meta">Second Major at SMU</div>
+                <p>I kept running into the same question: how do you build systems that recognize emotions without reducing them to data points? This program was my attempt to sit with that question more seriously - combining computing, psychology, and ethics.</p>
 
-                <p>The coursework covered applications in gaming, education, and mental health support, but the part that stuck with me was the constant tension: emotion detection systems can be genuinely helpful (supporting mental health, improving human-computer interaction) or deeply invasive (surveillance, manipulation, dependency). The difference often comes down to design choices and who's making them.</p>
-
-                <p><strong>Written work:</strong> <a href="https://drive.google.com/file/d/195DYnmsYCal5NCDWHnWB2s_-hHUeLXV4/view?usp=sharing" target="_blank">"The Ethics of Anthropomorphic AI for Emotional Support"</a> — I wrote about what happens when we design AI to feel like a friend or therapist. When does anthropomorphism help build trust, and when does it cross into manipulation? What happens when people start depending on AI for emotional support that might be better coming from humans? These aren't hypothetical questions anymore.</p>
-            </div>
-        </div>
-
-        <div class="research-section">
-            <h3>Selected Projects</h3>
-
-            <div class="project">
-                <h4>Kura Kura — Mental Health Tech Startup</h4>
-                <div class="project-meta">Co-founder/CEO | May 2021 — May 2024</div>
-                <p>Co-founded and led development of a mobile app helping Gen Z foster emotional intelligence, alongside a web dashboard aggregating mood data for school administrators to assess student mental health. Secured $50,000 in pre-seed funding from raiSE, launched Kickstarter and Product Hunt campaigns attracting 70 backers from 5+ countries, and managed a team of 6 employees while overseeing product strategy and stakeholder engagement.</p>
-
-                <p><strong>What this shows:</strong> Entrepreneurial depth, ability to ship products at scale (1000+ downloads), stakeholder management across educational institutions (pilots with NUS, Duke-NUS Medical School, local secondary schools), and full-stack technical capability.</p>
-
-                <p><strong>Technical stack:</strong> React Native, React.js, PostgreSQL/Firebase, designed for scalability and institutional use.</p>
-            </div>
-
-            <div class="project">
-                <h4>China Tech Ecosystem — DayDayUp</h4>
-                <div class="project-meta">Technology Analyst | Beijing, China | May 2024 — August 2024</div>
-                <p>Worked as a Technology Analyst at a Chinese technology accelerator, developing automated systems for market intelligence and business development. Built a news scraper to aggregate and analyze tech-industry news, created an investor details scraper to streamline due diligence processes, and engineered an automated plugin for generating lead messages to improve outreach efficiency.</p>
-
-                <p><strong>What this shows:</strong> Cross-border tech exposure, rapid prototyping capability, understanding of Chinese innovation ecosystems and how they differ from Western contexts.</p>
-
-                <p><strong>Skills demonstrated:</strong> Web scraping, data aggregation and analysis, automation, working in Mandarin-speaking technical environments.</p>
-            </div>
-
-            <div class="project">
-                <h4>CarbonAware Crypto Dashboard</h4>
-                <div class="project-meta">IS463 - Digital Technologies for Sustainability | 2023</div>
-                <p>Created a dashboard to estimate carbon emissions from cryptocurrency trading data, demonstrating the intersection of blockchain technology and environmental consciousness. Provides users with insights into the ecological impact of their crypto activities.</p>
-
-                <p><strong>What this shows:</strong> Ability to apply technical skills to sustainability challenges, understanding of blockchain's environmental implications, data visualization for user education.</p>
+                <p><a href="https://drive.google.com/file/d/195DYnmsYCal5NCDWHnWB2s_-hHUeLXV4/view?usp=sharing" target="_blank">The Ethics of Anthropomorphic AI for Emotional Support</a> - What happens when we design AI to feel like a friend? When does that help, and when does it cross into manipulation?</p>
             </div>
         </div>
     </div>
