@@ -48,7 +48,7 @@
 
     // Get post URL (internal or external)
     function getPostUrl(post) {
-        if (post.external && post.url) {
+        if (post.url) {
             return post.url;
         }
         return `blog/${post.slug}/`;

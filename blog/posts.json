@@ -67,6 +67,13 @@
       "external": true
     },
     {
+      "title": "OTR Copilot",
+      "category": "making",
+      "date": "2025-05-01",
+      "url": "otr-copilot.html",
+      "excerpt": "I spent six months as a peer listener, missing emotional cues in text messages. So I built something to help."
+    },
+    {
       "title": "CS462: TODI — Optimising Cleaning with IoT",
       "category": "making",
       "date": "2024-04-01",
