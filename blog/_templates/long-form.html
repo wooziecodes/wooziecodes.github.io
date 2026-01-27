@@ -7,15 +7,21 @@
     <link rel="stylesheet" href="../styles/blog-post.css">
 </head>
 <body>
-    <article class="post" data-length="long">
-        <nav class="post-nav">
-            <a href="../../about.html">About</a>
-            <a href="../../blog.html">Writing</a>
-            <a href="../../research.html">Research</a>
-            <a href="../../reading.html">Reading</a>
+    <header class="site-header">
+        <h1>Arif Woozeer</h1>
+        <nav>
+            <ul>
+                <li><a href="../../about.html">About</a></li>
+                <li><a href="../../blog.html">Writing</a></li>
+                <li><a href="../../research.html">Research</a></li>
+                <li><a href="../../reading.html">Reading</a></li>
+            </ul>
         </nav>
+    </header>
 
-        <header class="post-header">
+    <div class="container">
+        <article class="post" data-length="long">
+            <header class="post-header">
             <h1 class="post-title">{{TITLE}}</h1>
             <div class="post-meta">
                 <span class="post-date">{{DATE}}</span>
@@ -44,19 +50,20 @@
             {{CONTENT}}
         </div>
 
-        <footer class="post-footer">
-            <p><a href="../../blog.html">&larr; Back to writing</a></p>
+            <footer class="post-footer">
+                <p><a href="../../blog.html">&larr; Back to writing</a></p>
 
-            <!-- Optional: Related posts
-            <div class="related-posts">
-                <p class="related-posts-title">More in {{CATEGORY}}</p>
-                <ul class="related-posts-list">
-                    <li><a href="../{{RELATED_SLUG}}/">{{RELATED_TITLE}}</a></li>
-                </ul>
-            </div>
-            -->
-        </footer>
-    </article>
+                <!-- Optional: Related posts
+                <div class="related-posts">
+                    <p class="related-posts-title">More in {{CATEGORY}}</p>
+                    <ul class="related-posts-list">
+                        <li><a href="../{{RELATED_SLUG}}/">{{RELATED_TITLE}}</a></li>
+                    </ul>
+                </div>
+                -->
+            </footer>
+        </article>
+    </div>
 
     <script>
         // Auto-generate Table of Contents
