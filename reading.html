@@ -255,7 +255,8 @@
                     review: cleanReviewHtml(getTextContent('user_review')),
                     rating: parseInt(getTextContent('user_rating')) || 0,
                     status: shelf.label,
-                    priority: shelf.priority
+                    priority: shelf.priority,
+                    readAt: getTextContent('user_read_at')
                 };
 
                 // Only add if we have at least a title
@@ -302,8 +303,22 @@
                 }
             });
 
+            // Filter to only show books from 2024 onwards
+            const cutoffYear = 2024;
+            const filtered = Array.from(bookMap.values()).filter(book => {
+                // Always show currently-reading books (no read date yet)
+                if (book.status === 'Currently Reading') return true;
+
+                // Exclude books without a read date
+                if (!book.readAt) return false;
+
+                // Check if read year is 2024 or later
+                const readYear = new Date(book.readAt).getFullYear();
+                return !isNaN(readYear) && readYear >= cutoffYear;
+            });
+
             // Sort: books with reviews first, then by priority within each group
-            return Array.from(bookMap.values()).sort((a, b) => {
+            return filtered.sort((a, b) => {
                 const aHasReview = a.review && a.review.trim() !== '' ? 0 : 1;
                 const bHasReview = b.review && b.review.trim() !== '' ? 0 : 1;
 
