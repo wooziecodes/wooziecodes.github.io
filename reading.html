@@ -91,42 +91,6 @@
         .book-review-text p:last-child {
             margin-bottom: 0;
         }
-        .loading {
-            text-align: center;
-            padding: 40px;
-            color: #666;
-        }
-        .loading-spinner {
-            display: inline-block;
-            width: 24px;
-            height: 24px;
-            border: 3px solid #e0e0e0;
-            border-top-color: #333;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-            margin-right: 10px;
-            vertical-align: middle;
-        }
-        @keyframes spin {
-            to { transform: rotate(360deg); }
-        }
-        .error-state {
-            text-align: center;
-            padding: 40px;
-            color: #666;
-        }
-        .error-state button {
-            margin-top: 15px;
-            padding: 10px 20px;
-            background-color: #333;
-            color: #fff;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        .error-state button:hover {
-            background-color: #555;
-        }
         .star-rating {
             color: #f4b400;
             font-size: 1.1em;
@@ -134,23 +98,6 @@
         }
         .star-rating .empty {
             color: #ddd;
-        }
-        .show-more-container {
-            grid-column: 1 / -1;
-            text-align: center;
-            padding: 20px 0;
-        }
-        .show-more-btn {
-            padding: 12px 30px;
-            background-color: #333;
-            color: #fff;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 1em;
-        }
-        .show-more-btn:hover {
-            background-color: #555;
         }
     </style>
 </head>
@@ -169,167 +116,68 @@
 
     <div class="container">
         <h2>Reading</h2>
-        <p>Books I've recently read, am currently reading, or consider favorites. Reviews reflect my personal thoughts and takeaways.</p>
+        <p>A selection of books I've recently read with my thoughts and takeaways.</p>
 
         <div id="bookshelf" class="book-grid">
-            <!-- Books will be dynamically inserted here -->
+            <!-- Books will be inserted here -->
         </div>
+
+        <p style="text-align: center; margin-top: 30px;">
+            <a href="https://www.goodreads.com/user/show/14444457" target="_blank" style="color: #0066cc;">View more on Goodreads →</a>
+        </p>
     </div>
 
     <script>
-        // Configuration
-        const CONFIG = {
-            userId: '14444457',
-            corsProxy: 'https://corsproxy.io/?',
-            shelves: [
-                { name: 'currently-reading', label: 'Currently Reading', priority: 1 },
-                { name: 'favorites', label: 'Favorite', priority: 2 },
-                { name: 'read', label: 'Read', priority: 3 }
-            ],
-            cacheKey: 'goodreadsBookshelfData',
-            cacheTimestampKey: 'goodreadsBookshelfTimestamp',
-            cacheDuration: 24 * 60 * 60 * 1000, // 24 hours
-            booksPerPage: 12
-        };
+        // Static book data
+        const books = [
+            {
+                title: "Against Happiness: In Praise of Melancholy",
+                author: "Eric G. Wilson",
+                cover: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1438474855l/1298834.jpg",
+                link: "https://www.goodreads.com/book/show/1298834.Against_Happiness",
+                rating: 4,
+                status: "Read",
+                review: `chanced upon the book at the reference section of the library.
+the cover seemed deceiving (another self-help drudgery?)
+but wilson takes the reader on a socio-political journey examining the merits of melancholy and isolation.
+his thesis that treats sustained discomfort as intellectually valuable rather than a problem to be solved can be contentious but one that perhaps should be interrogated in light of "happiness metrics" or the idea that happiness can be optimized like productivity.
+there's discourse on the idea of tragic humanism, the belief that meaning emerges not from comfort or salvation, but from confronting suffering, limitation, and the absurdity of the human condition.
+wilson doesn't resolve whether a difficult, unresolved life is a "good" one, but perhaps the refusal to resolve it is his own subtle provocation.`
+            },
+            {
+                title: "Determined: A Science of Life without Free Will",
+                author: "Robert M. Sapolsky",
+                cover: "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1685350965i/83817782.jpg",
+                link: "https://www.goodreads.com/book/show/83817782-determined",
+                rating: 5,
+                status: "Read",
+                review: `finished this one on a tube in london with minh (@minh — you probably remember the tattered pages).
 
-        // Pagination state
-        let allBooksData = [];
-        let currentlyShown = 0;
+picked this up expecting an argument, a cogent/fortified thesis, and got something closer to an autopsy. sapolsky isn't interested in comforting anyone; he just keeps peeling back layers until the idea of "choice" starts to look like a story we tell ourselves after the fact.
 
-        // Show loading state
-        function showLoading() {
-            document.getElementById('bookshelf').innerHTML = `
-                <div class="loading">
-                    <span class="loading-spinner"></span>
-                    Loading books from Goodreads...
-                </div>
-            `;
-        }
+what felt most refreshing was how unfamiliar the angle was. free will is usually debated in philosophy seminars that can feel abstract or circular. here it's treated as a biological question, and that shift quietly dismantles an entire moral economy. praise, blame, deservingness (all the invisible accounting we do) start to feel mispriced.
 
-        // Show error state
-        function showError(message) {
-            document.getElementById('bookshelf').innerHTML = `
-                <div class="error-state">
-                    <p>${message}</p>
-                    <button onclick="loadBooks(true)">Try Again</button>
-                </div>
-            `;
-        }
+growing up pretty much extolling meritocracy and conditioned to treat it as sacrosanct, the book lands uncomfortably close to home. effort, discipline, ambition (even shame) are framed not as virtues or failures but as outcomes. products of biology, upbringing, timing. the mirror stops accusing and starts explaining.
 
-        // Build Goodreads RSS URL for a shelf
-        function getShelfUrl(shelfName) {
-            return `https://www.goodreads.com/review/list_rss/${CONFIG.userId}?shelf=${shelfName}`;
-        }
+the book does rush past philosophy too quickly. attempts to rescue free will are dismissed fairly quickly, which feels abrupt compared to how carefully the neuroscience is handled. for something that dismantles meaning so thoroughly, the impatience with centuries of thought feels oddly narrow?
 
-        // Fetch a single shelf via CORS proxy
-        async function fetchShelf(shelf) {
-            const url = CONFIG.corsProxy + encodeURIComponent(getShelfUrl(shelf.name));
-            const response = await fetch(url);
+still, there's a strange relief here. if no one truly earns their advantages or deserves their failures, then maybe the cruelty we apply (especially to ourselves) was never necessary.`
+            },
+            {
+                title: "Letters to a Young Poet",
+                author: "Rainer Maria Rilke",
+                cover: "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1321994947i/46199.jpg",
+                link: "https://www.goodreads.com/book/show/46199.Letters_to_a_Young_Poet",
+                rating: 4,
+                status: "Read",
+                review: `a friend kindly gifted the book towards the end of 2025.
+it genuinely stills enthralls me, how a string of words put together by men corresponding by mail, could have such a visceral impact.
 
-            if (!response.ok) {
-                throw new Error(`Failed to fetch shelf: ${shelf.name}`);
+this quote "I beg you, to have patience with everything unresolved in your heart and to try to love the questions themselves as if they were locked rooms or books written in a very foreign language. Don't search for the answers, which could not be given to you now, because you would not be able to live them. And the point is to live everything. Live the questions now. Perhaps then, someday far in the future, you will gradually, without even noticing it, live your way into the answer" from Rilke in his correspondence to Kappus, essentially articulating that some questions cannot be answered intellectually or prematurely.
+
+trusting that emotional ambiguity doesn't always need to be interrogated, something to hold with for 2026.`
             }
-
-            const text = await response.text();
-            const parser = new DOMParser();
-            const xml = parser.parseFromString(text, 'application/xml');
-            return parseRSSXml(xml, shelf);
-        }
-
-        // Parse RSS XML and extract book data
-        function parseRSSXml(xml, shelf) {
-            const items = xml.querySelectorAll('item');
-            const books = [];
-
-            items.forEach(item => {
-                const getTextContent = (tagName) => {
-                    const element = item.querySelector(tagName);
-                    return element ? element.textContent.trim() : '';
-                };
-
-                const book = {
-                    title: getTextContent('title'),
-                    author: getTextContent('author_name'),
-                    cover: getTextContent('book_image_url'),
-                    link: getTextContent('link'),
-                    review: cleanReviewHtml(getTextContent('user_review')),
-                    rating: parseInt(getTextContent('user_rating')) || 0,
-                    status: shelf.label,
-                    priority: shelf.priority,
-                    readAt: getTextContent('user_read_at')
-                };
-
-                // Only add if we have at least a title
-                if (book.title) {
-                    books.push(book);
-                }
-            });
-
-            return books;
-        }
-
-        // Clean HTML from review text
-        function cleanReviewHtml(html) {
-            if (!html) return '';
-
-            // Convert <br> tags to newlines
-            let text = html.replace(/<br\s*\/?>/gi, '\n');
-
-            // Strip all other HTML tags
-            text = text.replace(/<[^>]*>/g, '');
-
-            // Decode HTML entities
-            const textarea = document.createElement('textarea');
-            textarea.innerHTML = text;
-            text = textarea.value;
-
-            // Clean up excessive whitespace
-            text = text.replace(/\n{3,}/g, '\n\n').trim();
-
-            return text;
-        }
-
-        // Deduplicate books across shelves (higher priority status wins)
-        function deduplicateBooks(allBooks) {
-            const bookMap = new Map();
-
-            allBooks.forEach(book => {
-                const key = book.title.toLowerCase() + '|' + book.author.toLowerCase();
-                const existing = bookMap.get(key);
-
-                // Keep the book with higher priority (lower number)
-                if (!existing || book.priority < existing.priority) {
-                    bookMap.set(key, book);
-                }
-            });
-
-            // Filter to only show books from 2024 onwards
-            const cutoffYear = 2024;
-            const filtered = Array.from(bookMap.values()).filter(book => {
-                // Always show currently-reading books (no read date yet)
-                if (book.status === 'Currently Reading') return true;
-
-                // Exclude books without a read date
-                if (!book.readAt) return false;
-
-                // Check if read year is 2024 or later
-                const readYear = new Date(book.readAt).getFullYear();
-                return !isNaN(readYear) && readYear >= cutoffYear;
-            });
-
-            // Sort: books with reviews first, then by priority within each group
-            return filtered.sort((a, b) => {
-                const aHasReview = a.review && a.review.trim() !== '' ? 0 : 1;
-                const bHasReview = b.review && b.review.trim() !== '' ? 0 : 1;
-
-                // First sort by whether they have reviews
-                if (aHasReview !== bHasReview) {
-                    return aHasReview - bHasReview;
-                }
-                // Then by priority (currently reading, favorites, read)
-                return a.priority - b.priority;
-            });
-        }
+        ];
 
         // Generate star rating HTML
         function getStarRatingHtml(rating) {
@@ -342,56 +190,12 @@
             return `<div class="star-rating">${stars}</div>`;
         }
 
-        // Fetch all shelves and return combined book list
-        async function fetchAllBooks() {
-            // Check cache first
-            const cachedData = localStorage.getItem(CONFIG.cacheKey);
-            const cachedTimestamp = localStorage.getItem(CONFIG.cacheTimestampKey);
-
-            if (cachedData && cachedTimestamp && (Date.now() - parseInt(cachedTimestamp) < CONFIG.cacheDuration)) {
-                return JSON.parse(cachedData);
-            }
-
-            // Fetch all shelves in parallel
-            const shelfPromises = CONFIG.shelves.map(shelf => fetchShelf(shelf));
-            const results = await Promise.all(shelfPromises);
-
-            // Flatten and deduplicate
-            const allBooks = results.flat();
-            const books = deduplicateBooks(allBooks);
-
-            // Cache the results
-            localStorage.setItem(CONFIG.cacheKey, JSON.stringify(books));
-            localStorage.setItem(CONFIG.cacheTimestampKey, Date.now().toString());
-
-            return books;
-        }
-
         // Display books in the grid
-        function displayBooks(books, append = false) {
+        function displayBooks() {
             const bookshelf = document.getElementById('bookshelf');
+            bookshelf.innerHTML = '';
 
-            if (!append) {
-                bookshelf.innerHTML = '';
-                currentlyShown = 0;
-                allBooksData = books;
-            }
-
-            if (allBooksData.length === 0) {
-                bookshelf.innerHTML = '<p>No books found.</p>';
-                return;
-            }
-
-            // Remove existing Show More button if present
-            const existingBtn = bookshelf.querySelector('.show-more-container');
-            if (existingBtn) {
-                existingBtn.remove();
-            }
-
-            // Get the next batch of books to display
-            const booksToShow = allBooksData.slice(currentlyShown, currentlyShown + CONFIG.booksPerPage);
-
-            booksToShow.forEach(book => {
+            books.forEach(book => {
                 const bookElement = document.createElement('div');
                 bookElement.className = 'book-item';
 
@@ -414,7 +218,7 @@
                     `;
                 }
 
-                // Build cover image HTML (with fallback)
+                // Build cover image HTML
                 const coverHtml = book.cover
                     ? `<a href="${book.link}" target="_blank"><img src="${book.cover}" alt="${book.title} cover"></a>`
                     : '';
@@ -429,41 +233,10 @@
                 `;
                 bookshelf.appendChild(bookElement);
             });
-
-            currentlyShown += booksToShow.length;
-
-            // Add Show More button if there are more books
-            if (currentlyShown < allBooksData.length) {
-                const showMoreContainer = document.createElement('div');
-                showMoreContainer.className = 'show-more-container';
-                showMoreContainer.innerHTML = `
-                    <button class="show-more-btn" onclick="displayBooks(null, true)">Show More</button>
-                `;
-                bookshelf.appendChild(showMoreContainer);
-            }
-        }
-
-        // Main function to load and display books
-        async function loadBooks(forceRefresh = false) {
-            showLoading();
-
-            try {
-                // Clear cache if force refresh
-                if (forceRefresh) {
-                    localStorage.removeItem(CONFIG.cacheKey);
-                    localStorage.removeItem(CONFIG.cacheTimestampKey);
-                }
-
-                const books = await fetchAllBooks();
-                displayBooks(books);
-            } catch (error) {
-                console.error('Error fetching books:', error);
-                showError('Unable to load books from Goodreads. Please try again later.');
-            }
         }
 
         // Initialize
-        loadBooks();
+        displayBooks();
     </script>
 </body>
 </html>
