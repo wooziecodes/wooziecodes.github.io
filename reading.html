@@ -91,14 +91,6 @@
         .book-review-text p:last-child {
             margin-bottom: 0;
         }
-        .star-rating {
-            color: #f4b400;
-            font-size: 1.1em;
-            margin-top: 5px;
-        }
-        .star-rating .empty {
-            color: #ddd;
-        }
     </style>
 </head>
 <body>
@@ -116,126 +108,84 @@
 
     <div class="container">
         <h2>Reading</h2>
-        <p>A selection of books I've recently read with my thoughts and takeaways.</p>
+        <p>Books I've recently read, am currently reading, or consider favorites. Reviews reflect my personal thoughts and takeaways.</p>
 
         <div id="bookshelf" class="book-grid">
-            <!-- Books will be inserted here -->
+            <!-- Books will be dynamically inserted here -->
         </div>
-
-        <p style="text-align: center; margin-top: 30px;">
-            <a href="https://www.goodreads.com/user/show/14444457" target="_blank" style="color: #0066cc;">View more on Goodreads →</a>
-        </p>
     </div>
 
     <script>
-        // Static book data
-        const books = [
-            {
-                title: "Against Happiness: In Praise of Melancholy",
-                author: "Eric G. Wilson",
-                cover: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1438474855l/1298834.jpg",
-                link: "https://www.goodreads.com/book/show/1298834.Against_Happiness",
-                rating: 4,
-                status: "Read",
-                review: `chanced upon the book at the reference section of the library.
-the cover seemed deceiving (another self-help drudgery?)
-but wilson takes the reader on a socio-political journey examining the merits of melancholy and isolation.
-his thesis that treats sustained discomfort as intellectually valuable rather than a problem to be solved can be contentious but one that perhaps should be interrogated in light of "happiness metrics" or the idea that happiness can be optimized like productivity.
-there's discourse on the idea of tragic humanism, the belief that meaning emerges not from comfort or salvation, but from confronting suffering, limitation, and the absurdity of the human condition.
-wilson doesn't resolve whether a difficult, unresolved life is a "good" one, but perhaps the refusal to resolve it is his own subtle provocation.`
-            },
-            {
-                title: "Determined: A Science of Life without Free Will",
-                author: "Robert M. Sapolsky",
-                cover: "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1685350965i/83817782.jpg",
-                link: "https://www.goodreads.com/book/show/83817782-determined",
-                rating: 5,
-                status: "Read",
-                review: `finished this one on a tube in london with minh (@minh — you probably remember the tattered pages).
+        async function fetchBooks() {
+            try {
+                // Check if we have cached data
+                const cachedData = localStorage.getItem('bookshelfData');
+                const cachedTimestamp = localStorage.getItem('bookshelfTimestamp');
 
-picked this up expecting an argument, a cogent/fortified thesis, and got something closer to an autopsy. sapolsky isn't interested in comforting anyone; he just keeps peeling back layers until the idea of "choice" starts to look like a story we tell ourselves after the fact.
-
-what felt most refreshing was how unfamiliar the angle was. free will is usually debated in philosophy seminars that can feel abstract or circular. here it's treated as a biological question, and that shift quietly dismantles an entire moral economy. praise, blame, deservingness (all the invisible accounting we do) start to feel mispriced.
-
-growing up pretty much extolling meritocracy and conditioned to treat it as sacrosanct, the book lands uncomfortably close to home. effort, discipline, ambition (even shame) are framed not as virtues or failures but as outcomes. products of biology, upbringing, timing. the mirror stops accusing and starts explaining.
-
-the book does rush past philosophy too quickly. attempts to rescue free will are dismissed fairly quickly, which feels abrupt compared to how carefully the neuroscience is handled. for something that dismantles meaning so thoroughly, the impatience with centuries of thought feels oddly narrow?
-
-still, there's a strange relief here. if no one truly earns their advantages or deserves their failures, then maybe the cruelty we apply (especially to ourselves) was never necessary.`
-            },
-            {
-                title: "Letters to a Young Poet",
-                author: "Rainer Maria Rilke",
-                cover: "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1321994947i/46199.jpg",
-                link: "https://www.goodreads.com/book/show/46199.Letters_to_a_Young_Poet",
-                rating: 4,
-                status: "Read",
-                review: `a friend kindly gifted the book towards the end of 2025.
-it genuinely stills enthralls me, how a string of words put together by men corresponding by mail, could have such a visceral impact.
-
-this quote "I beg you, to have patience with everything unresolved in your heart and to try to love the questions themselves as if they were locked rooms or books written in a very foreign language. Don't search for the answers, which could not be given to you now, because you would not be able to live them. And the point is to live everything. Live the questions now. Perhaps then, someday far in the future, you will gradually, without even noticing it, live your way into the answer" from Rilke in his correspondence to Kappus, essentially articulating that some questions cannot be answered intellectually or prematurely.
-
-trusting that emotional ambiguity doesn't always need to be interrogated, something to hold with for 2026.`
-            }
-        ];
-
-        // Generate star rating HTML
-        function getStarRatingHtml(rating) {
-            if (!rating || rating === 0) return '';
-
-            let stars = '';
-            for (let i = 1; i <= 5; i++) {
-                stars += i <= rating ? '★' : '<span class="empty">★</span>';
-            }
-            return `<div class="star-rating">${stars}</div>`;
-        }
-
-        // Display books in the grid
-        function displayBooks() {
-            const bookshelf = document.getElementById('bookshelf');
-            bookshelf.innerHTML = '';
-
-            books.forEach(book => {
-                const bookElement = document.createElement('div');
-                bookElement.className = 'book-item';
-
-                // Build review HTML if review exists
-                let reviewHTML = '';
-                if (book.review && book.review.trim() !== '') {
-                    const reviewParagraphs = book.review
-                        .split('\n\n')
-                        .filter(p => p.trim() !== '')
-                        .map(p => `<p>${p.trim()}</p>`)
-                        .join('');
-
-                    reviewHTML = `
-                        <div class="book-review">
-                            <h4>Review</h4>
-                            <div class="book-review-text">
-                                ${reviewParagraphs}
-                            </div>
-                        </div>
-                    `;
+                // If we have cached data and it's less than 24 hours old, use it
+                if (cachedData && cachedTimestamp && (Date.now() - cachedTimestamp < 24 * 60 * 60 * 1000)) {
+                    return JSON.parse(cachedData);
                 }
 
-                // Build cover image HTML
-                const coverHtml = book.cover
-                    ? `<a href="${book.link}" target="_blank"><img src="${book.cover}" alt="${book.title} cover"></a>`
-                    : '';
+                // If no valid cached data, fetch from server
+                const response = await fetch('books.json');
+                const books = await response.json();
 
-                bookElement.innerHTML = `
-                    ${coverHtml}
-                    <h3><a href="${book.link}" target="_blank">${book.title}</a></h3>
-                    <p>${book.author}</p>
-                    ${getStarRatingHtml(book.rating)}
-                    <p class="book-status">${book.status}</p>
-                    ${reviewHTML}
-                `;
-                bookshelf.appendChild(bookElement);
-            });
+                // Cache the new data
+                localStorage.setItem('bookshelfData', JSON.stringify(books));
+                localStorage.setItem('bookshelfTimestamp', Date.now().toString());
+
+                return books;
+            } catch (error) {
+                console.error('Error fetching books:', error);
+                throw error;
+            }
         }
 
-        // Initialize
+        async function displayBooks() {
+            try {
+                const books = await fetchBooks();
+                const bookshelf = document.getElementById('bookshelf');
+                bookshelf.innerHTML = ''; // Clear existing content
+
+                books.forEach(book => {
+                    const bookElement = document.createElement('div');
+                    bookElement.className = 'book-item';
+
+                    // Build review HTML if review exists
+                    let reviewHTML = '';
+                    if (book.review && book.review.trim() !== '') {
+                        // Convert newlines to paragraph breaks
+                        const reviewParagraphs = book.review
+                            .split('\n\n')
+                            .filter(p => p.trim() !== '')
+                            .map(p => `<p>${p.trim()}</p>`)
+                            .join('');
+
+                        reviewHTML = `
+                            <div class="book-review">
+                                <h4>Review</h4>
+                                <div class="book-review-text">
+                                    ${reviewParagraphs}
+                                </div>
+                            </div>
+                        `;
+                    }
+
+                    bookElement.innerHTML = `
+                        <img src="${book.cover}" alt="${book.title} cover">
+                        <h3>${book.title}</h3>
+                        <p>${book.author}</p>
+                        <p class="book-status">${book.status}</p>
+                        ${reviewHTML}
+                    `;
+                    bookshelf.appendChild(bookElement);
+                });
+            } catch (error) {
+                document.getElementById('bookshelf').innerHTML = '<p>hmm.. the scraper does not seem to be working, try again later! or i need to topup my heroku credits..</p>';
+            }
+        }
+
         displayBooks();
     </script>
 </body>
