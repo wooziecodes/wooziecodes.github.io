@@ -1,115 +1,128 @@
-
 [
   {
-    "title": "A Promised Land",
+    "title": "Dreams from My Father: A Story of Race and Inheritance",
     "author": "Barack Obama",
-    "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1600357110l/55361205._SX98_.jpg",
-    "status": "Read",
-    "review": "I read this trying to understand the gap between what gets celebrated in presidential rhetoric and what actually shifts power structures. How much does individual agency matter when you're embedded in institutions designed to resist transformation? Obama's reflections on compromise made me question whether incrementalism is strategic necessity or just another way of deferring the deeper question: whose dignity gets traded away in the name of pragmatism?",
-    "link": "https://www.goodreads.com/book/show/55361205-a-promised-land"
-  },
-  {
-    "title": "Building a Second Brain: A Proven Method to Organize Your Digital Life and Unlock Your Creative Potential",
-    "author": "Tiago Forte",
-    "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1652891488l/59616977._SX98_.jpg",
-    "status": "Read",
-    "review": "There's something both useful and deeply troubling about productivity optimization culture. Forte's system works (I use parts of it) but I keep asking: does organizing my information build solidarity or just make me a more efficient individual while the systems around me stay extractive? Personal knowledge management feels like a hedge against institutional failure rather than a challenge to it.",
-    "link": "https://www.goodreads.com/book/show/59616977-building-a-second-brain"
-  },
-  {
-    "title": "Together: Why Social Connection Holds the Key to Better Health, Higher Performance, and Greater Happiness",
-    "author": "Vivek H. Murthy",
-    "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1569893285l/43309159._SX98_.jpg",
-    "status": "Read",
-    "review": "Murthy treats loneliness as a medical condition, which is both revelatory and limiting. Yes, isolation damages our health, but when does framing connection through health outcomes and performance metrics medicalize something that's fundamentally about how we've built systems that fracture community? I read this alongside my work on solidarity infrastructure, noticing where the clinical lens illuminates and where it obscures.",
-    "link": "https://www.goodreads.com/book/show/61604770-together"
-  },
-  {
-    "title": "The Spirit Catches You and You Fall Down",
-    "author": "Anne Fadiman",
-    "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1432610033l/12609._SY75_.jpg",
+    "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1352340675l/88061._SX300_.jpg",
     "status": "Favorite",
-    "review": "This book haunts me because it refuses to resolve the tragedy it documents. Fadiman shows how a medical system and a Hmong family both acting with care can still produce devastating outcomes when institutions can't see beyond their own frameworks. It's not about individual prejudice; it's about how systems built on monolingual, monocultural assumptions do violence even when individuals mean well. Every time I design something meant to 'help,' I think about Lia Lee and ask: whose meaning-making am I erasing?",
-    "link": "https://www.goodreads.com/book/show/12609.The_Spirit_Catches_You_and_You_Fall_Down"
+    "review": "I came across Dreams from My Father essentially by accident at a bookstore in Ipoh. I remember thinking, having already read (and listened to) A Promised Land when it first came out, skimming through the more technical bits: \"do I really need another Obama book?\" I felt like I already knew the arc, the ideas, the public version of the man.But reading it now, after university, after entering the working world, and after having the privilege of working more closely in a team with colleagues from across the African continent, I've been able to parse through Obama's journey with a different lens. His reflections on growing up across countries, moving between worlds, and learning how to read himself through other people's expectations are well-documented. What stayed with me most, though, was the chapter where he \"returns\" to Kenya and the subtle discomfort that came along with it.The discrepancies he encounters as a son, as \"kin\", as someone who is technically from there but also not, felt rather familiar. It made me think about my own position as a member of the Mauritian disapora: African? Indian? something in between and sometimes neither... What does it mean to inherit a place without fully belonging to it? And to an extent, what, if anything, does that inheritance demand of me? These are questions I'm trying to interrogate but reading him made me feel that maybe sitting with the discomfort is itself part of the work.I was also struck by how early his thinking about law appears, not as something abstract or procedural, but as a moral project. His suggestion that law is a way for a nation to examine its conscience feels especially resonant now. Law, in this framing, isn't just about order or rights, but about who we decide counts, whose injuries are legible, and what kinds of obligations we are willing to acknowledge to one another as a community. That idea of community, not as sentiment but as responsibility, threads through the book fairly persistently.Reading Dreams from My Father like this makes me want to return to The Audacity of Hope and A Promised Land, but more slowly this time, with better questions. Less about the statesman version, more about how you build a legal/political imagination when you never really \"land\" anywhere..",
+    "link": "https://www.goodreads.com/review/show/8249710704?utm_medium=api&utm_source=rss"
   },
   {
-    "title": "What I Know for Sure",
-    "author": "Oprah Winfrey",
-    "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1400988917l/21531503._SY75_.jpg",
+    "title": "Where I Was: A Memoir About Forgetting and Remembering",
+    "author": "Constance Singam",
+    "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1647605840l/60528975._SX300_.jpg",
     "status": "Favorite",
-    "review": "Winfrey's certainty is earned, not performed, and that distinction matters. I keep this as a favorite not because I agree with everything, but because it reminds me that personal wisdom and systemic critique aren't opposed. She writes about resilience without pretending individual strength fixes structural violence. There's something powerful about claiming 'what I know for sure' while acknowledging that certainty doesn't erase complexity.",
-    "link": "https://www.goodreads.com/book/show/21531503-what-i-know-for-sure"
+    "review": "a friend introduced me to singam's work and what strikes me most is how the memoir captures the internal contradictions of advocacy work. i.e even within AWARE's leadership, feminism meant different things to different people while also uncovering a reality of coalition-building.there's this observation about the \"package deal\" problem: if you identify as feminist, do you also need positions on lesbian rights, homosexuality, sex work? where do the boundaries lie, and who decides which struggles are legitimately connected? mostly, the memoir reveals how advocacy work in singapore involves constant navigation - of structural barriers, strategic compromises, the negotiation between what's possible and what's necessary. the questions it raises feel more valuable than any definitive answers it might offer.",
+    "link": "https://www.goodreads.com/review/show/8283987761?utm_medium=api&utm_source=rss"
   },
   {
-    "title": "When Breath Becomes Air",
-    "author": "Paul Kalanithi",
-    "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1492677644l/25899336._SX50_.jpg",
+    "title": "Letters to a Young Poet",
+    "author": "Rainer Maria Rilke",
+    "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1321994947l/46199._SX300_.jpg",
     "status": "Favorite",
-    "review": "Kalanithi writes from the intersection of doctor and patient, and that dual perspective reveals what medical training systematically erases: how to hold meaning when the body fails. His neurosurgical precision meets mortality, and instead of resolution he offers something harder—living in the tension between extending life and making it meaningful. I return to this when I need to remember that some questions shouldn't be optimized away.",
-    "link": "https://www.goodreads.com/book/show/25899336-when-breath-becomes-air"
+    "review": "a friend kindly gifted the book towards the end of 2025. it genuinely stills enthralls me, how a string of words put together by men corresponding by mail, could have such a visceral impact. this quote \" I beg you, to have patience with everything unresolved in your heart and to try to love the questions themselves as if they were locked rooms or books written in a very foreign language. Don\u2019t search for the answers, which could not be given to you now, because you would not be able to live them. And the point is to live everything. Live the questions now. Perhaps then, someday far in the future, you will gradually, without even noticing it, live your way into the answer\" from Rilke in his correspondence to Kappus, essentially articulating that some questions cannot be answered intellectually or prematurely. trusting that emotional ambiguity doesn't always need to be interrogated is not an easy pill to swallow but perhaps a useful heuristic to employ for certain situations.",
+    "link": "https://www.goodreads.com/review/show/8249710167?utm_medium=api&utm_source=rss"
   },
   {
-    "title": "Human Acts",
-    "author": "Han Kang",
-    "cover": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1728665520i/30091914._SX98_.jpg",
-    "status": "Read",
-    "review": "I needed to understand how state violence against students gets remembered and resisted. The Gwangju Uprising isn't just historical; it's about what happens when a state decides certain bodies don't deserve dignity, and how literature can refuse that erasure. Kang writes the aftermath, not just the event itself, and that choice matters.",
-    "link": "https://www.goodreads.com/book/show/30091914-human-acts"
-  },
-  {
-    "title": "Last Night I Dreamed of Peace",
-    "author": "Đặng Thùy Trâm",
-    "cover": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1355658669i/3587865._SX98_.jpg",
-    "status": "Read",
-    "review": "A Vietnamese doctor's diary from the war. I wanted to see how someone records daily life while their world is being destroyed. There's something about diaries written during violence that resists the sanitized narratives we get later. Witnessing in real time, before anyone knows how the story ends.",
-    "link": "https://www.goodreads.com/book/show/3587865"
-  },
-  {
-    "title": "Kampong Boy",
-    "author": "M. Ravi",
-    "cover": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1316727896i/635606._SX98_.jpg",
-    "status": "Read",
-    "review": "A Malaysian childhood memoir that helped me understand belonging in Southeast Asia beyond the academic frameworks I usually encounter. I was looking for the texture of daily life, the specific details of how community worked before certain kinds of modernization reshaped it. Graphic novel form matters too; what visual storytelling reveals that prose can't.",
-    "link": "https://www.goodreads.com/book/show/635606.Kampung_Boy"
-  },
-  {
-    "title": "Liberté, Egalité, Fraternité",
-    "author": "Cynthia Fleury",
-    "cover": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1631202282i/58547438._SX98_.jpg",
-    "status": "Read",
-    "review": "Picked this up because I'm trying to understand the lineage of solidarity frameworks: how 'fraternité' gets deployed, what it promises, where it fails. The French Revolution's language still shapes how we think about collective obligation, but whose brotherhood was actually meant? I'm suspicious and curious in equal measure.",
-    "link": "https://www.goodreads.com/book/show/58547438-libert-egalit-fraternit"
-  },
-  {
-    "title": "The Empathy Exams: Essays",
-    "author": "Leslie Jamison",
-    "cover": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1405924561i/17934655._SX98_.jpg",
-    "status": "Read",
-    "review": "Jamison writes about performing empathy as a medical actor for student doctors, and I need that analysis. How do you distinguish genuine care from competent performance? When I build systems meant to be 'empathetic,' am I creating infrastructure for solidarity or just better scripts for appearing to care? This question keeps me up at night.",
-    "link": "https://www.goodreads.com/book/show/17934655-the-empathy-exams"
+    "title": "Determined: A Science of Life without Free Will",
+    "author": "Robert M. Sapolsky",
+    "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1685350965l/83817782._SX300_.jpg",
+    "status": "Favorite",
+    "review": "finished this one on a tube in london with minh (@minh \u2014 you probably remember the tattered pages).picked this up expecting an argument, a cogent/fortified thesis, and got something closer to an autopsy. sapolsky isn\u2019t interested in comforting anyone; he just keeps peeling back layers until the idea of \u201cchoice\u201d starts to look like a story we tell ourselves after the fact.what felt most refreshing was how unfamiliar the angle was. free will is usually debated in philosophy seminars that can feel abstract or circular. here it\u2019s treated as a biological question, and that shift quietly dismantles an entire moral economy. praise, blame, deservingness (all the invisible accounting we do) start to feel mispriced.growing up pretty much extolling meritocracy and conditioned to treat it as sacrosanct, the book lands uncomfortably close to home. effort, discipline, ambition (even shame) are framed not as virtues or failures but as outcomes. products of biology, upbringing, timing. the mirror stops accusing and starts explaining.the book does rush past philosophy too quickly. attempts to rescue free will are dismissed fairly quickly, which feels abrupt compared to how carefully the neuroscience is handled. for something that dismantles meaning so thoroughly, the impatience with centuries of thought feels oddly narrow?still, there\u2019s a strange relief here. if no one truly earns their advantages or deserves their failures, then maybe the cruelty we apply (especially to ourselves) was never necessary.",
+    "link": "https://www.goodreads.com/review/show/8310851784?utm_medium=api&utm_source=rss"
   },
   {
     "title": "Against Happiness: In Praise of Melancholy",
     "author": "Eric G. Wilson",
-    "cover": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1438474855i/1298834._SX98_.jpg",
-    "status": "Read",
-    "review": "I'm tired of optimization culture demanding constant happiness. Melancholy isn't depression; it's a way of sitting with difficulty without rushing to resolution. Wilson treats sustained discomfort as intellectually valuable rather than a problem to be solved. Resisting the pressure to perform positivity feels increasingly urgent.",
-    "link": "https://www.goodreads.com/book/show/1298834.Against_Happiness"
+    "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1438474855l/1298834._SX300_.jpg",
+    "status": "Favorite",
+    "review": "chanced upon the book at the reference section of the library. the cover seemed deceiving (another self-help drudgery?) but wilson takes the reader on a socio-political journey examining the merits of melancholy and isolation. his thesis that treats sustained discomfort as intellectually valuable rather than a problem to be solved can be contentious but one that perhaps should be interrogated in light of \"happiness metrics\" or the idea that happiness can be optimized like productivity.there's discourse on the idea of tragic humanism (https://www.theguardian.com/commentis...), the belief that meaning emerges not from comfort or salvation, but from confronting suffering, limitation, and the absurdity of the human condition.wilson doesn\u2019t resolve whether a difficult, unresolved life is a \"good\" one, but perhaps the refusal to resolve it is his own subtle provocation.",
+    "link": "https://www.goodreads.com/review/show/8253953825?utm_medium=api&utm_source=rss"
   },
   {
-    "title": "The Tyranny of Merit: What's Become of the Common Good?",
-    "author": "Michael J. Sandel",
-    "cover": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1594431563i/50364458._SX98_.jpg",
-    "status": "Read",
-    "review": "Sandel articulates something I've felt but couldn't name: how meritocracy doesn't just fail to deliver opportunity—it actively corrodes dignity by suggesting your worth equals your market value. The 'you deserve your success' logic necessarily implies others deserve their suffering. I read this while thinking about the migrant workers I work with, whose labor is essential but whose dignity gets denied by the very systems that claim to reward merit. The book doesn't resolve the tension between recognizing talent and maintaining solidarity, and I'm grateful for that honesty.",
-    "link": "https://www.goodreads.com/book/show/50364458-the-tyranny-of-merit"
+    "title": "Atomic Habits: An Easy & Proven Way to Build Good Habits & Break Bad Ones",
+    "author": "James Clear",
+    "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1655988385l/40121378._SX300_.jpg",
+    "status": "Favorite",
+    "review": "Clear essentially repurposed many existing frameworks but packaged them into a nice concise and well organized read. One key framework that I found useful was the \"If-then\" method to better prepare for the internal roadblocks that would arise given our tendency to rely on inertia when making decisions. Sometimes success is less about making good habits easy but making bad habits hard.",
+    "link": "https://www.goodreads.com/review/show/6660158721?utm_medium=api&utm_source=rss"
   },
   {
-    "title": "What We Owe Each Other",
-    "author": "T.M. Scanlon",
-    "cover": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1386920792i/278553._SX98_.jpg",
+    "title": "Deep Work: Rules for Focused Success in a Distracted World",
+    "author": "Cal Newport",
+    "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1447957962l/25744928._SX300_.jpg",
+    "status": "Favorite",
+    "review": "Actionable steps on how to foster a less distracting environment though i question how relevant the strategies are given the prevalence of apps being used in study/work environments",
+    "link": "https://www.goodreads.com/review/show/4452912152?utm_medium=api&utm_source=rss"
+  },
+  {
+    "title": "The Third Door: The Wild Quest to Uncover How the World's Most Successful People Launched Their Careers",
+    "author": "Alex Banayan",
+    "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1527724477l/36739769._SX300_.jpg",
+    "status": "Favorite",
+    "review": "Great read for any aspiring or budding entrepreneur. Banayan gives a candid overlook of some of the highs and lows that well known entrepreneurs have experienced and peels behind some common misconceptions behind successful entrepreneurs and their journeys",
+    "link": "https://www.goodreads.com/review/show/4726950183?utm_medium=api&utm_source=rss"
+  },
+  {
+    "title": "Anything You Want",
+    "author": "Derek Sivers",
+    "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1608491606l/11878168._SX300_.jpg",
+    "status": "Favorite",
+    "review": "Must read for anyone wanting to dive into entrepreneurship or for existing entrepreneurs who need a fresh perspective on why they started their venture",
+    "link": "https://www.goodreads.com/review/show/4726953986?utm_medium=api&utm_source=rss"
+  },
+  {
+    "title": "Tuesdays with Morrie: An Old Man, a Young Man, and Life's Greatest Lesson",
+    "author": "Mitch Albom",
+    "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1423763749l/6900._SX300_.jpg",
+    "status": "Favorite",
+    "link": "https://www.goodreads.com/review/show/4442664823?utm_medium=api&utm_source=rss"
+  },
+  {
+    "title": "What I Know for Sure",
+    "author": "Oprah Winfrey",
+    "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1400988917l/21531503._SX300_.jpg",
+    "status": "Favorite",
+    "review": "Winfrey gives an illustrious look into the various life lessons she has garnered through both triumphs and falls. She summarizes all of her experiences into bite-sized gold nuggets, allowing the reader a peek into her spiritual ways that have guided her mindset and way of thinking.",
+    "link": "https://www.goodreads.com/review/show/4117308492?utm_medium=api&utm_source=rss"
+  },
+  {
+    "title": "The Spirit Catches You and You Fall Down: A Hmong Child, Her American Doctors, and the Collision of Two Cultures",
+    "author": "Anne Fadiman",
+    "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1432610033l/12609._SX300_.jpg",
+    "status": "Favorite",
+    "review": "Fadiman's writing will tug the heart of any reader.",
+    "link": "https://www.goodreads.com/review/show/4096312072?utm_medium=api&utm_source=rss"
+  },
+  {
+    "title": "Range: Why Generalists Triumph in a Specialized World",
+    "author": "David   Epstein",
+    "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1550048292l/41795733._SX300_.jpg",
+    "status": "Favorite",
+    "link": "https://www.goodreads.com/review/show/3951357740?utm_medium=api&utm_source=rss"
+  },
+  {
+    "title": "Hooked: How to Build Habit-Forming Products",
+    "author": "Nir   Eyal",
+    "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1407112405l/22668729._SX300_.jpg",
+    "status": "Favorite",
+    "review": "While slanted to software products, Eyal's Hook model provides substantiative insights into techniques and methods to increase user adoption and improve retention. Necessary reading for any SaaS entrepreneur.",
+    "link": "https://www.goodreads.com/review/show/4080756057?utm_medium=api&utm_source=rss"
+  },
+  {
+    "title": "The Subtle Art of Not Giving a F*ck: A Counterintuitive Approach to Living a Good Life",
+    "author": "Mark Manson",
+    "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1465761302l/28257707._SX300_.jpg",
     "status": "Read",
-    "review": "Scanlon's contractualism asks: what principles for living together could no one reasonably reject? It's a deceptively simple question that cuts through a lot of abstract philosophy. I appreciate that he grounds moral obligation in relationships rather than universal rules or consequences. But I keep pushing on 'reasonable rejection': reasonable according to whom? Whose reasoning counts? The framework is powerful, but I'm still working through how it handles power asymmetries where some people's reasons systematically don't get heard.",
-    "link": "https://www.goodreads.com/book/show/278553.What_We_Owe_to_Each_Other"
+    "review": "A practical and funny guide to not getting too heavy handed with life's sometimes unpleasant encounters.",
+    "link": "https://www.goodreads.com/review/show/2467145335?utm_medium=api&utm_source=rss"
+  },
+  {
+    "title": "When Breath Becomes Air",
+    "author": "Paul Kalanithi",
+    "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1492677644l/25899336._SX300_.jpg",
+    "status": "Read",
+    "review": "An amazing view of Paul's life and how he powered through adversity to continue living in the face of deaths and despair. Truly inspiring.",
+    "link": "https://www.goodreads.com/review/show/2467144716?utm_medium=api&utm_source=rss"
   }
 ]
