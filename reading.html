@@ -113,6 +113,7 @@
         <div id="bookshelf" class="book-grid">
             <!-- Books will be dynamically inserted here -->
         </div>
+        <p style="text-align: center; margin-top: 30px;"><a href="https://www.goodreads.com/user/show/14444457" target="_blank">See more on Goodreads</a></p>
     </div>
 
     <script>
@@ -144,7 +145,8 @@
 
         async function displayBooks() {
             try {
-                const books = await fetchBooks();
+                const allBooks = await fetchBooks();
+                const books = allBooks.slice(0, 8);
                 const bookshelf = document.getElementById('bookshelf');
                 bookshelf.innerHTML = ''; // Clear existing content
 
