@@ -1,5 +1,13 @@
 [
   {
+    "title": "Cogs and Monsters: What Economics Is, and What It Should Be",
+    "author": "Diane Coyle",
+    "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1620081794l/57423841._SX300_.jpg",
+    "status": "Favorite",
+    "review": "read this as an intended \"sequel\" to skidelsky in understanding the nuances of interpreting digital trade data/ synthezing macroeconomic trends from a digital pov but found most value in the afterword tldr: mainstream economics still models people as cogs (rational, atomistic, predictable) in a world that increasingly runs on monsters (platform dynamics, data flywheels, self-reinforcing feedback loops that the old toolkit can't see).the chapters on digital competition are fairly useful. re. the point that antitrust tools like the SSNIP test simply break down at zero prices (i.e that the harm from platform dominance shows up as stifled innovation rather than higher prices, and our frameworks are measuring the wrong thing) espeically in light of ligitation against some big tech players. but overall, an extended essay with the above pointers could largely convey the same message..",
+    "link": "https://www.goodreads.com/review/show/8447341430?utm_medium=api&utm_source=rss"
+  },
+  {
     "title": "What\u2019s Wrong with Economics? A Primer for the Perplexed",
     "author": "Robert Skidelsky",
     "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1576294647l/52008954._SX300_SY75_.jpg",
@@ -91,7 +99,7 @@
     "title": "Anything You Want",
     "author": "Derek Sivers",
     "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1608491606l/11878168._SX300_.jpg",
-    "status": "Favorite",
+    "status": "Read",
     "review": "Must read for anyone wanting to dive into entrepreneurship or for existing entrepreneurs who need a fresh perspective on why they started their venture",
     "link": "https://www.goodreads.com/review/show/4726953986?utm_medium=api&utm_source=rss"
   },
@@ -99,7 +107,7 @@
     "title": "Tuesdays with Morrie: An Old Man, a Young Man, and Life's Greatest Lesson",
     "author": "Mitch Albom",
     "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1423763749l/6900._SX300_.jpg",
-    "status": "Favorite",
+    "status": "Read",
     "link": "https://www.goodreads.com/review/show/4442664823?utm_medium=api&utm_source=rss"
   },
   {
