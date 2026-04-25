@@ -1,6 +1,16 @@
 {
   "posts": [
     {
+      "slug": "wrong-about-economics",
+      "title": "I Was Wrong About Economics",
+      "category": "thinking",
+      "date": "2026-04-25",
+      "readingTime": 5,
+      "excerpt": "I'd filed economics away as a settled discipline. Then I ended up at an economic agency building trade analytics tools, which is a strange way to discover that economics is not settled at all.",
+      "featured": false,
+      "length": "long"
+    },
+    {
       "slug": "solution-stopped-being-the-point",
       "title": "What I Learned When the Solution Stopped Being the Point",
       "category": "thinking",
