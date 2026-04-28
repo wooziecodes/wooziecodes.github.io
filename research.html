@@ -65,22 +65,89 @@
         .page-intro:last-of-type {
             margin-bottom: 50px;
         }
-        .inquiry {
-            margin-bottom: 50px;
-            padding-bottom: 30px;
+
+        /* Question cards on main page */
+        .question-card {
+            padding: 20px 0;
             border-bottom: 1px solid #eee;
+            cursor: pointer;
         }
-        .inquiry:last-child {
+        .question-card:last-child {
             border-bottom: none;
+        }
+        .question-card h3 {
+            margin: 0 0 6px;
+            font-size: 1.15em;
+            transition: color 0.2s ease;
+        }
+        .question-card:hover h3 {
+            color: #0000ff;
+        }
+        .question-card .inquiry-question {
+            font-style: italic;
+            font-size: 1em;
+            font-weight: 300;
+            color: #555;
+            margin: 0 0 8px;
+        }
+        .question-card .card-hint {
+            font-size: 0.8em;
+            color: #bbb;
+            letter-spacing: 0.03em;
+        }
+
+        /* Modal overlay */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.97);
+            z-index: 100;
+            overflow-y: auto;
+        }
+        .modal-overlay.active {
+            display: block;
+        }
+        .modal-content {
+            width: 80%;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 60px 20px 80px;
+        }
+        .modal-close {
+            position: fixed;
+            top: 24px;
+            right: 32px;
+            font-size: 1.4em;
+            font-weight: 300;
+            color: #000;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 0;
+            transition: color 0.2s ease;
+            line-height: 1;
+        }
+        .modal-close:hover {
+            color: #0000ff;
+        }
+        .modal-section-title {
+            font-size: 1.3em;
+            font-weight: 300;
+            margin: 0 0 6px;
         }
         .inquiry-question {
             font-style: italic;
             font-size: 1.05em;
             font-weight: 300;
             color: #333;
-            margin-top: 0;
-            margin-bottom: 1em;
+            margin: 0 0 20px;
         }
+
+        /* Projects inside modal */
         .project {
             margin-bottom: 30px;
         }
@@ -115,6 +182,11 @@
         .project a:hover {
             color: #0056b3;
         }
+        .modal-divider {
+            border: none;
+            border-top: 1px solid #eee;
+            margin: 30px 0;
+        }
     </style>
 </head>
 <body>
@@ -137,12 +209,36 @@
 
         <p class="page-intro">Being from Mauritius — which means growing up without a clean answer to where I'm from, navigating three languages that carry three genuinely different value systems, and learning early that how you ask a question depends on which world you're standing in. None of this makes me the most qualified person to answer what follows. But it's probably why I can't stop asking.</p>
 
-        <p class="page-intro">These are pretty much interdisciplinary questions with no ground truth answers. I work through them across different modalities — building tools, reading, community, writing. What follows is an attempt to document the inquiry :D </p>
+        <p class="page-intro">These are pretty much interdisciplinary questions with no ground truth answers. I work through them across different modalities — building tools, reading, community, writing. What follows is an attempt to document the inquiry :D</p>
 
-        <div class="inquiry">
+        <div class="question-card" onclick="openModal('modal-1')">
             <h3>I. AI & augmented work</h3>
             <p class="inquiry-question">How do tools change the way we think, not just what we produce?</p>
+            <span class="card-hint">click to explore →</span>
+        </div>
+
+        <div class="question-card" onclick="openModal('modal-2')">
+            <h3>II. Economic power & how the world is structured</h3>
+            <p class="inquiry-question">What are the forces shaping opportunity, and who gets to understand them?</p>
+            <span class="card-hint">click to explore →</span>
+        </div>
+
+        <div class="question-card" onclick="openModal('modal-3')">
+            <h3>III. Belonging & social infrastructure</h3>
+            <p class="inquiry-question">What does it mean to feel at home — in a city, a language, a community, yourself?</p>
+            <span class="card-hint">click to explore →</span>
+        </div>
+    </div>
+
+    <!-- Modal I: AI & augmented work -->
+    <div class="modal-overlay" id="modal-1">
+        <button class="modal-close" onclick="closeModal('modal-1')">×</button>
+        <div class="modal-content">
+            <h3 class="modal-section-title">I. AI & augmented work</h3>
+            <p class="inquiry-question">How do tools change the way we think, not just what we produce?</p>
             <p>Most conversations about AI in the workplace flatten into productivity metrics — how much faster, how much cheaper. But tools reshape cognition, not just output. What happens to judgment, pattern recognition, and expertise when a tool starts doing the inferring is underexplored. Particularly for people early in their careers, who are asked to adopt these tools before they've developed the instincts the tools are meant to augment.</p>
+
+            <hr class="modal-divider">
 
             <div class="project">
                 <div class="modality-tag">Building</div>
@@ -174,11 +270,17 @@
                 <p><a href="https://drive.google.com/file/d/195DYnmsYCal5NCDWHnWB2s_-hHUeLXV4/view?usp=sharing" target="_blank">The Ethics of Anthropomorphic AI for Emotional Support →</a></p>
             </div>
         </div>
+    </div>
 
-        <div class="inquiry">
-            <h3>II. Economic power & how the world is structured</h3>
+    <!-- Modal II: Economic power -->
+    <div class="modal-overlay" id="modal-2">
+        <button class="modal-close" onclick="closeModal('modal-2')">×</button>
+        <div class="modal-content">
+            <h3 class="modal-section-title">II. Economic power & how the world is structured</h3>
             <p class="inquiry-question">What are the forces shaping opportunity, and who gets to understand them?</p>
             <p>Economics gets taught as though its frameworks are neutral. They aren't — they encode assumptions about what counts as value, who gets to accumulate it, and what the state's role in that process should be. The trade wars, supply chain disruptions, and industrial policy debates of recent years have made those assumptions visible in ways they weren't before. Understanding them requires sitting with heterodox and structural economics alongside the mainstream.</p>
+
+            <hr class="modal-divider">
 
             <div class="project">
                 <div class="modality-tag">Research</div>
@@ -203,11 +305,17 @@
                 <p><a href="blog/wrong-about-economics/">I Was Wrong About Economics →</a></p>
             </div>
         </div>
+    </div>
 
-        <div class="inquiry">
-            <h3>III. Belonging & social infrastructure</h3>
+    <!-- Modal III: Belonging -->
+    <div class="modal-overlay" id="modal-3">
+        <button class="modal-close" onclick="closeModal('modal-3')">×</button>
+        <div class="modal-content">
+            <h3 class="modal-section-title">III. Belonging & social infrastructure</h3>
             <p class="inquiry-question">What does it mean to feel at home — in a city, a language, a community, yourself?</p>
-            <p>Belonging is treated as a given — something you either have or find. But for people who grow up between cultures, languages, and systems of meaning, it's more like a practice than a destination. Singapore is an interesting place to sit with this: a cosmopolitan city that is also a very legible racial taxonomy, where you can be surrounded by people and still be categorically alone. </p>
+            <p>Belonging is treated as a given — something you either have or find. But for people who grow up between cultures, languages, and systems of meaning, it's more like a practice than a destination. Singapore is an interesting place to sit with this: a cosmopolitan city that is also a very legible racial taxonomy, where you can be surrounded by people and still be categorically alone.</p>
+
+            <hr class="modal-divider">
 
             <div class="project">
                 <div class="modality-tag">Building</div>
@@ -229,5 +337,31 @@
             </div>
         </div>
     </div>
+
+    <script>
+        function openModal(id) {
+            document.getElementById(id).classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal(id) {
+            document.getElementById(id).classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        document.querySelectorAll('.modal-overlay').forEach(function(el) {
+            el.addEventListener('click', function(e) {
+                if (e.target === this) closeModal(this.id);
+            });
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                document.querySelectorAll('.modal-overlay.active').forEach(function(el) {
+                    closeModal(el.id);
+                });
+            }
+        });
+    </script>
 </body>
 </html>
