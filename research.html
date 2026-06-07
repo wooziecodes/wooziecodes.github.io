@@ -63,7 +63,12 @@
             max-width: 680px;
         }
         .page-intro:last-of-type {
-            margin-bottom: 50px;
+            margin-bottom: 30px;
+        }
+        .bridge-line {
+            font-size: 0.9em;
+            color: #999;
+            margin: 20px 0 20px;
         }
 
         /* Question cards on main page */
@@ -205,27 +210,29 @@
     <div class="container">
         <h2>Research</h2>
 
-        <p class="page-intro">So these questions didn't arrive fully formed. They accumulated through a computing degree that taught me how systems work, and an integrative studies major that kept asking why they work that way and for whom. Through two years of national service as a neighborhood police officer, where the gap between policy and lived reality was impossible to ignore. Through a mechanical engineering research project before university, a stint at a boutique investment bank, an exchange at UCL where I stumbled into behavioral science. Through building a startup for five years and closing it. Through research with migrant workers that kept dismantling its own assumptions.</p>
+        <p class="page-intro">I think what shifted wasn't one moment. It was more like accumulating evidence. Watching the people building these tools — myself included — put up this veneer of tech for good while quietly optimizing for retention, or engagement, or whatever metric the grant required. Watching my computing cohort dismiss philosophy and history like those were elective concerns. Realizing that these are the people writing the systems. And underneath all of it, this memory from secondary school: a girl brought me to a room I didn't know existed, where the kids who couldn't move to get pencils were. Nobody was building an app for that. And I don't think an app was what they needed.</p>
 
-        <p class="page-intro">Being from Mauritius, which means growing up without a clean answer to where I'm from, navigating three languages that carry three genuinely different value systems, and learning early that how you ask a question depends on which world you're standing in. None of this makes me the most qualified person to answer what follows. But it's probably why I can't stop asking.</p>
+        <p class="page-intro">I don't have a tribe. That's the real answer. My friends have Chinese New Year, Korean student societies, somewhere to go back to. I have Mauritius, which is to say I have a place that doesn't map cleanly onto anything Singapore recognizes. NRIC lists my race as "MAURITIAN" — bureaucracy's way of saying we don't have a box for you. I can consume French media and Mandarin media, I look South Asian, I don't celebrate any of the festivities. I grew up inside that ambiguity. I think it's why I keep noticing the people the system didn't account for — because I know what it feels like to not be accounted for.</p>
 
-        <p class="page-intro">These are pretty much interdisciplinary questions with no ground truth answers. I work through them across different modalities: building tools, reading, community, writing. What follows is an attempt to document the inquiry :D</p>
+        <p class="page-intro">Currently working in trade and economic policy, somewhere at the edge of where data and diplomacy meet. The question that keeps not getting answered: when a system fails someone — specifically the someone it was never designed for — what do they actually do? I'm starting to think the answer isn't a better tool.</p>
+
+        <p class="page-intro" style="color:#999; font-size:0.9em;">The same question, approached from three directions.</p>
 
         <div class="question-card" onclick="openModal('modal-1')">
             <h3>I. AI & augmented work</h3>
-            <p class="inquiry-question">How do tools change the way we think, not just what we produce?</p>
+            <p class="inquiry-question">When a tool does the inferring, whose assumptions does it carry?</p>
             <span class="card-hint">→</span>
         </div>
 
         <div class="question-card" onclick="openModal('modal-2')">
             <h3>II. Economic power & how the world is structured</h3>
-            <p class="inquiry-question">What are the forces shaping opportunity, and who gets to understand them?</p>
+            <p class="inquiry-question">What happens when the framework for understanding a problem is itself part of the problem?</p>
             <span class="card-hint">→</span>
         </div>
 
         <div class="question-card" onclick="openModal('modal-3')">
             <h3>III. Belonging & social infrastructure</h3>
-            <p class="inquiry-question">What does it mean to feel at home in a city, a language, a community, yourself?</p>
+            <p class="inquiry-question">What does it cost to be the person the system doesn't have a box for?</p>
             <span class="card-hint">→</span>
         </div>
     </div>
@@ -235,7 +242,7 @@
         <button class="modal-close" onclick="closeModal('modal-1')">×</button>
         <div class="modal-content">
             <h3 class="modal-section-title">I. AI & augmented work</h3>
-            <p class="inquiry-question">How do tools change the way we think, not just what we produce?</p>
+            <p class="inquiry-question">When a tool does the inferring, whose assumptions does it carry?</p>
             <p>Most conversations about AI in the workplace flatten into productivity metrics: how much faster, how much cheaper. But tools reshape cognition, not just output. What happens to judgment, pattern recognition, and expertise when a tool starts doing the inferring is underexplored. Particularly for people early in their careers, who are asked to adopt these tools before they've developed the instincts the tools are meant to augment.</p>
 
             <hr class="modal-divider">
@@ -245,14 +252,21 @@
                 <h4>OTR Copilot</h4>
                 <div class="project-meta">Over The Rainbow · Capstone · 2025</div>
                 <p>Built a tool to help youth mental health mentors surface patterns in digital conversations without automating the human work of listening. Three redesigns taught me that the NLP was the easy part.</p>
-                <p><a href="https://github.com/wooziecodes/otr-copilot" target="_blank">GitHub</a></p>
+                <p><a href="https://github.com/wooziecodes/otr-copilot" target="_blank">GitHub</a> · <a href="blog/otr-copilot/">Deep dive →</a></p>
             </div>
 
             <div class="project">
-                <div class="modality-tag">Writing · forthcoming</div>
+                <div class="modality-tag">Academic · Presented</div>
+                <h4>Augmenting Peer Mentor Emotional Intelligence — AMIA 2026</h4>
+                <div class="project-meta">American Medical Informatics Association Annual Symposium · 2026</div>
+                <p>The OTR work submitted as a formal research paper and accepted for poster presentation. The argument: augmentation over automation, and what design constraints actually follow from taking that seriously.</p>
+            </div>
+
+            <div class="project">
+                <div class="modality-tag">Academic · Presented</div>
                 <h4>Augmentation Over Automation</h4>
                 <div class="project-meta">UCL Behaviour Change Conference · June 2026</div>
-                <p>Extends the OTR questions: what does design look like when the goal is preserving the quality of human attention, not replacing it?</p>
+                <p>What does design look like when the goal is preserving the quality of human attention, not replacing it? Presented as an online poster in the Digital Technologies / Knowledge in Practice track.</p>
             </div>
 
             <div class="project">
@@ -277,7 +291,7 @@
         <button class="modal-close" onclick="closeModal('modal-2')">×</button>
         <div class="modal-content">
             <h3 class="modal-section-title">II. Economic power & how the world is structured</h3>
-            <p class="inquiry-question">What are the forces shaping opportunity, and who gets to understand them?</p>
+            <p class="inquiry-question">What happens when the framework for understanding a problem is itself part of the problem?</p>
             <p>Economics gets taught as though its frameworks are neutral. They aren't; they encode assumptions about what counts as value, who gets to accumulate it, and what the state's role in that process should be. The trade wars, supply chain disruptions, and industrial policy debates of recent years have made those assumptions visible in ways they weren't before. Understanding them requires sitting with heterodox and structural economics alongside the mainstream.</p>
 
             <hr class="modal-divider">
@@ -312,7 +326,7 @@
         <button class="modal-close" onclick="closeModal('modal-3')">×</button>
         <div class="modal-content">
             <h3 class="modal-section-title">III. Belonging & social infrastructure</h3>
-            <p class="inquiry-question">What does it mean to feel at home in a city, a language, a community, yourself?</p>
+            <p class="inquiry-question">What does it cost to be the person the system doesn't have a box for?</p>
             <p>Belonging is treated as a given, something you either have or find. But for people who grow up between cultures, languages, and systems of meaning, it's more like a practice than a destination. Singapore is an interesting place to sit with this: a cosmopolitan city that is also a very legible racial taxonomy, where you can be surrounded by people and still be categorically alone.</p>
 
             <hr class="modal-divider">
@@ -321,7 +335,7 @@
                 <div class="modality-tag">Building</div>
                 <h4>Kura</h4>
                 <div class="project-meta">Co-founder · 2021 – 2025</div>
-                <p>Five years building a voice journaling app for Gen Z mental health. $50K raised, 2,500 users, pilots with NUS and Duke-NUS. Winding it down taught me things shipping it didn't, particularly about the gap between what a product measures and what it's actually doing for someone.</p>
+                <p>Five years building a voice journaling app for Gen Z mental health. $50K raised, 2,500 users, pilots with NUS and Duke-NUS. Closing it taught me things shipping it didn't, particularly about the gap between what a product measures and what it's actually doing for someone.</p>
             </div>
 
             <div class="project">

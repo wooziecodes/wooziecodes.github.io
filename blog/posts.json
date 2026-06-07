@@ -86,11 +86,12 @@
       "length": "standard"
     },
     {
+      "slug": "otr-copilot",
       "title": "OTR Copilot",
       "category": "making",
       "date": "2025-05-01",
-      "url": "otr-copilot.html",
-      "excerpt": "I spent six months as a peer listener, missing emotional cues in text messages. So I built something to help."
+      "excerpt": "I spent six months as a peer listener, missing emotional cues in text messages. So I built something to help — and learned that the NLP was the easy part.",
+      "length": "long"
     },
     {
       "title": "CS462: TODI — Optimising Cleaning with IoT",
