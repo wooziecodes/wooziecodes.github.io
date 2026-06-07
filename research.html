@@ -62,135 +62,30 @@
             color: #333;
             max-width: 680px;
         }
-        .page-intro:last-of-type {
-            margin-bottom: 30px;
+        .research-section {
+            padding: 30px 0;
+            border-top: 1px solid #eee;
+            max-width: 680px;
         }
-        .bridge-line {
-            font-size: 0.9em;
-            color: #999;
-            margin: 20px 0 20px;
-        }
-
-        /* Question cards on main page */
-        .question-card {
-            padding: 20px 0;
-            border-bottom: 1px solid #eee;
-            cursor: pointer;
-        }
-        .question-card:last-child {
-            border-bottom: none;
-        }
-        .question-card h3 {
+        .research-section h3 {
             margin: 0 0 6px;
             font-size: 1.15em;
-            transition: color 0.2s ease;
         }
-        .question-card:hover h3 {
-            color: #0000ff;
-        }
-        .question-card .inquiry-question {
+        .inquiry-question {
             font-style: italic;
             font-size: 1em;
             font-weight: 300;
             color: #555;
-            margin: 0 0 8px;
+            margin: 0 0 16px;
         }
-        .question-card .card-hint {
-            font-size: 0.8em;
-            color: #bbb;
-            letter-spacing: 0.03em;
-        }
-
-        /* Modal overlay */
-        .modal-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(255, 255, 255, 0.97);
-            z-index: 100;
-            overflow-y: auto;
-        }
-        .modal-overlay.active {
-            display: block;
-        }
-        .modal-content {
-            width: 80%;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 60px 20px 80px;
-        }
-        .modal-close {
-            position: fixed;
-            top: 24px;
-            right: 32px;
-            font-size: 1.4em;
-            font-weight: 300;
-            color: #000;
-            cursor: pointer;
-            background: none;
-            border: none;
-            padding: 0;
-            transition: color 0.2s ease;
-            line-height: 1;
-        }
-        .modal-close:hover {
-            color: #0000ff;
-        }
-        .modal-section-title {
-            font-size: 1.3em;
-            font-weight: 300;
-            margin: 0 0 6px;
-        }
-        .inquiry-question {
-            font-style: italic;
-            font-size: 1.05em;
-            font-weight: 300;
+        .research-section p {
+            margin: 0 0 12px;
             color: #333;
-            margin: 0 0 20px;
         }
-
-        /* Projects inside modal */
-        .project {
-            margin-bottom: 30px;
-        }
-        .project h4 {
-            margin-bottom: 6px;
-            margin-top: 0;
-            font-size: 1.1em;
-        }
-        .project-meta {
+        .research-links {
             font-size: 0.9em;
-            color: #666;
-            margin-bottom: 10px;
-        }
-        .modality-tag {
-            font-size: 0.75em;
-            color: #999;
-            text-transform: uppercase;
-            letter-spacing: 0.06em;
-            margin-bottom: 6px;
-        }
-        .research-image {
-            max-width: 70%;
-            height: auto;
-            margin-top: 15px;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        .project a {
-            color: #007bff;
-            text-decoration: underline;
-        }
-        .project a:hover {
-            color: #0056b3;
-        }
-        .modal-divider {
-            border: none;
-            border-top: 1px solid #eee;
-            margin: 30px 0;
+            color: #555;
+            margin: 0;
         }
     </style>
 </head>
@@ -216,84 +111,26 @@
 
         <p class="page-intro">Currently working in trade and economic policy, somewhere at the edge of where data and diplomacy meet. The question that keeps surfacing: when a system fails someone (particularly the someone it was never designed for) what recourse do they actually have? I'm not sure the answer is a better tool.</p>
 
-        <p class="page-intro" style="color:#999; font-size:0.9em;">The same question, approached from three directions.</p>
-
-        <div class="question-card" onclick="openModal('modal-1')">
+        <div class="research-section">
             <h3>I. AI & augmented work</h3>
             <p class="inquiry-question">When a tool does the inferring, whose assumptions does it carry?</p>
-            <span class="card-hint">→</span>
+            <p>Most conversations about AI flatten into productivity metrics. But tools reshape cognition, not just output — and the assumptions baked into how a system infers are rarely made visible. The OTR Copilot project taught me that the NLP was the easy part; the harder problem was whose emotional expressions the system was built to read, and whose it wasn't. A follow-on research question currently in development: do LLMs exhibit recognisable philosophical priors in therapeutic contexts — defaulting toward individual agency, reframing, resolution — and what does that mean for who they actually serve?</p>
+            <p class="research-links"><a href="blog/otr-copilot/">OTR Copilot →</a> · <span style="color:#bbb">AMIA 2026 →</span> · <span style="color:#bbb">UCL BCC →</span> · <a href="https://drive.google.com/file/d/195DYnmsYCal5NCDWHnWB2s_-hHUeLXV4/view?usp=sharing" target="_blank">Ethics of Anthropomorphic AI →</a></p>
         </div>
 
-        <div class="question-card" onclick="openModal('modal-2')">
+        <div class="research-section">
             <h3>II. Economic power & how the world is structured</h3>
             <p class="inquiry-question">What happens when the framework for understanding a problem is itself part of the problem?</p>
-            <span class="card-hint">→</span>
+            <p>Economics gets taught as though its frameworks are neutral. They aren't — they encode assumptions about what counts as value, who gets to accumulate it, and what the state's role should be. The Reach Alliance research made this concrete: we started trying to build a financial literacy chatbot and ended up learning that the workers we were designing for already had sophisticated systems for managing money across borders. They needed structural support, not our frameworks. That gap between what a tool assumes and what a situation actually requires keeps showing up.</p>
+            <p class="research-links"><a href="https://reachalliance.org/case-study/how-can-we-utilise-conversational-a-i-to-enhance-financial-literacy-for-migrant-workers-in-singapore/#article" target="_blank">Reach Alliance case study →</a> · <a href="blog/solution-stopped-being-the-point/">What I learned →</a> · <a href="blog/wrong-about-economics/">I Was Wrong About Economics →</a></p>
         </div>
 
-        <div class="question-card" onclick="openModal('modal-3')">
+        <div class="research-section">
             <h3>III. Belonging & social infrastructure</h3>
             <p class="inquiry-question">What does it cost to be the person the system doesn't have a box for?</p>
-            <span class="card-hint">→</span>
-        </div>
-    </div>
-
-    <!-- Modal I: AI & augmented work -->
-    <div class="modal-overlay" id="modal-1">
-        <button class="modal-close" onclick="closeModal('modal-1')">×</button>
-        <div class="modal-content">
-            <h3 class="modal-section-title">I. AI & augmented work</h3>
-            <p class="inquiry-question">When a tool does the inferring, whose assumptions does it carry?</p>
-            <p>Most conversations about AI flatten into productivity metrics. But tools reshape cognition, not just output — and the assumptions baked into how a system infers are rarely made visible. The OTR Copilot project taught me that the NLP was the easy part; the harder problem was whose emotional expressions the system was built to read, and whose it wasn't. A follow-on research question currently in development: do LLMs exhibit recognisable philosophical priors in therapeutic contexts — defaulting toward individual agency, reframing, resolution — and what does that mean for who they actually serve?</p>
-            <p><a href="blog/otr-copilot/">OTR Copilot →</a> · <span style="color:#bbb">AMIA 2026 →</span> · <span style="color:#bbb">UCL BCC →</span> · <a href="https://drive.google.com/file/d/195DYnmsYCal5NCDWHnWB2s_-hHUeLXV4/view?usp=sharing" target="_blank">Ethics of Anthropomorphic AI →</a></p>
-        </div>
-    </div>
-
-    <!-- Modal II: Economic power -->
-    <div class="modal-overlay" id="modal-2">
-        <button class="modal-close" onclick="closeModal('modal-2')">×</button>
-        <div class="modal-content">
-            <h3 class="modal-section-title">II. Economic power & how the world is structured</h3>
-            <p class="inquiry-question">What happens when the framework for understanding a problem is itself part of the problem?</p>
-            <p>Economics gets taught as though its frameworks are neutral. They aren't — they encode assumptions about what counts as value, who gets to accumulate it, and what the state's role should be. The Reach Alliance research made this concrete: we started trying to build a financial literacy chatbot and ended up learning that the workers we were designing for already had sophisticated systems for managing money across borders. They needed structural support, not our frameworks. That gap between what a tool assumes and what a situation actually requires keeps showing up.</p>
-            <p><a href="https://reachalliance.org/case-study/how-can-we-utilise-conversational-a-i-to-enhance-financial-literacy-for-migrant-workers-in-singapore/#article" target="_blank">Reach Alliance case study →</a> · <a href="blog/solution-stopped-being-the-point/">What I learned →</a> · <a href="blog/wrong-about-economics/">I Was Wrong About Economics →</a></p>
-        </div>
-    </div>
-
-    <!-- Modal III: Belonging -->
-    <div class="modal-overlay" id="modal-3">
-        <button class="modal-close" onclick="closeModal('modal-3')">×</button>
-        <div class="modal-content">
-            <h3 class="modal-section-title">III. Belonging & social infrastructure</h3>
-            <p class="inquiry-question">What does it cost to be the person the system doesn't have a box for?</p>
             <p>Belonging is treated as a given — something you either have or find. But for people who grow up between cultures, languages, and systems of meaning, it's more like a practice than a destination. Singapore is an interesting place to sit with this: a cosmopolitan city that is also a very legible racial taxonomy, where you can be surrounded by people and still be categorically alone. Kura was five years of trying to build something for that space — $50K raised, 2,500 users, pilots with NUS and Duke-NUS. Closing it taught me things shipping it didn't.</p>
-            <p><a href="https://drive.google.com/file/d/1A1Sj1eE_Ru7KJR8cX_MTGs9v-IEexQfF/view?usp=sharing" target="_blank">The Experience of Being 'Othered' in Singapore's CMIO Classification →</a></p>
+            <p class="research-links"><a href="https://drive.google.com/file/d/1A1Sj1eE_Ru7KJR8cX_MTGs9v-IEexQfF/view?usp=sharing" target="_blank">The Experience of Being 'Othered' in Singapore's CMIO Classification →</a></p>
         </div>
     </div>
-
-    <script>
-        function openModal(id) {
-            document.getElementById(id).classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeModal(id) {
-            document.getElementById(id).classList.remove('active');
-            document.body.style.overflow = '';
-        }
-
-        document.querySelectorAll('.modal-overlay').forEach(function(el) {
-            el.addEventListener('click', function(e) {
-                if (e.target === this) closeModal(this.id);
-            });
-        });
-
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                document.querySelectorAll('.modal-overlay.active').forEach(function(el) {
-                    closeModal(el.id);
-                });
-            }
-        });
-    </script>
 </body>
 </html>
