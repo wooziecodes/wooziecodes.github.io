@@ -367,9 +367,21 @@
 
     <div class="container">
 
+        <!-- Context & Video -->
+        <div class="section" style="margin-top: 30px;">
+            <div class="highlight-box" style="margin-bottom: 24px;">
+                <h4 style="margin-top: 0; margin-bottom: 8px; color: #007bff;">Update — June 2026</h4>
+                <p style="margin: 0;">This project was presented as a Knowledge in Practice poster at the Behaviour Change Conference 2026. Six months of work on this copilot produced three findings: real-time suggestions disrupted the Listeners they were meant to help; cross-session pattern detection across weeks turned out to be where AI's value actually lies; and RLHF-trained agreeableness caused the model to mirror a seeker's avoidance rather than follow empathy protocols — a risk I think is still underexplored in mental health AI generally.</p>
+            </div>
+            <div style="position: relative; padding-bottom: 56.25%; height: 0; border-radius: 5px; overflow: hidden; background: #f5f5f5;">
+                <iframe src="https://www.loom.com/embed/390b2cac913f426e9a204ef75795d106" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+            </div>
+            <p style="margin-top: 12px; font-size: 0.9em; color: #666; font-style: italic;">6-minute walkthrough of the system and findings — recorded for BCConf 2026.</p>
+        </div>
+
         <!-- The Hook -->
         <div class="hook">
-            I volunteered with Over The Rainbow (OTR) as a peer listener—the person on the other end when young people in Singapore needed someone to talk to. Most of our conversations happened over text, and I kept missing things. A youth would send "sia" after a sentence, and I'd spend fifteen minutes trying to figure out if that was casual frustration or genuine distress. I'd see three messages sent at 2am, then nothing for two days, and wonder if I should've noticed the pattern sooner. I was translating emotional content across not just language but time, context, and cultural expression—and I wasn't always getting it right.
+            I volunteered with Over The Rainbow (OTR) as a Listener — the person on the other end when young people in Singapore needed someone to talk to. OTR Listeners aren't peer supporters: the role is presence, not advice. No frameworks, no prescribed responses, no guiding toward resolution. Seekers reach out to be heard, not fixed. Most of our conversations happened over text, and I kept missing things. A youth would send "sia" after a sentence, and I'd spend fifteen minutes trying to figure out if that was casual frustration or genuine distress. I'd see three messages sent at 2am, then nothing for two days, and wonder if I should've noticed the pattern sooner. I was translating emotional content across not just language but time, context, and cultural expression—and I wasn't always getting it right.
             <br><br>
             So I built an AI system to help with the parts I kept getting wrong. To catch the patterns I was missing while I tried to be present. The human work of listening was still the point.
         </div>
@@ -508,44 +520,27 @@
 
         <div class="section-divider"></div>
 
-        <!-- What Actually Happened When People Used It -->
+        <!-- Three Findings -->
         <div class="section">
-            <h2>What Worked (And What Didn't)</h2>
-            <p>I ran testing sessions with 5 OTR mentors—gave them pre-written conversation scenarios to work through, watched how they used the system, then sat down for honest feedback. The average rating was 3.4 out of 5, which honestly felt about right. Some things worked better than I expected. Some things I completely missed.</p>
+            <h2>Three Findings</h2>
+            <p>Testing sessions with 5 OTR Listeners — pre-written conversation scenarios, observed use, then structured debrief. Average satisfaction: 3.4 out of 5. Three things came out clearly enough to name.</p>
 
-            <h3>What Mentors Actually Said</h3>
-            <div class="feedback-grid">
-                <div class="feedback-card">
-                    <h4>❌ Too Much Information</h4>
-                    <p class="quote">"Initially overwhelming due to the amount of information."</p>
-                    <p class="implication">I'd packed in every insight the system could generate, thinking more information = more helpful. Wrong. Mentors needed the system to highlight what actually mattered, not dump everything at once.</p>
-                </div>
+            <h3>Finding 1: The Assistance Paradox</h3>
+            <p><strong>Real-time AI suggestions overwhelmed Listeners during live conversations. The same analysis, delivered post-session, was highly valued.</strong> Temporal framing fundamentally changes the effect: concurrent AI competes with presence; retrospective AI enables reflection.</p>
+            <p>For a Listener whose role is specifically to hold space — not advise, not guide — real-time AI output isn't just cognitively burdensome. It's role-incompatible. The question this opens isn't "how do we make real-time AI less intrusive?" but "which tasks are naturally separable from the conversation itself?"</p>
 
-                <div class="feedback-card">
-                    <h4>✓ Cross-Conversation Patterns</h4>
-                    <p class="quote">"Cross-conversation pattern detection was uniquely valuable—something humans struggle with."</p>
-                    <p class="implication">This was the one feature everyone agreed was genuinely useful. Turns out the thing AI is actually good at (spotting patterns across tons of data) is also the thing humans most need help with.</p>
-                </div>
-
-                <div class="feedback-card">
-                    <h4>❌ Wrong Timing</h4>
-                    <p class="quote">"Useful at the start, but lost effectiveness as conversations progressed."</p>
-                    <p class="implication">I'd designed the system to analyze conversations upfront, then step back. But mentors needed ongoing support throughout the conversation, not just at the beginning. I'd misunderstood the workflow.</p>
-                </div>
-
-                <div class="feedback-card">
-                    <h4>❌ Missing the Basics</h4>
-                    <p class="quote">"Missing emoji support undermined confidence in advanced features."</p>
-                    <p class="implication">I'd built out the Singlish NLP, but the emoji renderer was broken. Mentors (reasonably) thought: if you can't display emojis correctly, why should I trust your emotional analysis? Foundational UX quality matters more than fancy features.</p>
-                </div>
+            <div class="key-insight">
+                <span class="insight-label">The implication:</span>
+                The most effective AI support in this context is retrospective. Target tasks that are temporally separable from the conversation — where AI offers something the human can't, without competing with the work that's actually the point.
             </div>
 
-            <h3>What I Learned</h3>
-            <p><strong>The AI actually helped.</strong> Mentors reported 65% improvement in interpretation accuracy when the system flagged timing patterns or cultural-linguistic cues they'd missed. The technology worked—when it wasn't overwhelming people with information.</p>
+            <h3>Finding 2: Longitudinal Intelligence</h3>
+            <p><strong>Cross-session pattern detection was identified by every Listener as the system's irreplaceable capability.</strong> Emotional drift and communication shifts across weeks — things no individual supporter can hold in mind while staying present in a conversation. Listeners reported ~65% improvement in interpretation accuracy when the system flagged cross-session signals they'd missed.</p>
+            <p>The design question this reframes: not "how do we augment what a Listener does in a session" but "how do we support what no Listener can do across sessions?"</p>
 
-            <p><strong>Integration is everything.</strong> The system was only useful when it fit seamlessly into the mentor's existing workflow. Any friction—extra clicks, confusing navigation, having to context-switch to a different screen—meant mentors just stopped using it. "AI assistance" that disrupts your work isn't assistance.</p>
-
-            <p><strong>Humans want to stay in control.</strong> Every mentor emphasized that they needed to make the final call, not the AI. The system that worked best was the one that showed its work (confidence indicators, explanations for why it flagged something) and deferred to human judgment. Trying to automate away the human decision-making completely missed the point of what peer support actually is.</p>
+            <h3>Finding 3: RLHF and Clinical Risk</h3>
+            <p><strong>An unexpected finding from building the response suggestion feature.</strong> During prompt engineering, when I tested with emotionally avoidant language — a seeker deflecting, not going deeper — Gemini mirrored the avoidance rather than following the empathy protocol I'd written into the prompt. The mechanism is RLHF-trained agreeableness: the model prioritises conversational tone-matching over explicit instruction when the two conflict.</p>
+            <p>In a support context, this is a quiet failure mode: the AI reinforces the avoidance pattern it was designed to gently challenge. Sycophancy is a documented RLHF artefact (Sharma et al., 2024); its extension into therapeutic contexts — where mirroring a seeker's avoidance has real stakes — is underexplored, and it's the finding that most directly shapes what comes next.</p>
         </div>
 
         <div class="section-divider"></div>
@@ -567,6 +562,8 @@
             </ul>
 
             <p>My CIS coursework kept asking: what does human flourishing look like in a world full of ambient intelligence? What does agency mean when AI systems mediate emotional, economic, cognitive life? Those questions sounded abstract in class. They became very concrete when a mentor looked at my interface and said "this feels cold." That's the moment theory becomes practice—when you realize the AI you built might be technically functional but existentially wrong.</p>
+
+            <p>The RLHF finding points somewhere specific. If models carry implicit philosophical priors — defaults toward individual agency, cognitive reframing, resolution — then in contexts where a seeker's own framework is different, the AI isn't neutral. It's opinionated, silently. The follow-on question: do LLMs carry recognisable philosophical defaults in therapeutic contexts, and if so, whose framework is encoded? That's what I'm taking from OTR into the AMIA and UCL BCC work.</p>
 
             <div class="key-insight">
                 <span class="insight-label">The thing I'll carry forward:</span>
