@@ -12,7 +12,7 @@
       gtag('config', 'G-J0XS9D3KF4');
     </script>
     <title>OTR Copilot: Building AI for Peer Listeners | Arif Woozeer</title>
-    <meta name="description" content="I volunteered as a peer listener and kept missing emotional cues in text. So I built an AI system to help—and learned that supporting human work is harder than optimizing it.">
+    <meta name="description" content="I volunteered as a peer listener and kept missing emotional cues in text. So I built an AI system to help—and learned that supporting human work is harder than automating it.">
     <style>
         body {
             font-family: 'Helvetica', 'Arial', sans-serif;
@@ -438,7 +438,7 @@
 
             <div class="key-insight">
                 <span class="insight-label">The moment that changed everything:</span>
-                Three words. "This feels cold." I had built something technically functional—it worked, it caught patterns, it flagged things. But it had turned the emotional, human work of peer listening into something that felt clinical and detached. I'd been so focused on making the AI useful that I forgot the AI was supposed to <em>support</em> a human process, not optimize it.
+                Three words. "This feels cold." I had built something technically functional—it worked, it caught patterns, it flagged things. But it had turned the emotional, human work of peer listening into something that felt clinical and detached. I'd been so focused on making the AI useful that I forgot the AI was supposed to <em>support</em> a human process, not replace it.
                 <br><br>
                 I went back and rebuilt it. Three times.
             </div>
@@ -474,7 +474,7 @@
                 </div>
             </div>
 
-            <p><strong>The most important technical choice I made:</strong> I used rule-based NLP instead of fancy transformer models for the sentiment analysis. That sounds like a downgrade—and in terms of raw accuracy, it probably is. But here's what I realized: in a context this emotionally sensitive, mentors need to understand <em>why</em> the AI is flagging something. "The system detected frustration because the message ended in 'sia' and included three skull emojis" is something a mentor can evaluate and override if needed. "The transformer model assigned a 0.83 distress probability" is a black box. Transparency mattered more than perfect accuracy.</p>
+            <p><strong>The most important technical choice I made:</strong> I used rule-based NLP instead of fancy transformer models for the sentiment analysis. That sounds like a downgrade—and in terms of raw accuracy, it probably is. But in a context this emotionally sensitive, mentors need to understand <em>why</em> the AI is flagging something. "The system detected frustration because the message ended in 'sia' and included three skull emojis" is something a mentor can evaluate and override if needed. "The transformer model assigned a 0.83 distress probability" is a black box. Transparency mattered more than perfect accuracy.</p>
         </div>
 
         <div class="section-divider"></div>
@@ -494,7 +494,7 @@
                     <li><strong>Localized intensifiers:</strong> "Confirm plus chop" (absolutely certain), "super" as emphasis, reduplication like "long long time"</li>
                     <li><strong>Emoji combinations with cultural meaning:</strong> Certain emoji patterns carry different emotional weight in Singapore than they do elsewhere</li>
                 </ul>
-                <p>This wasn't about translation. It was about recognizing that language infrastructure shapes emotional access, and if your AI doesn't understand how people actually communicate, it's useless.</p>
+                <p>Translation was never really the goal. Language infrastructure shapes who gets emotional access, and an AI that doesn't understand how people actually communicate is useless.</p>
             </div>
 
             <h3>What I Built It With</h3>
@@ -527,11 +527,11 @@
 
             <h3>Finding 1: The Assistance Paradox</h3>
             <p><strong>Real-time AI suggestions overwhelmed Listeners during live conversations. The same analysis, delivered post-session, was highly valued.</strong> Temporal framing fundamentally changes the effect: concurrent AI competes with presence; retrospective AI enables reflection.</p>
-            <p>For a Listener whose role is specifically to hold space — not advise, not guide — real-time AI output isn't just cognitively burdensome. It's role-incompatible. The question this opens isn't "how do we make real-time AI less intrusive?" but "which tasks are naturally separable from the conversation itself?"</p>
+            <p>For a Listener whose role is specifically to hold space (not advise, not guide), real-time AI output is more than cognitively burdensome: it's incompatible with the role. This reframes the design question: rather than asking how to make real-time AI less intrusive, the better question is which tasks are naturally separable from the conversation itself.</p>
 
             <div class="key-insight">
                 <span class="insight-label">The implication:</span>
-                The most effective AI support in this context is retrospective. Target tasks that are temporally separable from the conversation — where AI offers something the human can't, without competing with the work that's actually the point.
+                The most effective AI support in this context is retrospective. Target tasks that are temporally separable from the conversation, where AI offers something the human can't without competing with the work that's actually the point.
             </div>
 
             <h3>Finding 2: Longitudinal Intelligence</h3>
@@ -552,22 +552,22 @@
 
             <p>The technical part was straightforward: sentiment analysis, pattern recognition, LLM integration. The hard part was figuring out what I was actually trying to build. Was this a tool to make mentors more efficient? Was it about catching emotional signals they were missing? Was it about reducing cognitive load? All of those sounded reasonable, but they led to different design choices—and some of those choices turned the work into something "cold" and clinical.</p>
 
-            <p>Here's what I learned: <strong>building AI that supports human work without replacing it is not a technical problem. It's a question about what human work actually is.</strong> Peer listening isn't just pattern recognition (even though patterns matter). It's relationship-building, trust formation, being present with someone in distress. If you optimize for the pattern recognition and accidentally undermine the relationship-building, you've made things worse, not better.</p>
+            <p><strong>Building AI that supports human work without replacing it turned out to be less a technical problem than a question about what human work actually is.</strong> Peer listening isn't just pattern recognition (even though patterns matter). It's relationship-building, trust formation, being present with someone in distress. If you get the pattern recognition right but accidentally undermine the relationship-building, you've made things worse, not better.</p>
 
             <p>Every technical choice I made carried assumptions about what mattered:</p>
             <ul>
-                <li><strong>Choosing rule-based NLP over transformer models</strong> wasn't about accuracy—it was about trust. Mentors needed to understand <em>why</em> the system flagged something, not just accept a black-box probability score.</li>
-                <li><strong>Building custom Singapore English detection</strong> wasn't just localization—it was recognizing that language infrastructure shapes who gets access to emotional support. If your AI doesn't understand how people actually talk, it's useless (or worse, it's harmful).</li>
-                <li><strong>Adding confidence indicators to every insight</strong> was about keeping humans in control. The AI suggests; the mentor decides. That's not a nice-to-have feature—it's the whole point.</li>
+                <li><strong>Choosing rule-based NLP over transformer models</strong> was about trust, not accuracy. Mentors needed to understand <em>why</em> the system flagged something, not just accept a black-box probability score.</li>
+                <li><strong>Building custom Singapore English detection</strong> went beyond localization. It recognized that language infrastructure shapes who gets access to emotional support. If your AI doesn't understand how people actually talk, it's useless (or worse, it's harmful).</li>
+                <li><strong>Adding confidence indicators to every insight</strong> was about keeping humans in control. The AI suggests; the mentor decides. That's the whole point, not a nice-to-have feature.</li>
             </ul>
 
             <p>My CIS coursework kept asking: what does human flourishing look like in a world full of ambient intelligence? What does agency mean when AI systems mediate emotional, economic, cognitive life? Those questions sounded abstract in class. They became very concrete when a mentor looked at my interface and said "this feels cold." That's the moment theory becomes practice—when you realize the AI you built might be technically functional but existentially wrong.</p>
 
-            <p>The RLHF finding points somewhere specific. If models carry implicit philosophical priors — defaults toward individual agency, cognitive reframing, resolution — then in contexts where a seeker's own framework is different, the AI isn't neutral. It's opinionated, silently. The follow-on question: do LLMs carry recognisable philosophical defaults in therapeutic contexts, and if so, whose framework is encoded? That's what I'm taking from OTR into the AMIA and UCL BCC work.</p>
+            <p>The RLHF finding points somewhere specific. If models carry implicit philosophical priors (defaults toward individual agency, cognitive reframing, resolution), then in contexts where a seeker's own framework is different, the AI isn't neutral. It's opinionated, silently. The follow-on question: do LLMs carry recognisable philosophical defaults in therapeutic contexts, and if so, whose framework is encoded? That's what I'm taking from OTR into the AMIA and UCL BCC work.</p>
 
             <div class="key-insight">
                 <span class="insight-label">The thing I'll carry forward:</span>
-                Technology that supports human work has to be built <em>with</em> an understanding of what that work actually is—what the people doing the work say they need, full stop. That sounds obvious. It's not. It took three complete redesigns for me to really understand it.
+                Technology that supports human work has to be built with an understanding of what that work actually is: what the people doing the work say they need, full stop. That sounds obvious. It's not. It took three complete redesigns for me to really understand it.
             </div>
         </div>
 
