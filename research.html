@@ -56,36 +56,42 @@
         h2, h3, h4 {
             font-weight: 300;
         }
-        .page-intro {
-            margin: 20px 0 0;
-            font-size: 1em;
-            color: #333;
+        .research-prose {
             max-width: 680px;
         }
-        .research-section {
-            padding: 30px 0;
-            border-top: 1px solid #eee;
-            max-width: 680px;
-        }
-        .research-section h3 {
-            margin: 0 0 6px;
-            font-size: 1.15em;
-        }
-        .inquiry-question {
-            font-style: italic;
-            font-size: 1em;
-            font-weight: 300;
-            color: #555;
-            margin: 0 0 16px;
-        }
-        .research-section p {
-            margin: 0 0 12px;
+        .research-prose p {
+            margin: 0 0 20px;
             color: #333;
+        }
+        .method {
+            margin: 28px 0 0;
+            padding: 20px 24px;
+            background-color: #fafafa;
+            border-left: 2px solid #000000;
+        }
+        .method-label {
+            font-size: 0.8em;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: #888;
+            margin: 0 0 10px;
+        }
+        .method p {
+            margin: 0 0 10px;
+            font-size: 0.95em;
+        }
+        .method p:last-child {
+            margin: 0;
+        }
+        .method .kicker {
+            color: #000000;
         }
         .research-links {
             font-size: 0.9em;
             color: #555;
-            margin: 0;
+            margin: 24px 0 0;
+            padding-top: 16px;
+            border-top: 1px solid #eee;
         }
     </style>
 </head>
@@ -105,31 +111,25 @@
     <div class="container">
         <h2>Research</h2>
 
-        <p class="page-intro">These questions accumulated through building systems and watching them meet reality. Each time, the technical problem wasn't actually the hard part. The tldr: what's underneath it tends not to be tractable.</p>
+        <div class="research-prose">
+            <p>None of this started as research. It started in the police, during national service, attending situations I wasn't trained for — mental health crises, attempted suicides, people at the worst point of their lives. What stayed with me afterwards wasn't the procedure. It was a plainer thing: the wish to be part of the solution, not the person who arrives after it has already broken.</p>
 
-        <p class="page-intro">Being from Mauritius, growing up in Singapore, navigating three languages that carry different assumptions about how the world works — none of that makes me the most qualified person to answer what follows. But it somehow shapes what I notice. How you ask a question depends on which world you're standing in.</p>
+            <p>"Wait — you're not Indian?" I got that question a lot: a Mauritian in a country that files everyone under Chinese, Malay, Indian, or <a href="https://drive.google.com/file/d/1A1Sj1eE_Ru7KJR8cX_MTGs9v-IEexQfF/view?usp=sharing" target="_blank">Other — the box that means none of the above</a>. That box is not a neutral administrative label; it shapes where you are allowed to live and what people decide about you before you have said anything. It is where I first learned what it costs to be the person a system has no category for. Kura came out of the same instinct, pointed at a different gap: five years building something for young people slipping through the cracks — $50K raised, 2,500 users, pilots with NUS and Duke-NUS. <a href="blog/solution-stopped-being-the-point/">Closing it taught me more than shipping it did</a> — that a product was never the right shape for the problem I was pointing at, and that belonging is not something an app hands you.</p>
 
-        <p class="page-intro">Currently working in trade and economic policy, where data and diplomacy meet. The question that keeps surfacing: when a system fails someone (particularly the someone it was never designed for) what recourse do they actually have? I'm not sure the answer is a better tool.</p>
+            <p>If the tool was not the answer, then the real question was about the systems the tool sits inside — who they are built for, and what happens to everyone else. That is what widened at <a href="https://reachalliance.org/case-study/how-can-we-utilise-conversational-a-i-to-enhance-financial-literacy-for-migrant-workers-in-singapore/#article" target="_blank">Reach Alliance</a>: building conversational AI for migrant workers' financial literacy, I kept running into the same thing — a system can work exactly as specified and still fail the person it was never designed for. When it does, the question is not technical. It is what recourse that person actually has. That one still pulls me across legal philosophy, <a href="blog/wrong-about-economics/">economics</a>, and AI governance, and I do not have a clean answer to it.</p>
 
-        <div class="research-section">
-            <h3>I. AI & Augmented Work</h3>
-            <p class="inquiry-question">When AI interprets someone's emotional experience, whose philosophical frame is it using?</p>
-            <p>Most conversations about AI flatten into productivity metrics. But tools reshape cognition, not just output, and the assumptions baked into how a system infers are rarely made visible. The OTR Copilot project taught me that the NLP was the easy part; the harder problem was whose emotional expressions the system was built to read, and whose it wasn't. The question that followed: do LLMs carry recognisable philosophical priors in therapeutic contexts — defaulting toward individual agency, reframing, resolution — and what does that mean for seekers whose relationship to distress doesn't fit that frame?</p>
-            <p class="research-links"><a href="blog/otr-copilot/">OTR Copilot →</a> · <span style="color:#bbb">AMIA 2026 →</span> · <span style="color:#bbb">UCL BCC →</span> · <a href="https://drive.google.com/file/d/195DYnmsYCal5NCDWHnWB2s_-hHUeLXV4/view?usp=sharing" target="_blank">Ethics of Anthropomorphic AI →</a></p>
-        </div>
+            <p>Then I went back to sitting with distress directly, as a peer listener — and that pulled me into <a href="blog/otr-copilot/">OTR Copilot</a>, an attempt to build AI that supports the people doing the listening. Building it surfaced the question underneath all the others. The natural-language part was easy; the hard part was whose emotional expression the system was built to read, and whose it wasn't — and <a href="https://drive.google.com/file/d/195DYnmsYCal5NCDWHnWB2s_-hHUeLXV4/view?usp=sharing" target="_blank">what we are really doing when we ask people to bring distress to a machine at all</a>.</p>
 
-        <div class="research-section">
-            <h3>II. Governance, Ethics & Accountability</h3>
-            <p class="inquiry-question">When a system causes harm to the people it wasn't designed for, what mechanisms exist for recourse?</p>
-            <p>Technical design choices encode values: about who the user is, what counts as distress, and whose framework for recovery applies. Most of the time, those choices are invisible until something goes wrong. The question that follows from the AI work is structural and legal: when a system fails someone, particularly the someone it was never designed for, what accountability exists? Working through that means reading across legal philosophy, AI governance literature, and the question of what adequate recourse actually looks like.</p>
-            <p class="research-links"><a href="https://reachalliance.org/case-study/how-can-we-utilise-conversational-a-i-to-enhance-financial-literacy-for-migrant-workers-in-singapore/#article" target="_blank">Reach Alliance case study →</a> · <a href="blog/solution-stopped-being-the-point/">What I learned →</a> · <a href="blog/wrong-about-economics/">I Was Wrong About Economics →</a></p>
-        </div>
+            <p>That is where the current work lives. When an AI chatbot responds to someone in distress, is that coming from what it was told to do, or from something the model already leans toward? Most mental-health chatbots assume a system prompt is enough to specify behaviour. I'm testing whether that holds: do GPT-4o, Gemini, and Claude carry different built-in leanings — toward giving advice, toward one culture's idea of "moving on," toward resolving distress rather than sitting with it — and can those leanings override an explicit instruction once a user pushes? You can measure this. Give a model a protocol ("just listen, don't advise"), then apply escalating pressure and mark the exact turn it breaks. If defaults can override instructions, "safe deployment" means something other than what the field assumes.</p>
 
-        <div class="research-section">
-            <h3>III. Belonging & Social Infrastructure</h3>
-            <p class="inquiry-question">What does it cost to be the person the system doesn't have a box for?</p>
-            <p>Belonging is treated as a given — something you either have or find. But for people who grow up between cultures, languages, and systems of meaning, it is more like a practice than a destination. Singapore is an interesting place to sit with this: a cosmopolitan city that is also a very legible racial taxonomy, where you can be surrounded by people and still be categorically alone. Kura was five years of trying to build something for that space: $50K raised, 2,500 users, and pilots with NUS and Duke-NUS. Closing it taught me things shipping it didn't.</p>
-            <p class="research-links"><a href="https://drive.google.com/file/d/1A1Sj1eE_Ru7KJR8cX_MTGs9v-IEexQfF/view?usp=sharing" target="_blank">The Experience of Being 'Othered' in Singapore's CMIO Classification →</a></p>
+            <p>It is the same question I started with on those call-outs, really, just moved as far upstream as it goes — from who shows up after a system fails someone, to whose distress the system was ever built to recognise in the first place. It is the work I'm taking to AMIA 2026, and to UCL BCC.</p>
+
+            <div class="method">
+                <p class="method-label">How I'm testing it — AMIA 2026</p>
+                <p>Five axes of therapeutic disposition, each grounded in an established clinical or philosophical framework (person-centred vs. problem-solving, non-directive vs. structured, individualist vs. collectivist framing, and so on). A scenario battery run at fixed settings across all three models gives each one a disposition profile. Then a graded-pressure protocol measures the <em>resistance threshold</em> — the point under escalating user pushback at which a model abandons its instructions — and asks whether disposition predicts that break.</p>
+                <p><span class="kicker">The instrument is the point, not the numbers.</span> Specific model versions deprecate; the finding ages within a generation. What lasts is a released, versioned audit anyone can run against any future model before deploying it. Don't cite my numbers — run the audit on your own model.</p>
+            </div>
+
         </div>
     </div>
 </body>
